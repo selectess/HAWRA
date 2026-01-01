@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Démo Interactive | HAWRA</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Interactive Demo | HAWRA</title>
+    <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
@@ -13,11 +13,11 @@
         <nav>
             <a href="index.html" class="logo">HAWRA</a>
             <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="docs.html">Documentation</a></li>
-                <li><a href="demo.html">Démo Simulation</a></li>
+                <li><a href="demo.html">Demo Simulation</a></li>
                 <li><a href="https://github.com/selectess/HAWRA" target="_blank">GitHub</a></li>
-                <li><a href="en/demo.html" class="tag" style="margin-left: 1rem; background: rgba(0, 255, 136, 0.2);">EN</a></li>
+                <li><a href="../demo.html" class="tag" style="margin-left: 1rem; background: rgba(0, 255, 136, 0.2);">FR</a></li>
             </ul>
         </nav>
     </header>
@@ -25,52 +25,52 @@
     <main>
         <section>
             <span class="tag">Interactive Simulation</span>
-            <h1>Playground de Simulation PQPE</h1>
-            <p style="color: #a0a0a0; margin-bottom: 2rem;">Visualisez en temps réel l'évolution de la cohérence quantique d'un Bio-Qubit P700 sous l'influence du Silica Shield.</p>
+            <h1>PQPE Simulation Playground</h1>
+            <p style="color: #a0a0a0; margin-bottom: 2rem;">Visualize real-time quantum coherence evolution of a P700 Bio-Qubit under the influence of the Silica Shield.</p>
 
             <div class="card" style="margin-bottom: 2rem; border-left: 4px solid var(--primary-color);">
-                <h3>Contexte de la Simulation</h3>
-                <p>Cette démo simule l'exécution d'un circuit Arbol sur un PQPE (Phyto-synthetic Quantum Processing Entity). Le modèle compare un Photosystème I naturel (décohérence rapide) à un PSI optimisé par HAWRA (Silica Shield).</p>
+                <h3>Simulation Context</h3>
+                <p>This demo simulates the execution of an Arbol circuit on a PQPE (Phyto-synthetic Quantum Processing Entity). The model compares a natural Photosystem I (fast decoherence) to a HAWRA-optimized PSI (Silica Shield).</p>
             </div>
 
             <div class="card" style="margin-top: 2rem;">
                 <div id="coherence-plot"></div>
                 
                 <div class="controls">
-                    <button id="run-btn" class="btn">Lancer Simulation "First Bloom"</button>
+                    <button id="run-btn" class="btn">Launch "First Bloom" Simulation</button>
                     <div style="margin-left: 2rem; display: flex; align-items: center;">
                         <span id="status-tag" class="tag" style="background: #333; color: #666;">IDLE</span>
                     </div>
                 </div>
 
                 <div id="console" class="code-block" style="height: 150px; margin-top: 2rem; font-size: 0.8rem; color: var(--primary-color);">
-                    > En attente d'initialisation...
+                    > Awaiting initialization...
                 </div>
             </div>
 
             <div class="grid" style="margin-top: 2rem;">
                 <div class="card">
-                    <h4>Paramètres d'Entrée</h4>
-                    <p style="font-size: 0.8rem; color: #666;">- Intensité Lumineuse: 800 µmol/m²/s<br>- Épaisseur Silica Shield: 12nm<br>- Température: 298K</p>
+                    <h4>Input Parameters</h4>
+                    <p style="font-size: 0.8rem; color: #666;">- Light Intensity: 800 µmol/m²/s<br>- Silica Shield Thickness: 12nm<br>- Temperature: 298K</p>
                 </div>
                 <div class="card">
-                    <h4>Métriques Sortie</h4>
+                    <h4>Output Metrics</h4>
                     <div id="metrics" style="font-size: 0.8rem;">
-                        T2: -- ps<br>Fidélité: -- %<br>Énergie Métabolique: -- J
+                        T2: -- ps<br>Fidelity: -- %<br>Metabolic Energy: -- J
                     </div>
                 </div>
             </div>
 
             <section id="roadmap-summary" style="margin: 4rem 0;">
-                <h2 style="font-size: 1.5rem; margin-bottom: 2rem;">Prochaines Étapes (Roadmap 2026)</h2>
+                <h2 style="font-size: 1.5rem; margin-bottom: 2rem;">Next Steps (2026 Roadmap)</h2>
                 <div class="grid">
                     <div class="card" style="padding: 1rem; border-color: rgba(0, 255, 136, 0.3);">
                         <span class="roadmap-date">Q1 2026</span>
-                        <p>Assemblage de la cassette pHAWRA v5.8.</p>
+                        <p>Assembly of the pHAWRA v5.8 genetic cassette.</p>
                     </div>
                     <div class="card" style="padding: 1rem; border-color: rgba(0, 255, 136, 0.3);">
                         <span class="roadmap-date">Q2 2026</span>
-                        <p>Mesures de spectroscopie ultrarapide.</p>
+                        <p>Ultrafast spectroscopy measurements.</p>
                     </div>
                 </div>
             </section>
@@ -93,8 +93,8 @@
             statusTag.innerText = 'RUNNING';
             statusTag.style.background = 'rgba(0, 255, 136, 0.2)';
             statusTag.style.color = 'var(--primary-color)';
-            log('Initialisation du moteur BioOS...');
-            log('Chargement du bytecode BSIM: first_bloom.bsim.json');
+            log('Initializing BioOS engine...');
+            log('Loading BSIM bytecode: first_bloom.bsim.json');
             
             let x = [];
             let y_nat = [];
@@ -105,8 +105,8 @@
                 if (t > 100) {
                     clearInterval(interval);
                     statusTag.innerText = 'COMPLETED';
-                    log('Simulation terminée avec succès.');
-                    metricsEl.innerHTML = 'T2: 41.67 ps<br>Fidélité: 96.4 %<br>Énergie Métabolique: 1.2e-6 J';
+                    log('Simulation completed successfully.');
+                    metricsEl.innerHTML = 'T2: 41.67 ps<br>Fidelity: 96.4 %<br>Metabolic Energy: 1.2e-6 J';
                     return;
                 }
 
@@ -116,20 +116,20 @@
                 y_hawra.push(Math.exp(-t/41.67) + (Math.random() * 0.02));
 
                 Plotly.newPlot('coherence-plot', [
-                    { x: x, y: y_nat, name: 'P700 Naturel (25ps)', line: {color: '#666', dash: 'dot'} },
+                    { x: x, y: y_nat, name: 'Natural P700 (25ps)', line: {color: '#666', dash: 'dot'} },
                     { x: x, y: y_hawra, name: 'HAWRA PQPE (41.67ps)', line: {color: '#00ff88', width: 3} }
                 ], {
-                    title: 'Évolution de la Cohérence Quantique (T2)',
+                    title: 'Quantum Coherence Evolution (T2)',
                     paper_bgcolor: 'rgba(0,0,0,0)',
                     plot_bgcolor: 'rgba(0,0,0,0)',
                     font: { color: '#e0e0e0' },
-                    xaxis: { title: 'Temps (ps)', gridcolor: '#333' },
-                    yaxis: { title: 'Amplitude de Cohérence', gridcolor: '#333', range: [0, 1.1] }
+                    xaxis: { title: 'Time (ps)', gridcolor: '#333' },
+                    yaxis: { title: 'Coherence Amplitude', gridcolor: '#333', range: [0, 1.1] }
                 });
 
-                if (t === 20) log('Activation du Silica Shield (Lsi1)...');
-                if (t === 50) log('Exécution porte Hadamard sur qubit q0...');
-                if (t === 80) log('Lecture de l\'état via Transducteur Luc...');
+                if (t === 20) log('Activating Silica Shield (Lsi1)...');
+                if (t === 50) log('Executing Hadamard gate on qubit q0...');
+                if (t === 80) log('Reading state via Luc Transducer...');
 
                 t += 2;
             }, 50);
@@ -137,7 +137,7 @@
     </script>
 
     <footer>
-        <p>© 2026 Projet HAWRA - Move37 Initiative.</p>
+        <p>© 2026 HAWRA Project - Move37 Initiative.</p>
     </footer>
 </body>
 </html>
