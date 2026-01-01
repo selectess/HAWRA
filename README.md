@@ -20,9 +20,18 @@ The HAWRA architecture has successfully passed the end-to-end numerical validati
   - **Grover's Search**: Amplitude amplification in biological substrates.
   - **Deutsch-Jozsa**: Determination of biological function parity.
 - **Synthesis Ready**: Full fragmentation (7 blocks) and [Gibson Assembly Protocol](genomics/processed_sequences/synthesis_order/GIBSON_ASSEMBLY_PROTOCOL.md) finalized for the 18.1 kb cassette.
-- **Full Report**: [View the Latest Certification Report](04_validation_benchmarks/CERTIFICATION_REPORT.md)
+- **Full Compendium**: [HAWRA Mega-Report 2026 (v4.0)](00_docs/scientific/HAWRA_MEGA_REPORT_2026.md)
+- **Executive Summary**: [Read the High-Level Summary](EXECUTIVE_SUMMARY.md)
 
-------
+---
+
+## 📢 Media & Recognition
+To facilitate global recognition and media coverage, we provide a dedicated press kit and executive summary for journalists and stakeholders.
+- 📰 **[Press Kit](PRESS_KIT.md)**: Key talking points, impact analysis, and media assets.
+- 🚀 **[Executive Summary](EXECUTIVE_SUMMARY.md)**: 2-page strategic overview of the project.
+- 🧪 **[Zenodo Archive](https://doi.org/10.5281/zenodo.17908061)**: Formal academic record and data repository.
+
+---
 
 ## 🌐 Project Presentation & Live Demo
 Explore our professional web interface for technical documentation and interactive simulation:
