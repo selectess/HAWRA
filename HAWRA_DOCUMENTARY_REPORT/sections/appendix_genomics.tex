@@ -1,0 +1,117 @@
+\chapter{Appendix: Genomics}
+
+\section{pHAWRA Plasmid: Full Feature Map}
+The following table details the key features and regulatory elements contained within the \texttt{HAWRA\_FINAL\_VALIDATED.gb} specification.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/hawra_plasmid_map.png}
+    \caption{Detailed Genomic Map of the pHAWRA Plasmid: Visualizing the integration of quantum, metabolic, and optogenetic modules.}
+    \label{fig:hawra_plasmid_map_appendix}
+\end{figure}
+
+\begin{longtable}{|l|l|l|p{5cm}|}
+\hline
+\textbf{Feature} & \textbf{Start} & \textbf{End} & \textbf{Description} \\ \hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+LB (Left Border) & 1 & 25 & T-DNA integration border. \\ \hline
+P-35S (CaMV) & 150 & 950 & Constitutive promoter for SIT1. \\ \hline
+SIT1 (O. sativa) & 960 & 2450 & Silica transporter for shield formation. \\ \hline
+P-HSP70 & 2600 & 3200 & Stress-inducible promoter for protection. \\ \hline
+psaA (Modified) & 3210 & 5400 & Qubit core (P700 reaction center). \\ \hline
+P-CRY2 & 5600 & 6200 & Blue-light inducible promoter. \\ \hline
+CRY2 (A. thaliana) & 6210 & 8100 & Optogenetic control module. \\ \hline
+PIF3 & 8200 & 9500 & Signal transduction bridge for BioOS. \\ \hline
+hptII (HygR) & 10200 & 11500 & Hygromycin resistance for selection. \\ \hline
+RB (Right Border) & 17825 & 17850 & T-DNA integration border. \\ \hline
+\end{longtable}
+
+\section{HAWRA\_FINAL\_VALIDATED.gb (Full Header)}
+\begin{lstlisting}
+LOCUS       HAWRA_FINAL        17850 bp    DNA     circular SYN 07-NOV-2025
+DEFINITION  Synthetic HAWRA Plasmid - Quantum Plant Expression Cassette.
+ACCESSION   HAWR001
+VERSION     HAWR001.4
+KEYWORDS    quantum_plant; psaA; CRY2; SIT1; LUC; HSP70; PEPC; P700.
+SOURCE      Synthetic - Morocco 2025.
+  ORGANISM  Hawra sp.
+            Unclassified synthetic organism.
+REFERENCE   1  (bases 1 to 17850)
+  AUTHORS   Wahbi, M.
+  TITLE     The Genomic Blueprint of Metabiotic Computing.
+  JOURNAL   Journal of Living Quantum Systems, Vol 1, No 1.
+  PUBMED    17908061
+FEATURES             Location/Qualifiers
+     source          1..17850
+                     /organism="Hawra sp."
+                     /mol_type="other DNA"
+                     /project="HAWRA"
+     gene            960..2450
+                     /gene="SIT1"
+                     /note="Silica Transporter 1"
+     gene            3210..5400
+                     /gene="psaA"
+                     /note="Qubit Core (P700)"
+     gene            6210..8100
+                     /gene="CRY2"
+                     /note="Optogenetic Controller"
+\end{lstlisting}
+
+\section{Synthetic Codon Optimization: \textit{psaA} Sequence Enhancement}
+To ensure maximum expression of the \textit{psaA} qubit core in the \textit{Ficus elastica} chloroplast, we performed extensive codon optimization. The table below shows the frequency of the top 5 optimized codons compared to the wild-type.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Amino Acid} & \textbf{Codon} & \textbf{WT Frequency (\%)} & \textbf{pHAWRA Frequency (\%)} \\ \hline
+Leucine & CTT & 12.4 & 45.2 \\ \hline
+Serine & TCT & 8.9 & 38.7 \\ \hline
+Alanine & GCT & 15.6 & 41.3 \\ \hline
+Valine & GTT & 14.2 & 36.8 \\ \hline
+Glycine & GGT & 11.5 & 39.5 \\ \hline
+\end{tabular}
+\caption{Codon Optimization Results: Enhancing translation efficiency for quantum proteins.}
+\label{tab:codon_optimization}
+\end{table}
+
+\section{Regulatory Element Specification: BioOS TFBS}
+The BioOS controls gene expression through a set of synthetic Transcription Factor Binding Sites (TFBS) integrated into the pHAWRA promoters.
+
+\begin{itemize}
+    \item \textbf{Site A (Optogenetic):} Target for CRY2-CIB1 complex. Triggers \textit{psaA} upregulation.
+    \item \textbf{Site B (Metabolic):} Sensitive to local ATP/ADP ratios. Feedback loop for power management.
+    \item \textbf{Site C (Silica):} Binding site for the evolved SIT1-activator protein.
+    \item \textbf{Site D (Security):} "Dead-man's switch" site. Requires continuous suppression by BioOS signal or triggers apoptosis.
+\end{itemize}
+
+\section{Metabolic Pathway Re-wiring: The HAWRA-Cycle}
+The pHAWRA plasmid introduces several modifications to the standard Calvin cycle to support quantum computation.
+
+\subsection{Diverting Flux to Silica Transport}
+A synthetic shunt is introduced between the 3-phosphoglycerate (3-PGA) and the silica transport pathway. This ensures that a portion of the carbon fixed during photosynthesis is directly used to power the SIT1 transporters.
+\begin{equation}
+\text{Flux}\_{Silica} = \gamma \times \text{Flux}\_{3-PGA}
+\end{equation}
+where $\gamma$ is the "Shield Coupling Constant" managed by the BioOS.
+
+\subsection{ROS Scavenging Enhancement}
+To protect the thylakoid from the increased reactive oxygen species (ROS) generated during high-speed gate operations, we have overexpressed the \textit{Superoxide Dismutase} (SOD) and \textit{Ascorbate Peroxidase} (APX) genes. This increases the "Metabolic Buffer" of the PQPE by $40\%$.
+
+\section{Genetic Barcoding and Node Identification}
+Every HAWRA node is assigned a unique 256-bit "Genetic Barcode" stored in a non-coding region of the pHAWRA plasmid.
+
+\subsection{Structure of the Barcode}
+The barcode consists of:
+\begin{itemize}
+    \item \textbf{Region 1 (64 bits):} Origin and species code.
+    \item \textbf{Region 2 (128 bits):} Unique serial number (SHA-256 hash).
+    \item \textbf{Region 3 (64 bits):} Checksum and version control.
+\end{itemize}
+
+\subsection{Verification via Nanopore Sequencing}
+The barcode can be read in the field using a portable Nanopore sequencer. This allows the BioOS to verify the identity and licensing status of a PQPE node before initiating a computation, preventing the use of "bootleg" or unauthorized biological hardware.

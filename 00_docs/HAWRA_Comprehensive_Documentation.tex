@@ -1,0 +1,242 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Page Geometry
+\geometry{margin=2.5cm}
+
+% Hyperlink Setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={HAWRA Comprehensive Documentation},
+    pdfauthor={HAWRA Team},
+}
+
+% Code Listing Style
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                   
+    keepspaces=true,                 
+    numbers=left,                   
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+% Title Page
+\title{
+    \Huge \textbf{HAWRA}\\
+    \huge Programmable Quantum-Physiological Plant Entity\\
+    \vspace{1cm}
+    \Large Comprehensive Academic Documentation\\
+    \vspace{1cm}
+    \large Version 1.0\\
+    \vspace{2cm}
+    \textbf{The HAWRA Team}\\
+    \textit{Move37 / HAWRA Initiative}\\
+    \date{\today}
+}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\listoffigures
+\newpage
+
+\chapter{Introduction}
+
+\section{Project Overview}
+HAWRA (Hardware-Agnostic Wetware-Reliant Architecture) is an interdisciplinary initiative aimed at realizing in vivo biological computation within \emph{Ficus elastica}. The project unifies quantum biology, synthetic biology, and computer science to create a "wetware" computer capable of processing information through bio-quantum states (excitons in chloroplasts) regulated by genetic circuits.
+
+The core of this system is the \textbf{PQPE} (Phyto-synthetic Quantum Processing Entity), a genetically modified plant organism that acts as the hardware substrate. This entity is orchestrated by the \textbf{BioOS} (Biological Operating System) and programmed via the \textbf{Arbol} language.
+
+\section{Objectives}
+The primary objectives of HAWRA are:
+\begin{itemize}
+    \item \textbf{PhytoQMML}: To implement "Phyto Quantum Mathematical-Metabolic Learning," a paradigm where optimization and learning are embodied by biological processes.
+    \item \textbf{PQPE Construction}: To engineer a Programmable Quantum-Physiological Plant Entity using a standardized genetic backbone (pHAWRA plasmid).
+    \item \textbf{Unified Simulation}: To provide a complete software stack (Arbol language, BioOS, Simulator) that models the interaction between biological, quantum, and environmental states with high fidelity.
+\end{itemize}
+
+\section{Scope}
+This document covers the entire technical stack, from the high-level Domain Specific Language (Arbol) to the low-level genetic implementation (pHAWRA plasmid) and the validation results obtained through the unified simulator.
+
+\chapter{System Architecture}
+
+\section{Global Architecture}
+The HAWRA system is structured around several key components that facilitate the flow from code to biological execution (simulated or real). The architecture ensures a strict control hierarchy where Arbol is the sole entry point.
+
+\begin{itemize}
+    \item \textbf{User Level}: Interaction via Arbol IDE or CLI.
+    \item \textbf{Compiler Level}: Translation of Arbol code into Bio-Simulation (BSIM) JSON format.
+    \item \textbf{OS Level (BioOS)}: Interpretation of BSIM instructions into physical stimuli (Light, EM fields).
+    \item \textbf{Hardware Level (PQPE)}: Biological execution in \emph{Ficus elastica} chloroplasts.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    % Placeholder for architecture diagram if available
+    \includegraphics[width=0.9\textwidth, keepaspectratio]{../results/hawra_architecture.png}
+    \caption{Global Architecture of the HAWRA System}
+\end{figure}
+
+\section{Components}
+\subsection{PQPE (Phyto-synthetic Quantum Processing Entity)}
+The PQPE is the biological hardware. It utilizes the P700 reaction center of Photosystem I as a qubit, encapsulated in a silica nano-cage (synthesized via Lsi1/SIT1) to preserve quantum coherence.
+
+\subsection{BioOS (Biological Operating System)}
+BioOS acts as the bridge between the digital and biological worlds. It manages:
+\begin{itemize}
+    \item Translation of quantum gates into light pulses and electromagnetic fields.
+    \item Regulation of the plant's metabolic state (homeostasis).
+    \item Readout of computation results via bioluminescent reporters (Luciferase).
+\end{itemize}
+
+\chapter{The Arbol Language}
+
+\section{Overview}
+Arbol (A-life Regulation and Bio-computation Orchestration Language) is a Domain-Specific Language (DSL) designed to express bio-quantum algorithms. It abstracts complex biological regulatory networks and quantum operations into high-level primitives.
+
+\section{Syntax and Grammar}
+Arbol supports standard quantum operations (H, X, Y, Z, CNOT) and biological constructs (Logical Qubits linked to promoters).
+
+\begin{lstlisting}[language=Python, caption=Example Arbol Script (PhytoQMML)]
+circuit phytoqmmml_demo {
+    // Define qubits linked to biological promoters
+    LOGICAL_QUBIT q1 [1] IS { activator: p1 };
+    LOGICAL_QUBIT q2 [1] IS { repressor: p2 };
+
+    // Apply quantum operations
+    H(q1);
+    CNOT(q1, q2);
+
+    // Measure state
+    measure q2;
+}
+
+run phytoqmmml_demo;
+\end{lstlisting}
+
+\section{Compiler and BSIM}
+The Arbol compiler transforms the source code into a JSON-based format called BSIM (Bio-Simulation). This format contains:
+\begin{itemize}
+    \item \texttt{metadata}: Version and source info.
+    \item \texttt{instructions}: An ordered list of commands (\texttt{INITIALIZE}, \texttt{QUANTUM\_OP}, \texttt{MEASURE}).
+\end{itemize}
+
+\chapter{Biological Implementation (pHAWRA)}
+
+\section{The pHAWRA Plasmid}
+The genetic backbone of the PQPE is the pHAWRA plasmid. It contains a modular arrangement of gene cassettes designed for specific functions.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Gene} & \textbf{Function} & \textbf{Role in BioOS} \\ \hline
+\texttt{psaA} & Photosystem I Core & Qubit Register (P700) \\ \hline
+\texttt{CRY2} & Cryptochrome & Quantum Gate Interface (Blue Light) \\ \hline
+\texttt{Lsi1/SIT1} & Silicon Transporter & Quantum Isolation (Silica Cage) \\ \hline
+\texttt{Luc} & Luciferase & Readout (Bioluminescence) \\ \hline
+\texttt{HSP70} & Heat Shock Protein & Thermal Error Correction \\ \hline
+\texttt{PEPC} & PEP Carboxylase & Energy Management (CAM) \\ \hline
+\end{tabular}
+\caption{pHAWRA Genetic Components}
+\end{table}
+
+\section{Quantum Isolation Strategy}
+To maintain quantum coherence in a wet, warm environment, HAWRA employs a silica nano-cage strategy. The expression of \texttt{Lsi1} and \texttt{SIT1} facilitates the deposition of a silica shell around the thylakoid membranes, shielding the P700 qubits from thermal noise and decoherence.
+
+\chapter{Unified Simulator and Physics}
+
+\section{Simulation Model}
+The Unified Simulator models the system using the Lindblad Master Equation for open quantum systems:
+
+\begin{equation}
+\frac{d\rho}{dt} = -\frac{i}{\hbar} [H, \rho] + \sum_k \gamma_k \left( L_k \rho L_k^\dagger - \frac{1}{2} \{L_k^\dagger L_k, \rho\} \right)
+\end{equation}
+
+Where:
+\begin{itemize}
+    \item $\rho$ is the density matrix of the qubit state.
+    \item $H$ is the Hamiltonian describing the system's energy and control fields.
+    \item $L_k$ are the Lindblad operators representing decoherence channels.
+\end{itemize}
+
+\section{Spectral Sweep}
+The simulator accounts for the wavelength-dependent response of the biological components. A spectral sweep analysis determines the optimal wavelengths for controlling specific genes (e.g., 450nm for CRY2, 650nm for PhyB).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../03_unified_simulator/results/spectral_sweep.png}
+    \caption{Spectral Sweep Analysis}
+\end{figure}
+
+\chapter{Results and Validation}
+
+\section{Quantum Coherence}
+Simulations demonstrate that the engineered environment (silica confinement + protein stabilization) allows for extended quantum coherence times.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth, keepaspectratio]{../03_quantum_simulation/results/qubit_coherence_validation.png}
+    \caption{P700 Coherence Decay Simulation}
+\end{figure}
+
+\section{Pipeline Verification}
+The entire pipeline, from Arbol code to simulated readout, has been validated. The "One-Shot Pipeline" ensures:
+\begin{enumerate}
+    \item Successful compilation of Arbol scripts.
+    \item Correct generation of BSIM instructions.
+    \item Accurate simulation of quantum dynamics.
+    \item Generation of validation plots and data bundles.
+\end{enumerate}
+
+\chapter{Conclusion}
+
+The HAWRA project establishes a comprehensive framework for vegetal quantum computing. By defining a rigorous language (Arbol), a valid genetic implementation (pHAWRA), and a unified simulator, we provide the necessary tools to explore the frontier of "wetware" computing. The results confirm the theoretical viability of the approach, showing coherence times >1ps and robust system programmability, paving the way for wet-lab experimentation in 2026.
+
+\bibliographystyle{plain}
+\begin{thebibliography}{9}
+\bibitem{hawra_formal}
+HAWRA Team. \textit{HAWRA-PQPE Formal Model}. 2025.
+\bibitem{phytoqmml}
+HAWRA Team. \textit{Phyto Quantum Mathematical-Metabolic Learning Formalization}. 2025.
+\bibitem{arbol_spec}
+HAWRA Team. \textit{Arbol Language Specification}. 2025.
+\end{thebibliography}
+
+\end{document}

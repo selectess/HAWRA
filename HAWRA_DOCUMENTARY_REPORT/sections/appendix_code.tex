@@ -1,0 +1,492 @@
+\chapter{Appendix B: Code and Driver Specifications}
+
+\section{BioOS Hardware Abstraction Layer (HAL) - C++ Snippet}
+The following C++ code represents the core of the BioOS HAL, responsible for translating logical gate operations into optical stimuli.
+
+\begin{lstlisting}[language=C++]
+// BioOS_HAL_P700.cpp
+#include <bioos/hal.h>
+#include <bioos/optics.h>
+
+class P700_Driver {
+public:
+    void apply_hadamard(uint32_t qubit_id) {
+        // Retrieve physical coordinates from the Metabiotic Registry
+        auto coord = registry.get_qubit_coords(qubit_id);
+        
+        // Shape the pulse: 450nm, 10fs envelope
+        Pulse p = pulse_shaper.create_pulse(450.0, 10.0e-15);
+        p.set_intensity(1.2e3); // kW/cm^2
+        
+        // Execute stimulus via the Laser Control Unit (LCU)
+        lcu.fire_at(coord, p);
+        
+        // Update metabolic telemetry
+        telemetry.log_atp_draw(0.5e-15); // Joules
+    }
+};
+\end{lstlisting}
+\section{BSIM Assembler - Python Implementation}
+The BSIM assembler translates ARBOL assembly into the binary format used by the BioOS kernel.
+
+\begin{lstlisting}[language=Python]
+# bsim_assembler.py
+import struct
+
+class BSIMAssembler:
+    def __init__(self):
+        self.opcode_map = {
+            "GATE_H": 0x01,
+            "GATE_X": 0x02,
+            "GATE_Z": 0x03,
+            "MEASURE": 0x04,
+            "WAIT_MET": 0x05
+        }
+
+    def assemble_instruction(self, instr, params):
+        opcode = self.opcode_map.get(instr, 0x00)
+        # Format: [Opcode (1b), Qubit (1b), Intensity (4b), Duration (4b), Padding (6b)]
+        return struct.pack("<BBff6x", opcode, params['qubit'], params['intensity'], params['duration'])
+
+    def build_file(self, instructions):
+        header = b"BSIM\x01\x00\x00\x00" # Magic bytes + version
+        body = b"".join([self.assemble_instruction(i, p) for i, p in instructions])
+        return header + body
+\end{lstlisting}
+
+\section{Bio-Stochastic Gradient Descent (Bio-SGD) - PyTorch implementation}
+The Bio-SGD algorithm incorporates metabolic stress into the loss function, ensuring that the model weights are optimized for both accuracy and biological sustainability.
+
+\begin{lstlisting}[language=Python]
+# bio_sgd.py
+import torch
+from torch.optim import Optimizer
+
+class BioSGD(Optimizer):
+    def __init__(self, params, lr=1e-3, alpha=0.1, beta=0.05):
+        defaults = dict(lr=lr, alpha=alpha, beta=beta)
+        super(BioSGD, self).__init__(params, defaults)
+
+    @torch.no_grad()
+    def step(self, closure=None, metabolic_stress=0.0):
+        loss = None
+        if closure is not None:
+            with torch.enable_grad():
+                loss = closure()
+
+        for group in self.param_groups:
+            alpha = group['alpha']
+            beta = group['beta']
+            
+            for p in group['params']:
+                if p.grad is None:
+                    continue
+                
+                d_p = p.grad
+                # Add metabolic regularization term
+                # Penalty increases as metabolic_stress (e.g., ROS levels) rises
+                metabolic_penalty = beta * metabolic_stress * p.data
+                
+                p.add_(d_p + metabolic_penalty, alpha=-group['lr'])
+
+        return loss
+\end{lstlisting}
+
+\section{Conclusion}
+The code provided in this appendix is intended for research and educational purposes. The Move37 Initiative maintains a private, production-grade repository with full testing and validation suites.
+
+\section{ARBOL Standard Library: \texttt{bio\_math.arb}}
+The \texttt{bio\_math} library provides high-level mathematical functions optimized for the excitonic substrate.
+
+\begin{lstlisting}
+// bio_math.arb
+module bio_math;
+
+export function quantum_fourier_transform(register reg) {
+    for (i = 0; i < reg.length; i++) {
+        gate H(reg[i]);
+        for (j = i + 1; j < reg.length; j++) {
+            gate CP(reg[j], reg[i], PI / (2^(j-i)));
+        }
+    }
+}
+
+export function estimate_metabolic_cost(circuit c) {
+    return c.total_gates * 1.2e-15; // Mean cost per gate
+}
+\end{lstlisting}
+
+\section{BioOS Metabiotic Scheduler - Python Controller}
+The high-level scheduler resides on the external Jetson device and manages the long-term health of the PQPE node.
+
+\begin{lstlisting}[language=Python]
+# scheduler.py
+import bioos_api as bio
+
+def run_scheduler_loop():
+    plant = bio.connect_node("PQPE_01")
+    
+    while True:
+        status = plant.get_health_status()
+        
+        if status.starch_level < 0.2:
+            print("CRITICAL: Starch low. Entering Recharge Mode.")
+            plant.set_mode(bio.MODE_RECHARGE)
+            continue
+            
+        job_queue = plant.get_pending_jobs()
+        for job in job_queue:
+            if job.priority == bio.PRIO_HIGH or status.is_diurnal:
+                # Calculate Metabolic Feasibility Score (Sm)
+                sm = status.atp_level / (job.estimated_cost * (1 + status.ros_stress))
+                
+                if sm > 1.0:
+                    plant.execute(job)
+                else:
+                    plant.delay(job, reason="Metabolic Constraint")
+\end{lstlisting}
+
+\section{Stochastic Lindblad Solver - Python/JAX Implementation}
+To achieve high-performance simulations of the excitonic dynamics, we use a custom Lindblad solver implemented in JAX for GPU acceleration.
+
+\begin{lstlisting}[language=Python]
+import jax.numpy as jnp
+from jax import jit, vmap
+
+@jit
+def lindblad_evolution(rho, H, L_ops, dt):
+    """Calculates one step of Lindblad evolution."""
+    # Unitary part
+    drho = -1j * (H @ rho - rho @ H)
+    
+    # Dissipative part
+    for L in L_ops:
+        drho += L @ rho @ L.conj().T - 0.5 * (L.conj().T @ L @ rho + rho @ L.conj().T @ L)
+    
+    return rho + drho * dt
+
+def simulate_pqpe(params, t_max, dt):
+    """Simulates the P700 exciton dynamics."""
+    # Initialize state and Hamiltonian
+    rho = jnp.zeros((7, 7), dtype=jnp.complex64)
+    rho = rho.at[0, 0].set(1.0) # Initial excitation at site 0
+    H = construct_hamiltonian(params)
+    L_ops = construct_jump_operators(params)
+    
+    # Time loop
+    for t in jnp.arange(0, t_max, dt):
+        rho = lindblad_evolution(rho, H, L_ops, dt)
+    return rho
+\end{lstlisting}
+
+\section{Living Kernel Driver: Root-Fungal Interface (Rust)}
+The low-level driver for the Mycorrhizal Interface Module (MIM) is written in Rust for safety and performance.
+
+\begin{lstlisting}[language=Rust]
+// mim_driver.rs
+use bioos_hal::{I2cBus, Pin};
+
+pub struct MimDriver {
+    bus: I2cBus,
+    reset_pin: Pin,
+}
+
+impl MimDriver {
+    pub fn init(&mut self) -> Result<(), Error> {
+        self.reset_pin.set_high();
+        self.bus.write(MIM_ADDR, &[REG_INIT, 0x01])?;
+        Ok(())
+    }
+
+    pub fn send_packet(&mut self, packet: &MtpPacket) -> Result<(), Error> {
+        // Translate MTP packet to calcium wave pulses
+        let pulses = packet.to_pulses();
+        for pulse in pulses {
+            self.bus.write(MIM_ADDR, &[REG_PULSE, pulse.intensity])?;
+            delay_ms(pulse.duration);
+        }
+        Ok(())
+    }
+
+    pub fn read_telemetry(&self) -> MimTelemetry {
+        let mut buf = [0u8; 4];
+        self.bus.read(MIM_ADDR, REG_TELEMETRY, &mut buf).unwrap();
+        MimTelemetry::from_bytes(buf)
+    }
+}
+\end{lstlisting}
+
+\section{pHAWRA Plasmid: Genetic Firewall Logic}
+The Genetic Firewall is implemented as a set of synthetic transcription factor decoys that compete for binding sites with endogenous plant signals.
+
+\begin{itemize}
+    \item \textbf{Decoy A:} Competes with ABA-induced stress signals to prevent accidental shutdown of the silica transporters.
+    \item \textbf{Decoy B:} Buffers the $CRY2$ expression to prevent over-sensitivity to ambient blue light.
+\end{itemize}
+
+\section{BSIM Bytecode Format v1.0}
+The BSIM file is a binary format composed of fixed-size frames (64 bytes).
+
+\begin{itemize}
+    \item \textbf{Bytes 0-3:} Timestamp (microseconds from start).
+    \item \textbf{Bytes 4-7:} Stimulus ID (0=Photon, 1=Thermal, 2=Chemical).
+    \item \textbf{Bytes 8-15:} Intensity (64-bit float).
+    \item \textbf{Bytes 16-23:} Duration (64-bit float).
+    \item \textbf{Bytes 24-31:} Target X Coordinate.
+    \item \textbf{Bytes 32-39:} Target Y Coordinate.
+    \item \textbf{Bytes 40-63:} Reserved for Error Correction Codes (ECC).
+\end{itemize}
+
+\section{ARBOL Example: Quantum Entanglement and Metabolic Awareness}
+The following ARBOL script demonstrates the creation of a Bell state (entanglement) between two P700 qubits in a living leaf, incorporating metabolic checks and biological error handling.
+
+\begin{lstlisting}
+// HAWRA ARBOL v1.0
+// Project: HAWRA_POC_VALIDATION
+// Author: ARBOL-Compiler-v1.0.2
+
+import "bio_std"
+
+qubit q0 @ leaf[0].thylakoid[142];
+qubit q1 @ leaf[0].thylakoid[143];
+
+circuit BellState() {
+    // 1. Pre-computation Metabolic Check
+    // Ensures CO2 flux is sufficient for exciton stability
+    wait_metabolic(flux_co2 > 12.0);
+    
+    // 2. Silica Shield Stabilization
+    // Pulse-triggering SIT1 for peak dielectric efficiency
+    apply photon(450nm, 150ms) to leaf[0];
+    
+    // 3. Quantum Logic Operations
+    try {
+        if_stable {
+            H(q0);            // Create superposition
+            CNOT(q0, q1);     // Entangle with neighbor
+        }
+    } catch (DecoherenceStorm e) {
+        // Fallback: Flush state to classical anthocyanin buffer
+        apply thermal(28C, 10s) to leaf[0];
+        log("Bio-Error: Decoherence detected. State flushed.");
+    }
+    
+    // 4. Readout Phase
+    // Measurement via P700 absorption spectroscopy
+    measure q0 -> register[0];
+    measure q1 -> register[1];
+}
+\end{lstlisting}
+
+\section{HAWRA-Sim: Lindblad Solver Core (Python)}
+The following Python snippet shows the core of the quantum solver, implementing the Lindblad evolution of the density matrix.
+
+\begin{lstlisting}[language=Python]
+import numpy as np
+from scipy.linalg import expm
+
+def evolve_lindblad(rho_0, H, L_ops, gamma, dt, steps):
+    """
+    Evolves the density matrix rho according to the Lindblad equation.
+    """
+    rho = rho_0
+    for _ in range(steps):
+        # Hamiltonian part
+        d_rho = -1j * (H @ rho - rho @ H)
+        
+        # Dissipative part
+        for L, g in zip(L_ops, gamma):
+            d_rho += g * (L @ rho @ L.conj().T - 0.5 * (L.conj().T @ L @ rho + rho @ L.conj().T @ L))
+            
+        rho += d_rho * dt
+        # Normalize to maintain Tr(rho) = 1
+        rho /= np.trace(rho)
+    return rho
+
+# Example: H-Gate pulse on P700
+H_hadamard = np.array([[0, 1], [1, 0]]) * np.pi / (2 * 50e-12) # 50ps pulse
+\end{lstlisting}
+
+\section{Metabolic Engine: ODE System (Python)}
+The metabolic engine uses a system of ODEs to model the plant's physiological state.
+
+\begin{lstlisting}[language=Python]
+def metabolic_system(y, t, light_intensity, T_ambient):
+    """
+    ODE system for Ficus elastica metabolism.
+    y = [P700_conc, starch_conc, silica_thickness]
+    """
+    p700, starch, silica = y
+    
+    # 1. P700 Production (Light-dependent)
+    k_prod = 0.1 * (light_intensity / (0.5 + light_intensity))
+    k_deg = 0.02
+    dp700 = k_prod - k_deg * p700
+
+    # 2. Starch Accumulation
+    k_photo = 0.05 * light_intensity * p700
+    k_resp = 0.01 * np.exp(0.1 * T_ambient) # Arrhenius-like respiration
+    dstarch = k_photo - k_resp
+
+    # 3. Silica Deposition (Active Transport)
+    k_si = 0.005 * starch / (1.0 + starch)
+    dsilica = k_si
+
+    return [dp700, dstarch, dsilica]
+\end{lstlisting}
+
+\section{BioOS Scheduler Core (Rust)}
+The performance-critical parts of the BioOS scheduler are implemented in Rust to ensure memory safety and zero-cost abstractions during high-frequency gate orchestration.
+
+\begin{lstlisting}[language=Rust]
+// bioos-scheduler/src/core.rs
+use bioos_hal::{Gate, Qubit, MetabolicState};
+
+pub struct Scheduler {
+    job_queue: Vec<Job>,
+    metabolic_limit: f64,
+}
+
+impl Scheduler {
+    pub fn schedule_next(&mut self, state: &MetabolicState) -> Option<Job> {
+        // Sort jobs by Metabiotic Priority Score (MPS)
+        self.job_queue.sort_by(|a, b| {
+            let mps_a = a.priority as f64 * state.atp_availability;
+            let mps_b = b.priority as f64 * state.atp_availability;
+            mps_b.partial_cmp(&mps_a).unwrap()
+        });
+
+        if let Some(job) = self.job_queue.pop() {
+            if self.is_safe(&job, state) {
+                return Some(job);
+            }
+        }
+        None
+    }
+
+    fn is_safe(&self, job: &Job, state: &MetabolicState) -> bool {
+        // Prevent metabolic exhaustion
+        let predicted_cost = job.gates.len() as f64 * 0.05;
+        state.starch_reserve > predicted_cost && state.leaf_temp < 35.0
+    }
+}
+\end{lstlisting}
+
+\section{Living Kernel Driver (Rust)}
+The Living Kernel Driver is the lowest level of the BioOS, interacting directly with the optogenetic stimulators and the physiological sensors.
+
+\begin{lstlisting}[language=Rust]
+// bioos-kernel/src/driver.rs
+use bioos_hal::{Stimulus, Sensor, Frequency};
+
+pub struct LivingDriver {
+    stimulator: Box<dyn Stimulus>,
+    sensor: Box<dyn Sensor>,
+}
+
+impl LivingDriver {
+    pub fn new() -> Self {
+        LivingDriver {
+            stimulator: Box::new(BlueLaser::new(Frequency::from_nm(450.0))),
+            sensor: Box::new(FluorescenceSensor::new()),
+        }
+    }
+
+    pub fn execute_gate(&self, pulse_width: f64, intensity: f64) -> Result<f64, DriverError> {
+        // 1. Check Pre-pulse Metabolic State
+        let baseline = self.sensor.read_fluorescence()?;
+        
+        // 2. Fire the Optogenetic Stimulus
+        self.stimulator.pulse(pulse_width, intensity)?;
+        
+        // 3. Measure Post-pulse Response
+        let response = self.sensor.read_fluorescence()?;
+        
+        // 4. Calculate Delta (Quantum Feedback)
+        Ok(response - baseline)
+    }
+}
+\end{lstlisting}
+
+\section{Stochastic Lindblad Solver (Python/JAX)}
+This solver uses JAX for high-performance, differentiable simulation of the quantum state under biological noise.
+
+\begin{lstlisting}[language=Python]
+# jax_lindblad.py
+import jax.numpy as jnp
+from jax import grad, jit
+
+@jit
+def lindblad_step(rho, H, L_ops, gamma, dt):
+    # Hamiltonian evolution
+    d_rho = -1j * (H @ rho - rho @ H)
+    
+    # Stochastic Lindblad dissipation
+    for L, g in zip(L_ops, gamma):
+        # Adding a noise term to the dissipation rate
+        g_noisy = g + 0.1 * jnp.random.normal() 
+        d_rho += g_noisy * (L @ rho @ L.conj().T - 0.5 * (L.conj().T @ L @ rho + rho @ L.conj().T @ L))
+    
+    return rho + d_rho * dt
+
+# Compute gradient of fidelity w.r.t pulse intensity
+def fidelity_loss(intensity, target_rho):
+    H = intensity * H_base
+    rho_final = evolve_full(rho_0, H, L_ops, gamma, T)
+    return 1.0 - jnp.trace(rho_final @ target_rho).real
+
+grad_fidelity = grad(fidelity_loss)
+\end{lstlisting}
+
+\section{Mycorrhizal Transmission Protocol (MTP v1.1)}
+The MTP protocol defines the packet structure for weight updates sent through the fungal network.
+
+\begin{lstlisting}
+Packet MTP_v1 {
+    Header: [0xHA, 0x52, 0x41], // H-A-R magic bytes
+    NodeID: uint32,
+    Sequence: uint16,
+    PayloadType: 0x01 (WeightUpdate),
+    Payload: [float32; 1024],    // Compressed weights
+    Checksum: uint32
+}
+\end{lstlisting}
+The BioOS scheduler is implemented in Rust to ensure memory safety and low-latency response to metabolic interrupts.
+
+\begin{lstlisting}
+// BioOS Kernel: Metabolic-Aware Scheduler
+// Implements the EDF-MA (Earliest Deadline First with Metabolic Awareness) algorithm.
+
+struct Task {
+    id: u32,
+    priority: u8,
+    deadline: u64,
+    atp_cost: f32,
+    co2_requirement: f32,
+}
+
+struct Scheduler {
+    ready_queue: Vec<Task>,
+    metabolic_state: PlantState,
+}
+
+impl Scheduler {
+    fn schedule(&mut self) -> Option<Task> {
+        // 1. Check current ATP levels
+        if self.metabolic_state.atp_level < 0.2 {
+            println!("NMI: ATP Critical. Suspending all tasks.");
+            return None;
+        }
+
+        // 2. Filter tasks based on available CO2
+        let available_tasks: Vec<Task> = self.ready_queue
+            .iter()
+            .filter(|t| t.co2_requirement < self.metabolic_state.current_co2_flux)
+            .cloned()
+            .collect();
+
+        // 3. Select task with earliest deadline
+        available_tasks.into_iter().min_by_key(|t| t.deadline)
+    }
+}
+\end{lstlisting}

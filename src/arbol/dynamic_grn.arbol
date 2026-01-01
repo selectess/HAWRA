@@ -1,0 +1,28 @@
+// Protocole Arbol pour la gestion dynamique d'un réseau de régulation génique (GRN)
+
+// Définition des gènes
+genes {
+    gene "GENE_A" with basal_rate=0.01, degradation_rate=0.05, light_sensitivity=0.8;
+    gene "GENE_B" with basal_rate=0.01, degradation_rate=0.05;
+    gene "GENE_C" with basal_rate=0.01, degradation_rate=0.05;
+}
+
+// Définition du réseau de régulation génique (GRN)
+grn {
+    "GENE_A" activates "GENE_B" with weight=1.0, hill_coefficient=2, half_max_concentration=0.5;
+    "GENE_B" represses "GENE_C" with weight=1.0, hill_coefficient=4, half_max_concentration=0.3;
+}
+
+// Définition des stimulus
+stimulus light_pulse(intensity: float, duration: float) {
+    // Ce stimulus affectera un gène sensible à la lumière
+}
+
+// Séquence d'exécution
+run {
+    step(50);
+    apply light_pulse(intensity: 1.0, duration: 10.0) on "GENE_A";
+    step(100);
+    apply light_pulse(intensity: 0.5, duration: 20.0) on "GENE_A";
+    step(200);
+}

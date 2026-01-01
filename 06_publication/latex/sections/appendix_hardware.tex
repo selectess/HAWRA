@@ -1,0 +1,28 @@
+\section{Critical Components List}
+
+The HAWRA cyber-physical interface is constructed using high-precision components to ensure the stability of the biological quantum substrate. The following table lists the core hardware elements:
+
+\begin{itemize}
+    \item \textbf{Central Control Unit:} NVIDIA Jetson Orin Nano (8GB RAM), responsible for executing the BioOS kernel and performing real-time EKF signal processing.
+    \item \textbf{Quantum Actuator (Photonic):} Thorlabs 680nm Laser Diode (HL6750MG) with an ultra-fast constant current driver, capable of sub-nanosecond pulse modulation for gate execution.
+    \item \textbf{Magnetic Compensation System:} Helmholtz coils (15cm diameter, 200 turns) driven by a bipolar power supply to nullify the Earth's magnetic field and prevent Zeeman splitting drift.
+    \item \textbf{Environmental Shielding:} 0.5mm biogenic silica glass chamber with integrated Peltier elements for thermal stabilization ($22^\circ \text{C} \pm 0.1^\circ \text{C}$).
+    \item \textbf{Detection System:} Hamamatsu Silicon Photomultiplier (SiPM) for high-sensitivity chlorophyll fluorescence readout.
+\end{itemize}
+
+\section{Wiring Diagrams and Analog Front-End}
+
+The analog front-end (AFE) is designed to capture the extremely low-amplitude electrophysiological signals from the thylakoid network. We utilize an AD8421 instrumentation amplifier with an ultra-low input bias current to process signals from the foliar micro-electrodes. The output is filtered through a 4th-order Butterworth low-pass filter (cutoff at 50 kHz) before being digitized by the Jetson's 16-bit ADC.
+
+\section{Bio-RPC Calibration Protocol}
+
+Upon every system initialization, the Jetson client executes the \texttt{client.py} calibration suite. This protocol ensures that the logical gates mapped in ARBOL correspond to the current physiological state of the \textit{Ficus elastica} host. The sequence includes:
+
+\begin{enumerate}
+    \item \textbf{Dark Adaptation:} 15 minutes of zero illumination to reach the $F_0$ fluorescence baseline.
+    \item \textbf{Saturation Pulse Analysis:} Measuring the $F_m$ (maximum fluorescence) to calculate the initial quantum yield $\Phi_{PSII}$.
+    \item \textbf{Pulse Area Mapping:} Sweeping laser intensity and duration to identify the $\pi$ and $\pi/2$ pulse parameters for $X$ and $H$ gates.
+    \item \textbf{Metabolic Baseline Check:} Verifying ATP/NADPH ratios via IRGA sensors to ensure the substrate is not in a state of starvation or stress.
+\end{enumerate}
+
+Failure to meet the calibration benchmarks results in an automatic \texttt{METABOLIC\_YIELD} wait state or a system-wide \texttt{Kernel Panic} if homeostasis cannot be established.

@@ -1,0 +1,126 @@
+LOCUS       HAWRA_PLASMID_v3     25831 bp    DNA     circular SYN 11-NOV-2025
+DEFINITION  Plasmide synthetique Hawra v3 - architecture de lecture asymetrique a double canal pour ordinateur quantique vegetal.
+ACCESSION   HAWR003
+VERSION     HAWR003.1
+KEYWORDS    quantum_plant; dual_channel_readout; ATP_riboswitch; ROS_riboswitch; CRY1; CRY2.
+SOURCE      Synthetique - HAWRA Project, 2025.
+  ORGANISM  Hawra sp.
+COMMENT     VERSION 3 - ARCHITECTURE DE LECTURE ASYMETRIQUE A DOUBLE CANAL
+            Cette version implemente un systeme de lecture a deux canaux (vert/rouge) pour distinguer les etats d'effondrement de P700.
+
+            NOUVELLES FONCTIONNALITES :
+            1.  **Canal |0> (Vert/ATP/Stable)** : Couple a CRY1, ce canal utilise un riboswitch ATP pour activer une luciferase verte (LUC_green) lors d'un effondrement lent de P700, signalant un etat de base stable.
+            2.  **Canal |1> (Rouge/ROS/Instable)** : Couple a CRY2, ce canal utilise un riboswitch sensible aux ROS (placeholder) pour activer une luciferase rouge (LUC_red) lors d'un effondrement rapide, signalant un etat de haute energie.
+            3.  **Asymetrie CRY1/CRY2** : L'utilisation de CRY1 pour le canal stable et de CRY2 pour le canal instable cree un biais de detection probabiliste, refletant la dynamique naturelle de P700.
+
+            NOTE SUR LA SEQUENCE : La sequence ORIGIN est un placeholder genere pour correspondre a la nouvelle taille calculee (25831 bp). Elle doit etre regeneree avec les sequences CDS reelles.
+FEATURES             Location/Qualifiers
+     source          1..25831
+                     /organism="Hawra sp."
+                     /mol_type="genomic DNA"
+                     /note="Synthetic plasmid v3 with dual-channel asymmetric readout"
+     
+     // --- CANAL |0> (STABLE - VERT) ---
+     promoter        1..800
+                     /label="CaMV35S_CRY1"
+                     /note="Cauliflower Mosaic Virus 35S promoter for CRY1"
+     gene            801..2880
+                     /gene="CRY1"
+                     /note="Cryptochrome 1 (A. thaliana) - EM field receptor, biased towards stable states"
+     terminator      2881..3080
+                     /label="Nos_CRY1"
+                     /note="Nopaline synthase terminator"
+     promoter        3081..3880
+                     /label="P_psaA_native"
+                     /note="Native promoter of psaA"
+     gene            3881..5880
+                     /gene="psaA"
+                     /note="P700 photosystem I subunit A - quantum coherence core"
+     misc_feature    5881..5920
+                     /label="ATP_Riboswitch_Aptamer"
+                     /note="ATP-binding RNA aptamer in 5' UTR of LUC_green. Represses translation until ATP binding."
+     gene            5921..7570
+                     /gene="LUC_green"
+                     /note="Luciferase (Photinus pyralis) - Green light readout for |0> state"
+     terminator      7571..7770
+                     /label="Nos_LUC_green"
+                     /note="Nopaline synthase terminator"
+
+     // --- CANAL |1> (INSTABLE - ROUGE) ---
+     promoter        7771..8570
+                     /label="CaMV35S_CRY2"
+                     /note="Cauliflower Mosaic Virus 35S promoter for CRY2"
+     gene            8571..10370
+                     /gene="CRY2"
+                     /note="Cryptochrome 2 - EM field receptor, biased towards rapid fluctuations"
+     terminator      10371..10570
+                     /label="Nos_CRY2"
+                     /note="Nopaline synthase terminator"
+     promoter        10571..11370
+                     /label="P_psaA_alt"
+                     /note="Alternative or duplicated psaA promoter for the second channel"
+     misc_feature    11371..11420
+                     /label="ROS_Riboswitch_Placeholder"
+                     /note="Placeholder for a synthetic ROS-sensitive RNA aptamer. To be developed via SELEX."
+     gene            11421..13070
+                     /gene="LUC_red"
+                     /note="Red-emitting Luciferase (P. pyralis S284T mutant) - Red light readout for |1> state"
+     terminator      13071..13270
+                     /label="Nos_LUC_red"
+                     /note="Nopaline synthase terminator"
+
+     // --- MODULES DE SUPPORT ---
+     promoter        13271..14070
+                     /label="Pro_root_specific"
+                     /note="Root-specific promoter for SIT1"
+     gene            14071..15570
+                     /gene="SIT1"
+                     /note="Silicon transporter 1 (Lsi1) for silica deposition"
+     terminator      15571..15770
+                     /label="Nos_SIT1"
+                     /note="Nopaline synthase terminator"
+     promoter        15771..16570
+                     /label="CaMV35S_HSP70_const"
+                     /note="Constitutive promoter for first HSP70 copy"
+     gene            16571..18470
+                     /gene="HSP70_1"
+                     /note="Heat shock protein 70 - constitutive copy"
+     terminator      18471..18670
+                     /label="Nos_HSP70_const"
+                     /note="Nopaline synthase terminator"
+     promoter        18671..19470
+                     /label="CaMV35S_PEPC"
+                     /note="Constitutive promoter for PEPC"
+     gene            19471..22470
+                     /gene="PEPC"
+                     /note="Phosphoenolpyruvate carboxylase"
+     terminator      22471..22670
+                     /label="Nos_PEPC"
+                     /note="Nopaline synthase terminator"
+     promoter        22671..23470
+                     /label="CaMV35S_cI857"
+                     /note="Constitutive promoter for cI857 repressor"
+     gene            23471..24180
+                     /gene="cI857"
+                     /note="Thermosensitive repressor cI857"
+     terminator      24181..24380
+                     /label="Nos_cI857"
+                     /note="Nopaline synthase terminator"
+     promoter        24381..24420
+                     /label="pR_promoter"
+                     /note="Bacteriophage lambda pR promoter, repressed by cI857"
+     gene            24421..25630
+                     /gene="HSP70_2"
+                     /note="Heat shock protein 70 - heat-inducible copy"
+     terminator      25631..25830
+                     /label="Nos_HSP70_ind"
+                     /note="Nopaline synthase terminator"
+ORIGIN      
+        1 atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc
+       61 atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc
+      121 atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc
+      181 atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc
+      241 atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc
+      301 atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc
+      // ... sequence is a placeholder and continues to 25831 bp
+//

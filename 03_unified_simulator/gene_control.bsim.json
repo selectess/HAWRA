@@ -1,0 +1,94 @@
+{
+    "metadata": {
+        "source_arbol": "gene_control.arbol",
+        "version": "0.1",
+        "qubit_count": 0,
+        "qubits": []
+    },
+    "simulation_config": {
+        "duration": 100.0,
+        "dt": 1.0
+    },
+    "environment_config": {
+        "light_schedule": [
+            {"time": 0, "intensity": 50.0},
+            {"time": 60, "intensity": 0.0}
+        ]
+    },
+    "biological_config": {
+        "genes": [
+            {
+                "id": "gene_light",
+                "name": "Light-sensitive Gene",
+                "basal_rate": 0.01,
+                "degradation_rate": 0.05,
+                "light_sensitivity": 0.5
+            },
+            {
+                "id": "gene_a",
+                "name": "Gene A",
+                "basal_rate": 0.01,
+                "degradation_rate": 0.05,
+                "light_sensitivity": 0
+            },
+            {
+                "id": "gene_b",
+                "name": "Gene B",
+                "basal_rate": 0.02,
+                "degradation_rate": 0.05,
+                "light_sensitivity": 0
+            }
+        ],
+        "grn": {
+            "gene_a": [
+                {
+                    "id": "gene_light",
+                    "type": "activator",
+                    "weight": 1.0,
+                    "hill_coefficient": 2,
+                    "half_max_concentration": 0.5
+                }
+            ],
+            "gene_b": [
+                {
+                    "id": "gene_a",
+                    "type": "repressor",
+                    "weight": 1.0,
+                    "hill_coefficient": 4,
+                    "half_max_concentration": 0.3
+                }
+            ]
+        }
+    },
+    "instructions": [
+        {
+            "instruction_id": 0,
+            "command": "INITIALIZE"
+        },
+        {
+            "instruction_id": 1,
+            "command": "RUN_UNTIL",
+            "params": {
+                "time": 100
+            }
+        },
+        {
+            "instruction_id": 2,
+            "command": "STIMULUS_APPLY",
+            "params": {
+                "stimulus": "inhibitor",
+                "target": "gene_a",
+                "arguments": {
+                    "concentration": 0.5
+                }
+            }
+        },
+        {
+            "instruction_id": 3,
+            "command": "RUN_UNTIL",
+            "params": {
+                "time": 200
+            }
+        }
+    ]
+}

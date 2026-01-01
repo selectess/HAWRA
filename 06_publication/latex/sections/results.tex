@@ -1,0 +1,48 @@
+\section{Validation of the Living Qubit: P700 Coherence}
+
+The core of the HAWRA validation process is the characterization of the P700 reaction center's coherence. Figure \ref{fig:p700_coherence} shows the simulated transverse relaxation time ($T_2$) under varying levels of biomineralized silica shielding.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/p700_coherence.png}
+\caption{Transverse relaxation time ($T_2$) of the P700 reaction center as a function of the \textit{Silica Shield} concentration. The green region indicates the operational regime for room-temperature quantum logic.}
+\label{fig:p700_coherence}
+\end{figure}
+
+Numerical analysis reveals a mean $T_2$ of $41.67\text{ ps}$ at $298\text{ K}$, which, while shorter than cryogenic qubits, is sufficient for executing thousands of gates within the sub-picosecond excitonic transfer window.
+
+\section{PhytoQMML Training and Convergence}
+
+The effectiveness of the PhytoQMML model was validated through a multi-run training sequence. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/bsim_convergence.png}
+\caption{PhytoQMML Convergence: Optimization of gate fidelity vs. metabolic cost during 500 training epochs.}
+\label{fig:bsim_convergence_pub}
+\end{figure}
+
+As documented in Section 2, the model optimizes its control parameters by minimizing metabolic stress. Figure \ref{fig:phytoqmmml_convergence} illustrates the convergence of the fidelity proxy toward a stable value of 0.66, coinciding with a 40\% reduction in pulse-induced ROS production.
+
+\section{System-Level Stability: BioOS Scheduling}
+
+The BioOS temporal scheduler's ability to maintain metabolic homeostasis was tested under high-load quantum circuit execution. The results, shown in Figure \ref{fig:bsim_convergence}, demonstrate that the \textit{Metabolic Pipelining} algorithm successfully prevents ATP depletion by interleaving recovery pulses between gate operations.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Metric} & \textbf{HAWRA (Ficus)} & \textbf{IBM Eagle (Cryo)} \\
+\hline
+Operating Temperature & $298\text{ K}$ & $0.015\text{ K}$ \\
+Energy Cost per Gate & $10^{-12}\text{ J}$ & $10^{-6}\text{ J}$ \\
+Coherence Time ($T_2$) & $4.2 \times 10^{-11}\text{ s}$ & $10^{-4}\text{ s}$ \\
+Gate Time ($T_{gate}$) & $10^{-14}\text{ s}$ & $10^{-8}\text{ s}$ \\
+\hline
+\textbf{Qubits per Watt} & \textbf{$10^{15}$} & \textbf{$10^{3}$} \\
+\hline
+\end{tabular}
+\caption{Comparative analysis of HAWRA versus traditional cryogenic quantum architectures. HAWRA's advantage lies in its extreme energy efficiency and high gate speed.}
+\label{tab:comparative_analysis}
+\end{table}
+

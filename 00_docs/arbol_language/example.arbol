@@ -1,0 +1,22 @@
+(* Exemple de code ARBOL : Contrôle lumineux d'un gène *)
+
+(* 
+  Ce circuit définit un réseau de régulation génique simple
+  où le photorécepteur CRY2, lorsqu'il est activé par la lumière,
+  induit l'expression de la protéine P700.
+*)
+
+circuit light_switch {
+    CRY2 -> P700 [ activator: light_blue ]
+}
+
+(* 
+  Application d'un stimulus lumineux pour activer le circuit.
+  Le stimulus est appliqué à l'ensemble du système ('plant').
+*)
+
+apply light to plant with {
+    wavelength = "488nm",
+    intensity = "high",
+    duration = "60min"
+}

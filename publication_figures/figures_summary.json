@@ -1,0 +1,46 @@
+{
+  "figures": [
+    {
+      "name": "figure1_conceptual_overview.png",
+      "description": "Conceptual overview of HAWRA framework showing PQPE architecture, Arbol language syntax, Hill function kinetics, and BSIM compilation pipeline",
+      "panels": [
+        "PQPE Architecture",
+        "Arbol Language",
+        "Hill Functions",
+        "BSIM Pipeline"
+      ]
+    },
+    {
+      "name": "figure2_grn_simulation.png",
+      "description": "Gene Regulatory Network simulation results showing light-responsive circuit topology, time-dynamics, dose-response curves, and sensitivity analysis",
+      "panels": [
+        "GRN Topology",
+        "Time-Dynamics",
+        "Dose-Response",
+        "Sensitivity Analysis"
+      ]
+    },
+    {
+      "name": "figure3_quantum_bio_hybrid.png",
+      "description": "Quantum-Bio hybrid simulation results showing quantum circuits with bio-coupled gates, state evolution, classical bit correlation, and operation fidelity",
+      "panels": [
+        "Quantum Circuit",
+        "State Evolution",
+        "Bit Correlation",
+        "Operation Fidelity"
+      ]
+    },
+    {
+      "name": "figure4_3d_molecular.png",
+      "description": "3D molecular visualization showing plasmid DNA structure, protein-DNA interactions, quantum dot coupling, and Watson-Crick base pairing",
+      "panels": [
+        "Plasmid Structure",
+        "Protein-DNA Binding",
+        "Quantum Dot Coupling",
+        "Base Pairing"
+      ]
+    }
+  ],
+  "generated_at": "2025-11-16T02:48:50.800060",
+  "total_figures": 4
+}

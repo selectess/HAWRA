@@ -1,0 +1,16 @@
+{
+    "quantum_core": {
+        "t1": 1.0e-6,
+        "t2": 1.0e-9
+    },
+    "biological_system": {
+        "p700_synthesis_rate": 0.1
+    },
+    "environment": {
+        "temperature": 25.0
+    },
+    "hardware": {
+        "enabled": true,
+        "api_url": "http://localhost:5001"
+    }
+}

@@ -1,0 +1,202 @@
+{
+    "metadata": {
+        "source_arbol": "compiled.arbol",
+        "version": "0.1"
+    },
+    "instructions": [
+        {
+            "instruction_id": 0,
+            "command": "INITIALIZE",
+            "config": {
+                "max_time": 500,
+                "dt": 5,
+                "env": {
+                    "light_schedule": []
+                },
+                "quantum": {
+                    "p700_threshold": 0.8,
+                    "decoherence_rate": 0.05
+                },
+                "bio": {
+                    "p700_synthesis_rate": 1.0,
+                    "p700_degradation_rate": 0.1,
+                    "optimal_temp": 35.0,
+                    "temp_sensitivity": 0.1,
+                    "genes": {},
+                    "grn": {}
+                }
+            }
+        },
+        {
+            "instruction_id": 1,
+            "command": "RUN_UNTIL",
+            "params": {
+                "time": 10.0
+            }
+        },
+        {
+            "instruction_id": 2,
+            "command": "STIMULUS_APPLY",
+            "params": {
+                "stimulus": "light_pulse",
+                "target": "GENE_A",
+                "arguments": {
+                    "intensity": 40.0,
+                    "duration": 3.0
+                }
+            }
+        },
+        {
+            "instruction_id": 3,
+            "command": "RUN_UNTIL",
+            "params": {
+                "time": 30.0
+            }
+        },
+        {
+            "instruction_id": 4,
+            "command": "STIMULUS_APPLY",
+            "params": {
+                "stimulus": "light_pulse",
+                "target": "GENE_A",
+                "arguments": {
+                    "intensity": 40.0,
+                    "duration": 3.0
+                }
+            }
+        },
+        {
+            "instruction_id": 5,
+            "command": "RUN_UNTIL",
+            "params": {
+                "time": 60.0
+            }
+        },
+        {
+            "instruction_id": 6,
+            "command": "STIMULUS_APPLY",
+            "params": {
+                "stimulus": "light_pulse",
+                "target": "GENE_A",
+                "arguments": {
+                    "intensity": 40.0,
+                    "duration": 3.0
+                }
+            }
+        },
+        {
+            "instruction_id": 7,
+            "command": "RUN_UNTIL",
+            "params": {
+                "time": 100.0
+            }
+        },
+        {
+            "instruction_id": 8,
+            "command": "STIMULUS_APPLY",
+            "params": {
+                "stimulus": "light_pulse",
+                "target": "GENE_A",
+                "arguments": {
+                    "intensity": 40.0,
+                    "duration": 3.0
+                }
+            }
+        },
+        {
+            "instruction_id": 9,
+            "command": "RUN_UNTIL",
+            "params": {
+                "time": 150.0
+            }
+        },
+        {
+            "instruction_id": 10,
+            "command": "STIMULUS_APPLY",
+            "params": {
+                "stimulus": "light_pulse",
+                "target": "GENE_A",
+                "arguments": {
+                    "intensity": 40.0,
+                    "duration": 3.0
+                }
+            }
+        },
+        {
+            "instruction_id": 11,
+            "command": "RUN_UNTIL",
+            "params": {
+                "time": 210.0
+            }
+        },
+        {
+            "instruction_id": 12,
+            "command": "STIMULUS_APPLY",
+            "params": {
+                "stimulus": "light_pulse",
+                "target": "GENE_A",
+                "arguments": {
+                    "intensity": 40.0,
+                    "duration": 3.0
+                }
+            }
+        },
+        {
+            "instruction_id": 13,
+            "command": "RUN_UNTIL",
+            "params": {
+                "time": 280.0
+            }
+        },
+        {
+            "instruction_id": 14,
+            "command": "STIMULUS_APPLY",
+            "params": {
+                "stimulus": "light_pulse",
+                "target": "GENE_A",
+                "arguments": {
+                    "intensity": 40.0,
+                    "duration": 3.0
+                }
+            }
+        },
+        {
+            "instruction_id": 15,
+            "command": "RUN_UNTIL",
+            "params": {
+                "time": 360.0
+            }
+        },
+        {
+            "instruction_id": 16,
+            "command": "STIMULUS_APPLY",
+            "params": {
+                "stimulus": "light_pulse",
+                "target": "GENE_A",
+                "arguments": {
+                    "intensity": 40.0,
+                    "duration": 3.0
+                }
+            }
+        },
+        {
+            "instruction_id": 17,
+            "command": "RUN_UNTIL",
+            "params": {
+                "time": 450.0
+            }
+        },
+        {
+            "instruction_id": 18,
+            "command": "STIMULUS_APPLY",
+            "params": {
+                "stimulus": "light_pulse",
+                "target": "GENE_A",
+                "arguments": {
+                    "intensity": 40.0,
+                    "duration": 3.0
+                }
+            }
+        }
+    ]
+}

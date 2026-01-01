@@ -1,0 +1,4 @@
+
+qubit q1
+h q1
+measure q1

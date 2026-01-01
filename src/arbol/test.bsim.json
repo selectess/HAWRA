@@ -1,0 +1,49 @@
+{
+    "metadata": {
+        "source_arbol": "compiled.arbol",
+        "version": "0.1"
+    },
+    "instructions": [
+        {
+            "instruction_id": 0,
+            "command": "INITIALIZE",
+            "config": {
+                "max_time": 500,
+                "dt": 5,
+                "env": {
+                    "light_schedule": []
+                },
+                "quantum": {
+                    "p700_threshold": 0.8,
+                    "decoherence_rate": 0.05
+                },
+                "bio": {
+                    "p700_synthesis_rate": 1.0,
+                    "p700_degradation_rate": 0.1,
+                    "optimal_temp": 35.0,
+                    "temp_sensitivity": 0.1,
+                    "genes": {},
+                    "grn": {}
+                }
+            }
+        },
+        {
+            "instruction_id": 1,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "H",
+                "qubits": [
+                    "q1"
+                ]
+            }
+        },
+        {
+            "instruction_id": 2,
+            "command": "MEASURE",
+            "params": {
+                "qubit": "q1",
+                "classical_bit": "c1"
+            }
+        }
+    ]
+}

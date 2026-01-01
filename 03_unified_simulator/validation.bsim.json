@@ -1,0 +1,73 @@
+{
+    "metadata": {
+        "qubit_count": 5,
+        "qubits": [
+            {"id": 0, "name": "Q0"},
+            {"id": 1, "name": "Q1"},
+            {"id": 2, "name": "Q2"},
+            {"id": 3, "name": "Q3"},
+            {"id": 4, "name": "Q4"}
+        ]
+    },
+    "instructions": [],
+    "simulation_config": {
+        "duration": 100,
+        "dt": 1
+    },
+    "environment_config": {
+        "temperature": 35.0,
+        "light_schedule": [
+            [0, 0.0],
+            [10, 50.0],
+            [60, 0.0]
+        ]
+    },
+    "biological_config": {
+        "initial_p700": 1.0,
+        "genes": [
+            {
+                "id": "gene_light",
+                "name": "Light-sensitive Gene",
+                "basal_rate": 0.01,
+                "degradation_rate": 0.05,
+                "light_sensitivity": 0.5
+            },
+            {
+                "id": "gene_a",
+                "name": "Gene A",
+                "basal_rate": 0.01,
+                "degradation_rate": 0.05,
+                "light_sensitivity": 0
+            },
+            {
+                "id": "gene_b",
+                "name": "Gene B",
+                "basal_rate": 0.02,
+                "degradation_rate": 0.05,
+                "light_sensitivity": 0
+            }
+        ],
+        "grn": {
+            "gene_a": {
+                "gene_light": 1.0
+            },
+            "gene_b": {
+                "gene_a": -1.0
+            }
+        }
+    },
+    "environment_script": [
+        {
+            "time": 10,
+            "actions": {
+                "set_light_intensity": 50.0
+            }
+        },
+        {
+            "time": 60,
+            "actions": {
+                "set_light_intensity": 0.0
+            }
+        }
+    ]
+}

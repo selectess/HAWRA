@@ -1,0 +1,17 @@
+(* Test de la grammaire unifiée ARBOL v0.3 *)
+
+stimulus light(type: "STRING", wavelength: "STRING", duration: "STRING");
+
+logical_qubit q1 is synthetic_biology_qubit at site(0);
+
+classical_bit c1;
+
+gate H on q1 is
+    apply light to q1 with {
+        wavelength: "660nm",
+        duration: "10ms"
+    };
+
+H on q1;
+
+MEASURE q1 ON c1;

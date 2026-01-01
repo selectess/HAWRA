@@ -1,0 +1,107 @@
+LOCUS       HAWRA_PLASMID_v2     21741 bp    DNA     circular SYN 10-NOV-2025
+DEFINITION  Plasmide synthetique Hawra v2 - architecture de regulation fine pour ordinateur quantique vegetal.
+ACCESSION   HAWR002
+VERSION     HAWR002.1
+KEYWORDS    quantum_plant; riboswitch; heat-inducible; root-specific; P700.
+SOURCE      Synthetique - HAWRA Project, 2025.
+  ORGANISM  Hawra sp.
+COMMENT     VERSION 2 - MISE A JOUR MAJEURE DE L'ARCHITECTURE
+            Cette version intègre des mécanismes de régulation fine pour un contrôle spatio-temporel de l'expression des gènes.
+            
+            NOUVELLES FONCTIONNALITES :
+            1.  **Riboswitch ATP-sensible** : Le gène de la luciférase (LUC) est précédé d'un aptamère ARN synthétique qui se déplie en présence d'ATP. Cela couple le signal de bioluminescence (effondrement du qubit) à une augmentation locale d'ATP (+5%), assurant un déclenchement précis.
+            2.  **Double Système HSP70** :
+                - Une copie de HSP70 reste sous promoteur constitutif (CaMV35S) pour une protection de base.
+                - Une seconde copie est placée sous le contrôle d'un système thermo-inductible strict (répresseur cI857 / promoteur pR du phage λ). Ce système active l'expression de HSP70 uniquement lorsque la température dépasse 30°C, offrant une protection ciblée contre le stress thermique sans coût métabolique permanent.
+            3.  **Expression Racine-Spécifique de SIT1** : Le promoteur de SIT1 (Lsi1) a été remplacé par un promoteur racine-spécifique (placeholder : Pro_root_specific) pour diriger le dépôt de silice exclusivement dans les racines, créant ainsi la "cage quantique vivante" autour des chloroplastes dans cette zone.
+            
+            NOTE SUR LA SEQUENCE : La séquence ORIGIN est un placeholder généré pour correspondre à la nouvelle taille calculée (21741 bp). Elle doit être régénérée à l'aide des séquences CDS réelles et des nouveaux composants (aptamère, cI857, pR) via un script d'assemblage.
+FEATURES             Location/Qualifiers
+     source          1..21741
+                     /organism="Hawra sp."
+                     /mol_type="genomic DNA"
+                     /note="Synthetic plasmid v2 with fine-tuned regulation"
+     promoter        1..800
+                     /label="CaMV35S_psaA"
+                     /note="Cauliflower Mosaic Virus 35S promoter - constitutive"
+     gene            801..2800
+                     /gene="psaA"
+                     /note="P700 photosystem I subunit A - quantum coherence core"
+     terminator      2801..3000
+                     /label="Nos_psaA"
+                     /note="Nopaline synthase terminator"
+     promoter        3001..3800
+                     /label="CaMV35S_CRY2"
+                     /note="Cauliflower Mosaic Virus 35S promoter - constitutive"
+     gene            3801..5600
+                     /gene="CRY2"
+                     /note="Cryptochrome 2 - EM field receptor (9.8 kHz)"
+     terminator      5601..5800
+                     /label="Nos_CRY2"
+                     /note="Nopaline synthase terminator"
+     promoter        5801..6600
+                     /label="Pro_root_specific"
+                     /note="Root-specific promoter (e.g., rolD) to drive SIT1 expression only in roots. REPLACED CaMV35S."
+     gene            6601..8100
+                     /gene="SIT1"
+                     /note="Silicon transporter 1 (Lsi1) for silica deposition"
+     terminator      8101..8300
+                     /label="Nos_SIT1"
+                     /note="Nopaline synthase terminator"
+     promoter        8301..9100
+                     /label="CaMV35S_LUC"
+                     /note="Cauliflower Mosaic Virus 35S promoter - constitutive"
+     misc_feature    9101..9140
+                     /label="ATP_Riboswitch_Aptamer"
+                     /note="Synthetic ATP-binding RNA aptamer. Placed in 5' UTR of LUC. Folds to repress translation, unfolds with ATP (~5% increase) to allow LUC expression. SEQUENCE IS A PLACEHOLDER."
+     gene            9141..10790
+                     /gene="LUC"
+                     /note="Luciferase - quantum collapse readout"
+     terminator      10791..10990
+                     /label="Nos_LUC"
+                     /note="Nopaline synthase terminator"
+     promoter        10991..11790
+                     /label="CaMV35S_HSP70_const"
+                     /note="Cauliflower Mosaic Virus 35S promoter - constitutive expression of first HSP70 copy"
+     gene            11791..13690
+                     /gene="HSP70_1"
+                     /note="Heat shock protein 70 - constitutive copy for baseline thermal protection"
+     terminator      13691..13890
+                     /label="Nos_HSP70_const"
+                     /note="Nopaline synthase terminator"
+     promoter        13891..14690
+                     /label="CaMV35S_PEPC"
+                     /note="Cauliflower Mosaic Virus 35S promoter - constitutive"
+     gene            14691..17690
+                     /gene="PEPC"
+                     /note="Phosphoenolpyruvate carboxylase for CAM metabolism"
+     terminator      17691..17890
+                     /label="Nos_PEPC"
+                     /note="Nopaline synthase terminator"
+     promoter        17891..18690
+                     /label="CaMV35S_cI857"
+                     /note="Cauliflower Mosaic Virus 35S promoter - drives constitutive expression of the cI857 thermal repressor"
+     gene            18691..19401
+                     /gene="cI857"
+                     /note="Bacteriophage lambda thermosensitive repressor cI857. Active at <30C, denatured at >30C. Represses pR promoter. SEQUENCE IS A PLACEHOLDER."
+     terminator      19402..19601
+                     /label="Nos_cI857"
+                     /note="Nopaline synthase terminator"
+     promoter        19602..19641
+                     /label="pR_promoter"
+                     /note="Bacteriophage lambda pR promoter. Repressed by cI857 at <30C. Strongly induced when cI857 is inactivated by heat. SEQUENCE IS A PLACEHOLDER."
+     gene            19642..21541
+                     /gene="HSP70_2"
+                     /note="Heat shock protein 70 - heat-inducible copy for targeted stress response"
+     terminator      21542..21741
+                     /label="Nos_HSP70_ind"
+                     /note="Nopaline synthase terminator"
+ORIGIN      
+        1 atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc
+       61 atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc
+      121 atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc
+      181 atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc
+      241 atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc
+      301 atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc atgcatgcat gcatgcatgc
+      ... (sequence is a placeholder and continues to 21741 bp)
+//

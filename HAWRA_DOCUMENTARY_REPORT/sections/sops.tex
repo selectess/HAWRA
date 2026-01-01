@@ -1,0 +1,230 @@
+\chapter{Standard Operating Procedures (SOP)}
+
+\section{SOP-001: Transformation and Regeneration of the PQPE}
+The creation of a PQPE (Phyto-synthetic Quantum Processing Entity) requires precise laboratory protocols to ensure high transformation efficiency and robust regeneration of the living substrate.
+
+\subsection{Protoplast Isolation and Preparation}
+\begin{enumerate}
+    \item \textbf{Leaf Selection:} Select young, fully expanded leaves from a healthy, 2-year-old \textit{Ficus elastica} donor plant.
+    \item \textbf{Surface Sterilization:} Wash leaves in 70\% ethanol for 1 minute, followed by 2\% sodium hypochlorite for 15 minutes. Rinse five times in sterile distilled water.
+    \item \textbf{Enzymatic Digestion:} Slice leaves into 1mm strips and incubate in a solution of 1.5\% Cellulase R-10 and 0.4\% Macerozyme R-10 for 12 hours at $25^\circ$C in the dark.
+    \item \textbf{Purification:} Filter the suspension through a $40 \mu m$ mesh and centrifuge at 100g for 5 minutes. Resuspend the protoplast pellet in W5 solution.
+\end{enumerate}
+
+\subsection{PEG-Mediated Transformation}
+\begin{enumerate}
+    \item \textbf{DNA Addition:} Add $20 \mu g$ of purified pHAWRA plasmid (\texttt{HAWRA\_FINAL\_VALIDATED.gb}) to $200 \mu L$ of protoplast suspension ($10^5$ cells/mL).
+    \item \textbf{PEG Treatment:} Add an equal volume of 40\% PEG 4000 and incubate for 20 minutes at room temperature.
+    \item \textbf{Wash and Recovery:} Slowly dilute the PEG with W5 solution, centrifuge, and resuspend the protoplasts in liquid WI medium. Incubate for 24 hours in the dark for initial gene expression.
+\end{enumerate}
+
+\subsection{Callus Induction and Shoot Regeneration}
+\begin{enumerate}
+    \item \textbf{Plating:} Plate the transformed protoplasts on MS medium supplemented with BAP (2.0 mg/L) and Kinetin (0.5 mg/L).
+    \item \textbf{Selection:} After 1 week, transfer to medium containing 50 mg/L Hygromycin B to select for transgenic cells.
+    \item \textbf{Subculturing:} Subculture developing calli every 3 weeks until green shoot primordia appear.
+    \item \textbf{Rooting:} Transfer shoots to half-strength MS medium with 0.1 mg/L IBA to induce rooting.
+\end{enumerate}
+
+\section{SOP-006: Algal Bio-Reactor Setup and PQPE Cultivation}
+While HAWRA-Ficus is used for large-scale forest deployment, HAWRA-Algae is optimized for high-throughput laboratory computing in photobioreactors.
+
+\subsection{Media Preparation and Inoculation}
+\begin{enumerate}
+    \item \textbf{Medium Formulation:} Prepare BG-11 medium supplemented with 100 $\mu$M sodium metasilicate ($Na\_2SiO\_3 \cdot 9H\_2O$) for silica shield support.
+    \item \textbf{Sterilization:} Autoclave at 121$^\circ$C for 20 minutes.
+    \item \textbf{Inoculation:} Inoculate with transformed \textit{Chlamydomonas reinhardtii} cells carrying the pHAWRA-Algal-1.0 plasmid at an initial density of $10^5$ cells/mL.
+\end{enumerate}
+
+\subsection{Quantum-Optical Synchronization in Liquid Culture}
+\begin{enumerate}
+    \item \textbf{Agitation:} Maintain constant stirring at 120 rpm to ensure uniform light exposure and $\text{CO}\_2$ diffusion.
+    \item \textbf{Optical Density (OD) Monitoring:} Measure $OD\_{750}$ every 4 hours. The BioOS adjusts the LED intensity to maintain a constant "Effective Photon Flux" per cell.
+    \item \textbf{Fidelity Measurement:} Use a flow-cytometry interface to measure the excitonic fluorescence response of individual cells as they pass through the "Quantum Gate" laser zone.
+\end{enumerate}
+
+\section{SOP-007: BioOS Calibration and Metabolic Sync}
+Once the plant is regenerated and established in soil, the BioOS must be calibrated to the specific metabolic profile of the individual.
+
+\subsection{Light Sensitivity Sweep and Reporter Validation}
+\begin{enumerate}
+    \item \textbf{Optical Setup:} Place the plant in the HAWRA growth chamber equipped with the modulated LED array.
+    \item \textbf{Expression Mapping:} Apply a range of blue light (450nm) intensities (0-200 $\mu mol/m^2s$) and measure the expression of the \textit{Luciferase} reporter gene via a CCD camera.
+    \item \textbf{Transfer Function Generation:} Calculate the "Light-to-Protein" transfer function, which the BioOS uses to translate ARBOL \texttt{apply} commands into specific LED power levels.
+\end{enumerate}
+
+\subsection{Coherence Baseline and Quantum Characterization}
+\begin{enumerate}
+    \item \textbf{P700 Absorption:} Use a dual-wavelength spectrophotometer to measure the $P\_{700}$ absorption change ($\Delta A$) in response to actinic light pulses.
+    \item \textbf{Decay Analysis:} Establish the baseline $T\_2$ coherence time by fitting the absorption decay curve to the Lindblad model.
+    \item \textbf{Silica Shield Verification:} Confirm that the measured $T\_2$ is $> 35$ ps, indicating successful silica accumulation.
+\end{enumerate}
+
+\subsection{Circadian Synchronization}
+\begin{enumerate}
+    \item \textbf{Entrainment:} Subject the plant to a 12h/12h light/dark cycle for 7 days.
+    \item \textbf{Clock Alignment:} Align the BioOS internal scheduler with the peak of the plant's \textit{CCA1} gene expression (the master circadian regulator).
+    \item \textbf{Metabolic Profiling:} Record the diurnal starch accumulation profile to define the "Computational Window" for the Bio-SGD optimizer.
+\end{enumerate}
+
+\section{SOP-003: BSIM Compilation and Deployment}
+This protocol describes the process of translating high-level ARBOL logic into executable BSIM bytecode and deploying it to a live HAWRA node.
+
+\subsection{Logic Compilation}
+\begin{enumerate}
+    \item \textbf{Source Validation:} Run the ARBOL source through the semantic analyzer to ensure all biological constraints (e.g., maximum pulse intensity, metabolic limits) are respected.
+    \item \textbf{Bytecode Generation:} Use the \texttt{arbol-compiler} to generate the \texttt{.bsim.json} file.
+    \item \textbf{Simulation Pre-flight:} Execute the generated BSIM in the HAWRA-Sim "Digital Twin" to verify that the expected fidelity is $> 0.90$.
+\end{enumerate}
+
+\subsection{Physical Deployment}
+\begin{enumerate}
+    \item \textbf{Node Handshake:} Establish a secure connection between the BioOS controller and the HAWRA growth chamber.
+    \item \textbf{Resource Reservation:} The BioOS kernel checks the current metabolic state of the plant (Starch levels, $\text{CO}\_2$ flux). If resources are sufficient, the task is queued.
+    \item \textbf{Execution:} The controller executes the BSIM instructions, modulating the light sources and nutrient pumps in real-time according to the compiled sequence.
+\end{enumerate}
+
+\subsection{Telemetry and Feedback}
+\begin{enumerate}
+    \item \textbf{Real-time Monitoring:} Capture chlorophyll fluorescence and leaf temperature throughout the execution.
+    \item \textbf{Fidelity Estimation:} Use the PhytoQMML estimator to calculate the real-time gate fidelity based on the measured physiological response.
+    \item \textbf{Post-Execution Audit:} Save the execution log and the resulting fidelity metrics to the local audit trail for subsequent synchronization with the global reproducibility database.
+\end{enumerate}
+
+\section{SOP-004: Maintenance and Pruning of the Quantum Substrate}
+As a living system, the HAWRA processor requires regular physical maintenance to ensure optimal computational performance.
+
+\subsection{Leaf Age and Replacement Strategy}
+\begin{enumerate}
+    \item \textbf{Fidelity Mapping:} Every 30 days, the BioOS performs a full-leaf "Fidelity Map."
+    \item \textbf{Senescence Detection:} Identify leaves where the peak gate fidelity has dropped below 0.85 due to natural aging or metabolic fatigue.
+    \item \textbf{Pruning:} Using a sterile surgical blade, remove the identified leaf at the petiole base.
+    \item \textbf{Regeneration Trigger:} Apply a specialized "Growth Hormone Pulse" (via the chemical stimulus module) to the nearest axillary bud to trigger the development of a fresh, high-fidelity replacement leaf.
+\end{enumerate}
+
+\subsection{Silica Surface Cleaning}
+\begin{enumerate}
+    \item \textbf{Dust Interference:} Airborne particulates on the leaf surface can scatter control light, reducing gate precision.
+    \item \textbf{Cleaning Protocol:} Every 14 days, mist the leaves with a 0.01\% Tween-20 solution in deionized water, followed by a gentle air-dry using filtered, $N\_2$ gas.
+    \item \textbf{Calibration Reset:} Following cleaning, perform a full "Optical Sensitivity Sweep" (as per SOP-002) to recalibrate the light-to-DNA transfer function.
+\end{enumerate}
+
+\section{SOP-005: Emergency De-Transformation (Biosafety)}
+In the event of a biosafety breach or a "Metabolic Meltdown" that threatens the plant's survival, the HAWRA system includes a protocol for rapid de-transformation.
+
+\subsection{The "Scorched Earth" Genetic Reset}
+\begin{enumerate}
+    \item \textbf{Trigger:} Apply a high-intensity, 365nm (UV-A) pulse for 60 seconds across the entire plant.
+    \item \textbf{Mechanism:} This pulse triggers a synthetic "excision circuit" within the pHAWRA plasmid. A UV-inducible Cre-recombinase enzyme is expressed, which targets the \textit{loxP} sites flanking the quantum core and the silica transporter genes.
+    \item \textbf{Outcome:} The synthetic genes are physically removed from the plant's genome, leaving only the backbone pCAMBIA sequence. The plant reverts to its wild-type metabolic state within 48 hours.
+\end{enumerate}
+
+\subsection{Chemical Containment}
+\begin{enumerate}
+    \item \textbf{Root Drench:} In case of UV-trigger failure, apply a 500 mL drench of 50 $\mu$M "HAWRA-Stop" solution (a competitive inhibitor of the synthetic SIT1 transporter).
+    \item \textbf{Metabolic Arrest:} This solution immediately halts all silica transport, causing the Silica Shield to degrade naturally within 24 hours and effectively "turning off" the quantum computer without killing the host.
+\end{enumerate}
+
+\section{Advanced Operational and Maintenance SOPs}
+
+\subsection{SOP-006: Metabiotic Scheduler Configuration}
+This procedure details how to tune the BioOS scheduler for different computational loads.
+\begin{enumerate}
+    \item Access the BioOS configuration terminal.
+    \item Set the \texttt{ATP\_RESERVE\_THRESHOLD} to 35\% for high-intensity logic tasks.
+    \item Configure the \texttt{ROS\_QUENCH\_INTERVAL} to 500ms during the peak diurnal phase.
+    \item Verify the scheduler's "Metabolic Feasibility Score" calculation against the HAWRA-Sim reference.
+\end{enumerate}
+
+\subsection{SOP-007: Mycorrhizal Network Handshake}
+This SOP describes the process of establishing a quantum-biological link between two HAWRA nodes.
+\begin{enumerate}
+    \item Verify that both nodes are colonized by the \textit{Rhizophagus irregularis} fungal network.
+    \item Trigger a "Chemical Ping" pulse from Node A using the jasmonic acid stimulus module.
+    \item Monitor the root-level electrical potential in Node B for the "MTP-SYN" signal.
+    \item Confirm the handshake by observing the cross-node synchronization of the CRY2 optogenetic clocks.
+\end{enumerate}
+
+\subsection{SOP-008: Epigenetic Weight Synchronization}
+This procedure is used to synchronize learned PhytoQMML weights across the HAWRA forest.
+\begin{enumerate}
+    \item Initiate the "Weight Broadcast" mode on the lead node (the "Mother Tree").
+    \item Monitor the methylation rates at the \textit{pHAWRA} promoter sites in the target nodes.
+    \item Use the "Read-Back" reporter genes to verify that the weights have been successfully persisted in the methylome.
+    \item Perform a local "Fidelity Validation" run to confirm the transfer success.
+\end{enumerate}
+
+\subsection{SOP-010: High-Temperature Thermal Management}
+When leaf temperatures exceed 35$^{\circ}$C, the following thermal management protocol must be activated.
+\begin{enumerate}
+    \item Override the default stomatal control to force 100\% aperture.
+    \item Activate the root-level "Chilled Nutrient Feed" system (set to 18$^{\circ}$C).
+    \item Reduce the quantum gate frequency by 50\% to lower the internal $Q\_{\text{quantum}}$ heat generation.
+    \item \textbf{Emergency Shutdown:} If temperature continues to rise above 40$^{\circ}$C, trigger an immediate \texttt{INT\_TS} and enter the "State Flush" sequence (SOP-012).
+\end{enumerate}
+
+\subsection{SOP-012: Quantum State Flush to Anthocyanin Buffer}
+In the event of an emergency shutdown, the quantum state must be flushed to a biological buffer to prevent data loss.
+\begin{enumerate}
+    \item Map the density matrix $\rho$ to the spatial distribution of anthocyanin pigments in the leaf epidermis.
+    \item Apply a 532nm (green) laser pulse to trigger the "Pigment Fixation" reaction.
+    \item Verify the successful flush via the multi-spectral imaging sensor.
+    \item Log the state-flush completion to the BioOS audit trail.
+\end{enumerate}
+
+\subsection{SOP-015: Silica Shield Surface Repair}
+If the silica shield shows signs of degradation or non-uniformity (SOP-002), follow this repair protocol.
+\begin{enumerate}
+    \item Upregulate the \textit{SIT1} gene expression by applying a 10s "Silica Stimulus" pulse (405nm).
+    \item Supplement the nutrient feed with 500 $\mu$M Orthosilicic acid ($H\_4SiO\_4$).
+    \item Monitor the silica accumulation rate in real-time via the XRF scanner.
+    \item Once the 5.0nm target thickness is restored, return to normal operation.
+\end{enumerate}
+
+\subsection{SOP-020: Decommissioning and Genetic De-activation}
+This SOP ensures the safe decommissioning of a HAWRA node at the end of its life cycle.
+\begin{enumerate}
+    \item Perform a final "Epigenetic Reset" (SOP-005) to erase all PhytoQMML weights.
+    \item Trigger the UV-inducible Cre-recombinase "Scorched Earth" excision circuit.
+    \item Harvest the silica-rich leaf tissue for material recycling.
+    \item Compost the remaining organic matter in a specialized HAWRA-safe containment facility.
+\end{enumerate}
+
+\subsection{SOP-021: Quantum Gate Calibration (Z-Gate)}
+This procedure calibrates the phase shift ($\phi$) of the Z-gate by modulating the localized refractive index of the thylakoid membrane.
+\begin{enumerate}
+    \item Apply a reference Hadamard gate $H$ to initialize the exciton in a superposition state $|+\rangle$.
+    \item Modulate the SIT1 transporter activity to create a localized silica gradient across the P700 complex.
+    \item Measure the resulting phase shift using Ramsey interferometry via the fluorescence reporter.
+    \item Adjust the SIT1 drive current until the measured phase shift matches the target $\phi = \pi/2$ (for a $Z^{1/2}$ gate).
+\end{enumerate}
+
+\subsection{SOP-022: Mycorrhizal Data Routing and Packet Recovery}
+This SOP describes how the BioOS handles packet loss in the fungal network.
+\begin{enumerate}
+    \item Monitor the "Pulse-to-Noise" ratio (PNR) of the incoming calcium wave signals.
+    \item If PNR drops below 10dB, the BioOS initiates a "Request for Retransmission" (MTP-REQ) to the source node.
+    \item If the fungal hyphae is physically damaged, the BioOS automatically searches for an alternative "Biotic Route" through the nearest healthy neighboring node.
+    \item Log the network topology change in the global HAWRA-Mesh status registry.
+\end{enumerate}
+
+\subsection{SOP-023: Bio-SGD Model Retraining and Hyperparameter Tuning}
+This procedure is used to retrain a PhytoQMML model when the environment shifts significantly (e.g., seasonal change).
+\begin{enumerate}
+    \item Capture a 24-hour "Metabolic Trace" of the plant's response to the new environmental conditions.
+    \item Update the Bio-SGD cost function coefficients ($\alpha, \beta, \gamma$) to prioritize metabolic health over speed if $\text{CO}\_2$ levels are low.
+    \item Execute a 100-epoch "Warm-up Run" using the historical weights stored in the L2 (Methylation) storage.
+    \item Validate the new model accuracy against the classical benchmark data in the HAWRA-Sim cloud.
+\end{enumerate}
+
+\subsection{SOP-024: Genetic Firewall Audit and Malware Scanning}
+This procedure is used to verify the integrity of the host genome and the pHAWRA plasmid.
+\begin{enumerate}
+    \item \textbf{Sequence Verification:} Perform a targeted nanopore sequencing run on the pHAWRA plasmid region.
+    \item \textbf{Signature Matching:} Compare the sequence against the "Golden Master" hash stored in the BioOS kernel.
+    \item \textbf{Decoy Check:} Verify the activity of the Transcription Factor Decoys (Layer 1) by applying a synthetic "Probe Peptide."
+    \item \textbf{Reporting:} If any unauthorized mutations or insertions are detected, trigger an immediate \texttt{INT\_GS} and follow the sanitization protocol in SOP-020.
+\end{enumerate}
+
+\section{Conclusion}
+The rigorous application of these SOPs ensures that HAWRA remains a safe, reproducible, and scalable platform for carbon-negative quantum computing.

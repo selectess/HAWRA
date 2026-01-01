@@ -1,0 +1,178 @@
+\documentclass[12pt,a4paper,oneside]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\setlength{\headheight}{15pt}
+\addtolength{\topmargin}{-3pt}
+
+\geometry{margin=2.5cm}
+
+% Custom Colors for Listings
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstset{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstdefinelanguage{arbol}{
+    keywords={qubit, leaf, thylakoid, apply, photon, wait\_metabolic, if\_stable, measure, try, catch, persist, recall, import, species, as},
+    keywordstyle=\color{magenta}\bfseries,
+    ndkeywords={H, X, Z, CNOT, SWAP},
+    ndkeywordstyle=\color{blue}\bfseries,
+    identifierstyle=\color{black},
+    sensitive=false,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{codegreen}\ttfamily,
+    stringstyle=\color{codepurple}\ttfamily,
+    morestring=[b]',
+    morestring=[b]"
+}
+
+\lstdefinelanguage{rust}{
+    keywords={abstract, alignof, as, become, box, break, const, continue, crate, do, else, enum, extern, false, final, fn, for, if, impl, in, let, loop, macro, match, mod, move, mut, offsetof, override, priv, pub, pure, ref, return, Self, self, sizeof, static, struct, super, trait, true, type, typeof, unsafe, unsized, use, virtual, where, while, yield},
+    keywordstyle=\color{magenta}\bfseries,
+    sensitive=true,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{codegreen}\ttfamily,
+    stringstyle=\color{codepurple}\ttfamily,
+    morestring=[b]',
+    morestring=[b]"
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={HAWRA: Comprehensive Documentary and Technical Report},
+    pdfpagemode=FullScreen,
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{HAWRA Initiative}
+\lhead{Documentary and Technical Report 2025}
+\rfoot{Page \thepage}
+
+\title{
+    \vspace{2cm}
+    \includegraphics[width=0.4\textwidth]{figures/hawra_architecture.png}\\
+    \vspace{1cm}
+    \Huge \textbf{HAWRA}\\
+    \Large \textit{Hardware-Agnostic Wetware-Reliant Architecture}\\
+    \vspace{1cm}
+    \huge \textbf{Comprehensive Documentary and Technical Report}\\
+    \vspace{0.5cm}
+    \Large From Theorization to Numerical Validation\\
+    \vspace{1cm}
+    \large \textbf{A Chronicle of the Post-Silicon Era}\\
+    \vfill
+    \textbf{Conceived and Engineered by:}\\
+    \Large \textbf{Mehdi Wahbi}\\
+    \small Move37 Initiative, Independent Researcher\\
+    \small ORCID: 0009-0007-0110-9437\\
+    \small Email: \href{mailto:m.wahbi.move37@atomicmail.io}{m.wahbi.move37@atomicmail.io}\\
+    \vspace{0.5cm}
+    \large Implemented by: Move37 AI Team\\
+    \vspace{1cm}
+    \textbf{Document Version: 1.0}\\
+    \large \textbf{DOI:} \href{https://doi.org/10.5281/zenodo.17908061}{10.5281/zenodo.17908061}\\
+    \vspace{0.5cm}
+    \date{December, 2025}
+}
+
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This document serves as the exhaustive record of the HAWRA project (\textbf{Hardware-Agnostic Wetware-Reliant Architecture}), a revolutionary paradigm in metabiotic computing. Chronicling the development from the initial "Day 1" theorization in early 2024 to the final numerical validation (In Silico Proof of Concept) in late 2025, this report details the fusion of photosynthetic quantum biology, synthetic genomics, and biological operating systems. 
+
+The core of HAWRA is the \textbf{PQPE} (Phyto-synthetic Quantum Processing Entity), implemented in \textit{Ficus elastica} thylakoids. By leveraging the natural excitonic coherence of P700 complexes and protecting it via an engineered \textbf{Silica Shield} (biomineralized SiO2 nanocage), we demonstrate theoretical room-temperature quantum logic with a simulated gate fidelity of 0.952. 
+
+With technical specifications of the \textbf{Arbol} language, the \textbf{BioOS} kernel, and the \textbf{HAWRA-Sim} multiphysics engine, this report provides the definitive blueprint for the first generation of living quantum processors.
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+
+\include{sections/introduction}
+\include{sections/literature_review}
+\include{sections/mathematical_foundations}
+\include{sections/methodology}
+\include{sections/chronology}
+\include{sections/biological_substrate}
+\include{sections/quantum_core}
+\include{sections/phytoqmml}
+\include{sections/bio_os}
+\include{sections/bio_os_architecture}
+\include{sections/optogenetic_interface}
+\include{sections/arbol_specification}
+\include{sections/arbol_programming}
+\include{sections/hardware_design}
+\include{sections/multiphysics_simulation}
+\include{sections/numerical_validation}
+\include{sections/reproducibility}
+\include{sections/biosafety_and_regulatory}
+\include{sections/sops}
+\include{sections/technical_specifications}
+\include{sections/economic_impact}
+\include{sections/strategic_partnerships}
+\include{sections/ethics_and_policy}
+\include{sections/ethics_artificial_life}
+\include{sections/post_silicon_economy}
+\include{sections/global_governance}
+\include{sections/biological_security_protocols}
+\include{sections/philosophical_implications}
+\include{sections/impact_global}
+\include{sections/roadmap_2026}
+\include{sections/future_perspectives}
+\include{sections/conclusion}
+\include{sections/glossary}
+
+\appendix
+\include{sections/appendix_code}
+\include{sections/appendix_genomics}
+\include{sections/appendix_data}
+
+\end{document}

@@ -1,0 +1,50 @@
+{
+    "results": [
+        {
+            "time": 0.0,
+            "light_intensity": 0.0,
+            "coherence_factor": 0.99,
+            "p700_concentration": 0.999
+        },
+        {
+            "time": 0.1,
+            "light_intensity": 0.0,
+            "coherence_factor": 0.98,
+            "p700_concentration": 0.9970019999999999
+        }
+    ],
+    "final_state": {
+        "p700_concentration": 0.9970019999999999,
+        "stability": 0.98,
+        "coherence_factor": 0.98,
+        "genes": {}
+    },
+    "environment_history": [
+        {
+            "time": 0.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0,
+            "light_wavelength": null
+        },
+        {
+            "time": 0.1,
+            "temperature": 35.0,
+            "light_intensity": 0.0,
+            "light_wavelength": null
+        }
+    ],
+    "quantum_history": [
+        {
+            "time": 0.1,
+            "op": "H",
+            "targets": [
+                0
+            ]
+        },
+        {
+            "time": 0.15000000000000002,
+            "measure": 0,
+            "outcome": 1
+        }
+    ]
+}

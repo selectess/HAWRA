@@ -1,0 +1,22 @@
+name: docker-first-bloom
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -f 07_deployment/Dockerfile -t hawra:ci .
+      - name: Run First Bloom
+        run: docker run --rm -v "$PWD":/workspace hawra:ci
+      - name: Verify report
+        run: test -f 00_docs/proofs/FIRST_BLOOM_REPORT.md
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: FIRST_BLOOM_REPORT
+          path: 00_docs/proofs/FIRST_BLOOM_REPORT.md

@@ -1,0 +1,51 @@
+
+// Simulation d'une expérience PQPE de base
+// Ce script simule l'effet d'un stimulus lumineux sur l'état quantique
+// d'un qubit au sein d'un système biologique (Ficus).
+
+// Définition des opérations quantiques
+gate H(q) {
+    // Porte Hadamard standard
+}
+
+gate X(q) {
+    // Porte Pauli-X standard
+}
+
+// Définition des stimulus biologiques
+stimulus light_pulse(intensity: float, duration: float) {
+    // Ce stimulus représente une impulsion lumineuse
+}
+
+circuit pqpe_experiment (p700_synthesis: float, coherence: float) {
+    // Corps du circuit
+    q: qubit;
+    m: bit;
+
+    // 1. Appliquer un stimulus lumineux pour affecter le système biologique
+    apply light_pulse(intensity: 1.0, duration: 10.0) on q;
+
+    // 2. Laisser le système évoluer. Le facteur de cohérence va changer.
+    // (Cette partie est implicitement gérée par le simulateur)
+
+    // 3. Préparer un état de superposition
+    H(q);
+
+    // 4. Mesurer le qubit
+    m = measure q;
+}
+
+// Configuration de la simulation
+config {
+    bio {
+        p700_synthesis_rate: 0.5,
+        p700_degradation_rate: 0.1
+    },
+    quantum {
+        t2: 1e-5 // Temps de cohérence plus long
+    }
+}
+
+// Exécution du circuit
+run pqpe_experiment(p700_synthesis: 0.5, coherence: 0.9);
+

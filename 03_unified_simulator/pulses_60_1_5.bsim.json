@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "qubit_count": 5,
+    "qubits": [
+      {"id": 0, "name": "Q0"},
+      {"id": 1, "name": "Q1"},
+      {"id": 2, "name": "Q2"},
+      {"id": 3, "name": "Q3"},
+      {"id": 4, "name": "Q4"}
+    ]
+  },
+  "instructions": [],
+  "simulation_config": {
+    "duration": 100,
+    "dt": 1
+  },
+  "environment_config": {
+    "temperature": 35.0,
+    "light_schedule": [
+      [0, 0.0],
+      [10, 60.0], [11, 0.0],
+      [15, 60.0], [16, 0.0],
+      [20, 60.0], [21, 0.0],
+      [25, 60.0], [26, 0.0],
+      [30, 60.0], [31, 0.0],
+      [35, 60.0], [36, 0.0],
+      [40, 60.0], [41, 0.0],
+      [45, 60.0], [46, 0.0],
+      [50, 60.0], [51, 0.0],
+      [55, 60.0], [56, 0.0],
+      [60, 60.0], [61, 0.0],
+      [65, 60.0], [66, 0.0],
+      [70, 60.0], [71, 0.0],
+      [75, 60.0], [76, 0.0],
+      [80, 60.0], [81, 0.0],
+      [85, 60.0], [86, 0.0],
+      [90, 60.0], [91, 0.0],
+      [95, 60.0], [96, 0.0]
+    ]
+  },
+  "biological_config": {
+    "initial_p700": 1.0,
+    "genes": [
+      {"id": "gene_light", "name": "Light-sensitive Gene", "basal_rate": 0.01, "degradation_rate": 0.05, "light_sensitivity": 0.5},
+      {"id": "gene_a", "name": "Gene A", "basal_rate": 0.01, "degradation_rate": 0.05, "light_sensitivity": 0.0},
+      {"id": "gene_b", "name": "Gene B", "basal_rate": 0.02, "degradation_rate": 0.06, "light_sensitivity": 0.0}
+    ],
+    "grn": {
+      "gene_a": {"gene_light": 1.0},
+      "gene_b": {"gene_a": -1.0}
+    }
+  }
+}

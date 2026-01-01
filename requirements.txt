@@ -1,0 +1,10 @@
+lark>=1.1.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+qutip>=4.7.0
+flask>=2.3.0
+markdown>=3.4.0
+biopython>=1.81
+scipy>=1.10.0
+sympy>=1.11.0
+ace-tools

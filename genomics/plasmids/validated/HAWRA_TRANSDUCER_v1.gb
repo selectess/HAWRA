@@ -1,0 +1,28 @@
+LOCUS       HAWRA_TRANSDUCER_v1    351 bp    DNA     linear   SYN 
+DEFINITION  Cauliflower Mosaic Virus 35S promoter, synthetic construct.
+ACCESSION   HAWRA_001
+VERSION     HAWRA_001.1
+KEYWORDS    .
+SOURCE      Cauliflower mosaic virus
+  ORGANISM  Cauliflower mosaic virus
+            Viruses; Retro-transcribing viruses; Caulimoviridae; Caulimovirus.
+REFERENCE   1  (bases 1 to 351)
+  AUTHORS   HAWRA Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-NOV-2025) to the HAWRA Virtual Biorepository
+FEATURES             Location/Qualifiers
+     source          1..351
+                     /organism="Cauliflower mosaic virus"
+                     /mol_type="genomic DNA"
+                     /note="synthetic construct"
+     promoter        1..351
+                     /gene="CaMV 35S"
+                     /note="Cauliflower Mosaic Virus 35S promoter"
+ORIGIN      
+        1 caaagggcaa ttgagacttt tcaacaaagg gtaatatccg gaaacctcct cggattccat
+       61 tgcccagcta tctgtcactt tattgtgaag atagtggaaa aggaaggtgg ctcctacaaa
+      121 tgccatcatt gcgataaagg aaaggccatc gttgaagatg cctctgccga cagtggtccc
+      181 aaagatggac ccccacccac gaggagcatc gtggaaaaag aagacgttcc aaccacgtct
+      241 tcaaagcaag tggattgatg tgatatctcc actgacgtaa gggatgacgc acaatcccac
+      301 tatccttcgc aagacccttc ctctatataa ggaagttcat ttcatttgga g
+//

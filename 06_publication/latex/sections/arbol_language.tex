@@ -1,0 +1,130 @@
+\section{Language Philosophy: Bio-Semantic Abstraction}
+The \texttt{ARBOL} (\textit{Advanced Resource for Biological Operations and Logic}) language transcends the traditional QASM (\textit{Quantum Assembly}) paradigm by integrating the biological dimension of information. In the HAWRA framework, a qubit is not an isolated entity but a P700 reaction center embedded within a living thylakoid membrane. ARBOL allows for programming not only the quantum state but also the biological context that supports it. This holistic approach ensures that quantum operations are grounded in the metabolic reality of the organism.
+
+\section{Type System and Bio-Quantum Typing}
+ARBOL introduces an innovative type system that distinguishes resources based on their metabolic stability. Typing is statically checked by the compiler to prevent physiological instability.
+
+\begin{itemize}
+    \item \texttt{qubit} ($\mathcal{Q}$): Represents a P700 reaction center. A qubit is a linear resource (non-duplicable), adhering to the principles of quantum mechanics.
+    \item \texttt{stimulus} ($\mathcal{S}$): A physical action vector, such as light intensity, wavelength, pH modulation, or nutrient delivery.
+    \item \texttt{biosignal} ($\mathcal{B}$): A classical variable derived from a biological sensor, such as NADPH concentration or fluorescence levels.
+    \item \texttt{metabolic\_lock} ($\mathcal{L}$): A synchronization primitive that prevents quantum operations on a leaf zone during critical regenerative phases.
+\end{itemize}
+
+We define the typing rule for a stimulated gate application as follows:
+\begin{equation}
+\frac{\Gamma \vdash s : \mathcal{S} \quad \Gamma \vdash q : \mathcal{Q} \quad \Gamma \vdash \text{compat}(s, q)}{\Gamma \vdash \text{apply } s \text{ to } q : \mathcal{Q}}
+\end{equation}
+Where the compatibility function $\text{compat}(s, q)$ verifies that the stimulus $s$ is physically realizable on the substrate $q$ without inducing irreversible quenching or metabolic distress.
+
+\section{Linear Logic and Resource Ownership}
+Inspired by the Rust ownership model and linear logic ($\multimap$), ARBOL enforces strict resource management for biological qubits. A qubit cannot be cloned (Biological No-Cloning Theorem), and its state is intimately tied to the local redox potential.
+
+\begin{equation}
+\forall q \in \mathcal{Q}, \text{count}(q) = 1 \implies \text{Affordance}(q) = \text{Stable}
+\end{equation}
+
+When a qubit is passed to a circuit, ownership is moved. If a circuit needs to return the qubit, it must be explicitly specified in the return signature. This prevents "biological memory leaks" where a reaction center remains in an excited state without a corresponding relaxation command.
+
+\section{Temporal Semantics and Multi-Scale Synchronization}
+A major challenge in ARBOL is managing the disparity of temporal scales: quantum electronic transitions ($\sim 10^{-15}$ s) versus metabolic responses ($\sim 10^0$ to $10^2$ s). ARBOL resolves this via "elastic barrier" semantics. The instruction \texttt{wait\_metabolic(target\_state)} suspends quantum execution until the biological substrate reaches an optimal relaxation state (e.g., regeneration of the plastoquinone pool). This synchronization is managed by the BioOS \textit{Temporal Scheduler}.
+
+\begin{equation}
+T_{exec} = \sum T_{quantum} + \sum \Delta t_{wait}(\text{metabolic\_recovery})
+\end{equation}
+
+\section{Syntax and Control Operators}
+The originality of ARBOL lies in its coupling instructions. For example, the \texttt{apply} instruction is not limited to a logic gate; it defines a light-matter interaction calibrated by the BioOS:
+
+\begin{lstlisting}[language=Python, caption=ARBOL v0.4 - Complex Bio-Quantum Circuit with Metabolic Recovery]
+# Initialization of a 5-qubit biological register
+qubit q[0..4]
+
+# Define a metabolic recovery pulse
+stimulus recovery = light(wavelength=730nm, mode=far_red, intensity=0.2mW)
+
+# Superposition preparation via coherent photonic stimuli
+# Each 'apply' consumes metabolic ATP
+for i in 0..4:
+    apply light(mode=coherence_mode, duration=15ps) to q[i]
+
+# Bio-quantum oracle: state marking via pH pulse
+circuit oracle(qubits):
+    with lock(qubits): # Acquire metabolic lock
+        apply chemical(ph=6.5) to qubits
+        z qubits
+        # Automatic recovery after gate
+        apply recovery to qubits
+
+# Main execution loop with error handling
+try:
+    run oracle(q)
+    measure q -> results
+catch MetabolicDistress as e:
+    log "Emergency quench initiated: " + e.reason
+    apply emergency_reset to q
+\end{lstlisting}
+
+\section{Formal BNF Grammar (v0.4)}
+The syntactic structure of ARBOL is defined by the following EBNF grammar, optimized for the \texttt{Lark} parser used in the HAWRA compiler. Version 0.4 introduces \texttt{with lock} blocks and \texttt{try-catch} for biological exceptions.
+
+\begin{verbatim}
+start          : (statement | circuit_def)*
+statement      : declaration | instruction | flow_control | error_handling
+declaration    : "qubit" identifier "[" range "]" | "stimulus" identifier "=" value
+instruction    : gate_apply | stimulus_apply | measure_op | lock_block
+gate_apply     : ("h" | "x" | "z" | "cnot" | "hadamard") identifier ("," identifier)*
+stimulus_apply : "apply" identifier "(" param_list ")" "to" identifier
+measure_op     : "measure" identifier "->" identifier
+lock_block     : "with lock" "(" identifier ")" "{" statement* "}"
+error_handling : "try" "{" statement* "}" "catch" identifier "as" identifier "{" statement* "}"
+param_list     : (identifier "=" value ("," identifier "=" value)*)?
+circuit_def    : "circuit" identifier "(" [identifier_list] ")" "{" statement* "}"
+flow_control   : "wait_metabolic" "(" value ")" | "for" identifier "in" range
+\end{verbatim}
+
+\section{The Metabolic Constraint Engine (MCE)}
+The MCE is the core of ARBOL's execution safety. It acts as a thermodynamic safeguard. For each instruction block $\mathcal{B}$, the compiler calculates the total metabolic cost $C(\mathcal{B})$ by integrating the expected ATP consumption of each photonic pulse against the basal metabolic rate.
+
+\begin{equation}
+C(\mathcal{B}) = \sum_{op \in \mathcal{B}} \int_{0}^{\tau_{op}} \dot{E}_{met}(t) dt + \lambda \cdot \Delta \text{Entropy}
+\end{equation}
+
+If $C(\mathcal{B}) > \Psi_{max}$ (where $\Psi_{max}$ is the viability threshold), the compiler generates a \texttt{MetabolicBudgetExceeded} error. This ensures that quantum computation does not occur at the expense of the biological integrity of the substrate.
+
+\section{The Bio-Quantum Graph IR (BQG-IR)}
+The ARBOL compiler does not generate linear bytecode directly. Instead, it constructs a \textbf{Bio-Quantum Graph IR (BQG-IR)}. This intermediate representation is a directed acyclic graph where:
+\begin{itemize}
+    \item \textbf{Nodes} represent either quantum gates (H, CNOT) or metabolic checkpoints.
+    \item \textbf{Edges} represent dependencies, but unlike traditional compilers, these edges carry a "thermodynamic weight" $\omega$.
+\end{itemize}
+
+The BQG-IR allows the compiler to perform \textbf{Metabolic Pipelining}. If two quantum operations are scheduled on different reaction centers, the compiler can overlap them provided their combined metabolic demand $\sum \omega_i$ does not exceed the local $P_{max}$ of the leaf region.
+
+\begin{equation}
+\text{Schedule}(\mathcal{G}) = \text{argmin}_t \left( \text{Duration}(\mathcal{G}) \right) \text{ s.t. } \forall t, \sum_{i \in \text{Active}(t)} \omega_i \leq \Phi_{PSII}(t)
+\end{equation}
+
+\section{GRAPE Algorithm Integration for Pulse Shaping}
+To achieve high-fidelity gates in a noisy biological environment, ARBOL integrates a modified \textbf{GRAPE (Gradient Ascent Pulse Engineering)} algorithm. The compiler optimizes the photonic stimulus envelope $\Omega(t)$ by minimizing the infidelity $1-F$ while simultaneously penalizing pulse shapes that induce high thermal stress $\Delta T$.
+
+\begin{equation}
+\mathcal{J}_{GRAPE} = \|| \psi_{target} \rangle - U(\Omega(t)) | \psi_0 \rangle \|^2 + \lambda \int_0^T \Omega^2(t) dt
+\end{equation}
+
+This optimization is performed at compile-time using the BSIM digital twin, ensuring that the instructions sent to the Jetson-driven lasers are pre-validated for the specific plant's current health status.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/bsim_convergence.png}
+\caption{Optimization of the GRAPE pulse envelope via the BSIM digital twin. The blue line represents the reduction in gate infidelity over 50 iterations.}
+\label{fig:bsim_convergence}
+\end{figure}
+
+\section{Type Inference and Resource Semantics}
+ARBOL implements move semantics inspired by the Rust language for qubits, as a biological qubit is a localized physical resource that cannot be cloned (biological no-cloning theorem). The type system ensures that:
+\begin{enumerate}
+    \item A qubit used in a gate is consumed and must be reset explicitly or through natural relaxation.
+    \item Measurement of a qubit ($\mathcal{Q} \to \mathcal{B}$) releases the associated metabolic memory space.
+\end{enumerate}
+This rigorous resource management enables optimized spatial scheduling on the leaf surface, minimizing crosstalk between adjacent computing zones.

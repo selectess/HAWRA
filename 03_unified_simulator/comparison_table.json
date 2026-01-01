@@ -1,0 +1,32 @@
+{
+  "files": [
+    {
+      "file": "output_pulses_40_1_5.json",
+      "steps": 100,
+      "coherence_avg": 0.49499999999999955,
+      "p700_avg": 0.8726345493032707,
+      "light_avg": 7.2
+    },
+    {
+      "file": "output_pulses_40_3_10.json",
+      "steps": 100,
+      "coherence_avg": 0.49499999999999955,
+      "p700_avg": 0.8577416604695824,
+      "light_avg": 10.8
+    },
+    {
+      "file": "output_pulses_60_1_5.json",
+      "steps": 100,
+      "coherence_avg": 0.49499999999999955,
+      "p700_avg": 0.8865679805911713,
+      "light_avg": 10.8
+    },
+    {
+      "file": "output_validation.json",
+      "steps": 100,
+      "coherence_avg": 0.49499999999999955,
+      "p700_avg": 0.7233306824077615,
+      "light_avg": 25.0
+    }
+  ]
+}

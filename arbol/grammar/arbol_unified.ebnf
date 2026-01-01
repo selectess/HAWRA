@@ -1,0 +1,57 @@
+(* 
+  ARBOL Unified Grammar - v0.4
+  Reflects the state of the Python compiler as of the latest refactoring.
+*)
+
+program ::= (statement)*
+
+statement ::= (circuit_definition | logical_qubit_definition | classical_bit_definition | gate_definition | stimulus_definition | quantum_operation | measure_operation | stimulus_application) (SEMICOLON)?
+
+(* --- Definitions --- *)
+
+circuit_definition ::= "CIRCUIT" ID "LBRACE" (qubit_list)? (quantum_operation)* "RBRACE"
+qubit_list ::= ID ("," ID)*
+
+logical_qubit_definition ::= "LOGICAL_QUBIT" ID "IS" "LBRACE" promoters "RBRACE"
+promoters ::= promoter ("," promoter)*
+promoter ::= ("ACTIVATOR" | "REPRESSOR") ":" ID
+
+classical_bit_definition ::= "CLASSICAL_BIT" ID
+
+gate_definition ::= "GATE" ID (ID)* "LBRACE" (quantum_operation)* "RBRACE"
+
+stimulus_definition ::= "STIMULUS" ID "IS" ID "LPAREN" (parameter_def ("," parameter_def)*)? "RPAREN"
+parameter_def ::= ID ":" ("float" | "string" | "int")
+
+(* --- Operations --- *)
+
+quantum_operation ::= ID "LPAREN" (qubit_refs)? "RPAREN"
+qubit_refs ::= ID ("," ID)*
+
+measure_operation ::= "MEASURE" ID "TO" ID
+
+stimulus_application ::= "APPLY" ID "TO" ID "WITH" "LBRACE" (parameter_assign ("," parameter_assign)*)? "RBRACE"
+parameter_assign ::= ID "=" STRING
+
+(* --- Terminals --- *)
+
+ID ::= /[a-zA-Z_][a-zA-Z0-9_]*/
+NUMBER ::= /\d+(\.\d*)?/
+STRING ::= /"[^\"]*"/
+
+SEMICOLON ::= ";"
+LBRACE ::= "{"
+RBRACE ::= "}"
+LPAREN ::= "("
+RPAREN ::= ")"
+LBRACKET ::= "["
+RBRACKET ::= "]"
+COMMA ::= ","
+COLON ::= ":"
+EQUALS ::= "="
+
+(* --- Keywords --- *)
+(* Defined implicitly by the literal strings in rules *)
+
+%ignore /\s+/
+%ignore /\(\*.*?\*\)/ (* Comments *)

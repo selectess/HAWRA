@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  hawra-sim:
+    build:
+      context: .
+      dockerfile: 07_deployment/Dockerfile
+    volumes:
+      - .:/workspace
+    environment:
+      - PYTHONPATH=/workspace:/workspace/03_unified_simulator/src
+    command: python3 scripts/run_first_bloom.py
+
+  hawra-web:
+    build:
+      context: .
+      dockerfile: 07_deployment/Dockerfile
+    volumes:
+      - .:/workspace
+    ports:
+      - "5001:5001"
+    environment:
+      - PYTHONPATH=/workspace:/workspace/03_unified_simulator/src
+    command: python3 08_webapp/app.py

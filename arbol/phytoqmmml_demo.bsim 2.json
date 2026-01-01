@@ -1,0 +1,180 @@
+{
+    "metadata": {
+        "source_arbol": "compiled.arbol",
+        "version": "0.1"
+    },
+    "instructions": [
+        {
+            "instruction_id": 0,
+            "command": "INITIALIZE",
+            "config": {
+                "max_time": 500,
+                "dt": 5,
+                "env": {
+                    "light_schedule": []
+                },
+                "quantum": {
+                    "p700_threshold": 0.8,
+                    "decoherence_rate": 0.05
+                },
+                "bio": {
+                    "p700_synthesis_rate": 1.0,
+                    "p700_degradation_rate": 0.1,
+                    "optimal_temp": 35.0,
+                    "temp_sensitivity": 0.1,
+                    "genes": {},
+                    "grn": {}
+                }
+            }
+        },
+        {
+            "instruction_id": 1,
+            "command": "run",
+            "circuit": "phytoqmmml_trainer",
+            "arguments": {
+                "learning_rate": 0.15,
+                "coherence": 0.0001,
+                "noise_level": 0.05
+            }
+        },
+        {
+            "instruction_id": 2,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "H",
+                "qubits": [
+                    "q1"
+                ]
+            }
+        },
+        {
+            "instruction_id": 3,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "H",
+                "qubits": [
+                    "q2"
+                ]
+            }
+        },
+        {
+            "instruction_id": 4,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "H",
+                "qubits": [
+                    "q3"
+                ]
+            }
+        },
+        {
+            "instruction_id": 5,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "Y",
+                "qubits": [
+                    "q1"
+                ]
+            }
+        },
+        {
+            "instruction_id": 6,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "Z",
+                "qubits": [
+                    "q2"
+                ]
+            }
+        },
+        {
+            "instruction_id": 7,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "X",
+                "qubits": [
+                    "q3"
+                ]
+            }
+        },
+        {
+            "instruction_id": 8,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "CNOT",
+                "qubits": [
+                    "q1",
+                    "q2"
+                ]
+            }
+        },
+        {
+            "instruction_id": 9,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "CNOT",
+                "qubits": [
+                    "q2",
+                    "q3"
+                ]
+            }
+        },
+        {
+            "instruction_id": 10,
+            "command": "STIMULUS_APPLY",
+            "params": {
+                "stimulus": "adaptive_light",
+                "target": "q1",
+                "arguments": {
+                    "intensity": 0.8,
+                    "wavelength": 680.0,
+                    "duration": 10.0
+                }
+            }
+        },
+        {
+            "instruction_id": 11,
+            "command": "MEASURE",
+            "params": {
+                "qubit": "q3",
+                "classical_bit": "label"
+            }
+        },
+        {
+            "instruction_id": 12,
+            "command": "run",
+            "circuit": "phytoqmmml_classifier",
+            "arguments": {
+                "threshold": 0.5
+            }
+        },
+        {
+            "instruction_id": 13,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "H",
+                "qubits": [
+                    "q"
+                ]
+            }
+        },
+        {
+            "instruction_id": 14,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "Z",
+                "qubits": [
+                    "q"
+                ]
+            }
+        },
+        {
+            "instruction_id": 15,
+            "command": "MEASURE",
+            "params": {
+                "qubit": "q",
+                "classical_bit": "m"
+            }
+        }
+    ]
+}

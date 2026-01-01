@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "source_arbol": "compiled.arbol",
+    "version": "0.2"
+  },
+  "instructions": [
+    {
+      "instruction_id": 0,
+      "command": "INITIALIZE",
+      "config": {
+        "max_time": 400,
+        "dt": 1,
+        "env": {
+           "pulse_configs": [
+                {"start": 10, "end": 20, "intensity": 1.0},
+                {"start": 50, "end": 55, "intensity": 0.8},
+                {"start": 90, "end": 92, "intensity": 1.0},
+                {"start": 120, "end": 140, "intensity": 0.6},
+                {"start": 160, "end": 170, "intensity": 1.0},
+                {"start": 200, "end": 220, "intensity": 0.9},
+                {"start": 250, "end": 270, "intensity": 0.7},
+                {"start": 300, "end": 310, "intensity": 1.0},
+                {"start": 340, "end": 360, "intensity": 0.5}
+            ]
+        },
+        "bio": {
+            "p700_initial": 0.0,
+            "degradation_rate": 0.05,
+            "synthesis_rate": 0.2
+        },
+        "quantum": {
+          "threshold": 0.85,
+          "decoherence_rate": 0.02
+        }
+      }
+    },
+    {
+      "instruction_id": 1,
+      "command": "RUN_UNTIL",
+      "params": {
+        "time": 400
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+(* Grammaire EBNF pour le langage ARBOL - v0.1 *)
+
+program = { statement };
+
+statement = circuit_definition | stimulus_application | comment;
+
+comment = '(*' , { any_character - '*)' } , '*)' ;
+
+circuit_definition = 'circuit' , identifier , '{' , { gene_expression } , '}' ;
+
+gene_expression = identifier , '->' , identifier , [ regulation ] ;
+
+regulation = '[' , regulator , { ',' , regulator } , ']' ;
+
+regulator = ( 'activator' | 'repressor' ) , ':' , identifier ;
+
+stimulus_application = 'apply' , stimulus , 'to' , identifier , [ 'with' , parameters ] ;
+
+stimulus = 'light' | 'heat' | 'chemical' ;
+
+parameters = '{' , parameter , { ',' , parameter } , '}' ;
+
+parameter = identifier , '=' , value ;
+
+identifier = letter , { letter | digit | '_' } ;
+
+value = string_literal | number ;
+
+letter = 'a'..'z' | 'A'..'Z' ;
+
+digit = '0'..'9' ;
+
+string_literal = '"' , { any_character - '"' } , '"' ;
+
+number = [ '-' ] , digit , { digit } , [ '.' , digit , { digit } ] ;
+
+any_character = ? any character ? ;

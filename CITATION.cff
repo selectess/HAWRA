@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software or research data, please cite it as below."
+authors:
+  - family-names: "Wahbi"
+    given-names: "Mehdi"
+    orcid: "https://orcid.org/0009-0007-0110-9437"
+    affiliation: "Move37 Initiative, Independent Researcher"
+title: "Metabiotic Quantum Supremacy: A Programmable Operating System Executed by Room-Temperature Photosynthetic Coherence"
+version: 1.0
+doi: 10.5281/zenodo.17908061
+date-released: 2025-12-29
+url: "https://doi.org/10.5281/zenodo.17908061"
+keywords:
+  - "Quantum Computing"
+  - "Photosynthetic Coherence"
+  - "Bio-Computing"
+  - "Ficus elastica"
+  - "BioOS"
+  - "Arbol Language"
+  - "Room-Temperature Quantum Logic"
+license: CC-BY-4.0
+repository-code: "https://github.com/Move37-Initiative/HAWRA"

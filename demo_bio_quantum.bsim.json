@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "source_arbol": "demo_bio_quantum.arbol",
+    "version": "0.3",
+    "description": "Bio-quantum hybrid circuit with light stimulus"
+  },
+  "instructions": [
+    {
+      "instruction_id": 0,
+      "command": "INITIALIZE",
+      "params": {
+        "max_time": 500,
+        "dt": 5,
+        "env": {
+          "light_schedule": []
+        },
+        "quantum": {
+          "p700_threshold": 0.8,
+          "decoherence_rate": 0.05
+        },
+        "bio": {
+          "p700_synthesis_rate": 1.0,
+          "p700_degradation_rate": 0.1,
+          "optimal_temp": 35.0,
+          "temp_sensitivity": 0.1,
+          "genes": {},
+          "grn": {}
+        }
+      }
+    },
+    {
+      "instruction_id": 1,
+      "command": "STIMULUS_APPLY",
+      "params": {
+        "stimulus": "light",
+        "target": "q1",
+        "arguments": {
+          "wavelength": "660nm",
+          "duration": "10ms"
+        }
+      }
+    },
+    {
+      "instruction_id": 2,
+      "command": "QUANTUM_OP",
+      "params": {
+        "gate": "H",
+        "qubits": [
+          "q1"
+        ]
+      }
+    },
+    {
+      "instruction_id": 3,
+      "command": "MEASURE",
+      "params": {
+        "qubit": "q1",
+        "classical_bit": "c1"
+      }
+    }
+  ]
+}

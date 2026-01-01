@@ -1,0 +1,79 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Conceptual Overview of the HAWRA Ecosystem: Integrating quantum logic with biological homeostasis.}}{24}{figure.caption.4}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces The Metabiotic Advantage: Comparing the energy efficiency and environmental impact of HAWRA vs. classical architectures.}}{24}{figure.caption.5}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces The HAWRA Architectural Hierarchy: From ARBOL logic to PQPE biological execution.}}{26}{figure.caption.6}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces The Timeline of Biological Discovery: From Mendelian genetics to the dawn of quantum biology.}}{27}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces The Evolution of Quantum Computing: From cryogenic superconductors to room-temperature metabiotic substrates.}}{28}{figure.caption.8}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Evolution of the biological substrate modeling from initial P700 reaction center analysis to complex metabolic integration.}}{43}{figure.caption.9}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Historical trajectory of quantum coherence milestones within the project, highlighting the transition from silicon-based limitations to biological solutions.}}{45}{figure.caption.10}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Environmental stabilization trends showing the reduction of vibrational noise and metabolic fluctuations as the Silica Shield was implemented.}}{47}{figure.caption.11}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Phase 3 Milestone: Successful integration of the BSIM pipeline with the Multiphysics Simulation engine.}}{48}{figure.caption.12}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Chronicle of Convergence: Final validation runs showing the steady increase in gate fidelity during the December 2025 validation phase.}}{49}{figure.caption.13}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Gene Regulation Network (GRN) for P700 expression, showing the feedback loops between optogenetic stimuli and protein synthesis.}}{51}{figure.caption.14}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Visual progression of the pHAWRA plasmid design, showing the integration of functional modules.}}{52}{figure.caption.15}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Analysis of the Gene Regulatory Network (GRN) under various metabolic loads, ensuring long-term homeostatic stability of the living processor.}}{54}{figure.caption.16}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Detailed molecular and physiological feedback mechanisms within the modified \textit {Ficus elastica} substrate.}}{54}{figure.caption.17}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces The pHAWRA Plasmid: Genetic Blueprint of the Living Processor.}}{55}{figure.caption.18}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces SymPy-based symbolic derivation of the excitonic Hamiltonian for the P700 special pair.}}{57}{figure.caption.19}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Experimental validation of P700 coherence times under controlled environmental conditions.}}{58}{figure.caption.20}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Integrated coherence landscape across the leaf surface, showing the "hotspots" of high fidelity.}}{59}{figure.caption.21}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Interaction between control light intensity and quantum coherence, showing the optimal operational window.}}{60}{figure.caption.22}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Experimental demonstration of single-qubit control in the living substrate.}}{61}{figure.caption.23}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Qubit Coherence Validation: Theoretical vs. Engineered Decay.}}{62}{figure.caption.24}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces PhytoQMML Training Dynamics: Balancing computational accuracy with biological sustainability.}}{63}{figure.caption.25}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Quantum Feature Mapping in PhytoQMML: Visualizing the high-dimensional Hilbert space representation.}}{65}{figure.caption.26}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces PhytoQMML Architecture Overview: From Excitons to Planetary Intelligence.}}{85}{figure.caption.27}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces PhytoQMML Observables: Mapping excitonic counts to logical states across the planetary mesh.}}{86}{figure.caption.28}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {10.1}{\ignorespaces The BioOS Architectural Hierarchy: Orchestrating the flow of information between the digital and biological domains.}}{91}{figure.caption.29}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Metabolic IPC: Utilizing hormonal gradients for inter-thread communication and synchronization.}}{96}{figure.caption.30}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {11.1}{\ignorespaces Molecular mechanism of the CRY2-PIF3 interface, showing the radical pair formation and conformational transition.}}{108}{figure.caption.31}%
+\contentsline {figure}{\numberline {11.2}{\ignorespaces Spectral characterization of the HAWRA optogenetic interface, defining the operational channels.}}{108}{figure.caption.32}%
+\contentsline {figure}{\numberline {11.3}{\ignorespaces Dynamic Control Loop: Correlation between blue-light pulse intensity and the expression level of P700-associated regulatory genes.}}{109}{figure.caption.33}%
+\contentsline {figure}{\numberline {11.4}{\ignorespaces Comparative analysis of pulse configurations for maximizing gate fidelity while minimizing metabolic stress.}}{110}{figure.caption.34}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {13.1}{\ignorespaces BSIM Compilation Trace: Monitoring the convergence of the pulse-shaping algorithm during the generation of a complex gate sequence.}}{123}{figure.caption.35}%
+\contentsline {figure}{\numberline {13.2}{\ignorespaces ARBOL Debugger Interface: Visualizing the real-time coherence levels across the thylakoid mesh during code execution.}}{125}{figure.caption.36}%
+\contentsline {figure}{\numberline {13.3}{\ignorespaces The Compilation Pipeline: From ARBOL to Biological Execution.}}{126}{figure.caption.37}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {14.1}{\ignorespaces Electrochemical response of the mycorrhizal interface, showing the transduction of biological signals into digital packets.}}{130}{figure.caption.38}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {15.1}{\ignorespaces The HAWRA-Sim Architecture: A multi-scale approach to living quantum systems.}}{132}{figure.caption.39}%
+\contentsline {figure}{\numberline {15.2}{\ignorespaces 3D molecular rendering of the P700 reaction center used for spatial Hamiltonian mapping.}}{134}{figure.caption.40}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {16.1}{\ignorespaces Overview of the massive numerical validation phase, showing both biological viability and computational execution.}}{138}{figure.caption.41}%
+\contentsline {figure}{\numberline {16.2}{\ignorespaces Global Sensitivity Analysis: Identifying the key drivers of gate fidelity in the living substrate.}}{139}{figure.caption.42}%
+\contentsline {figure}{\numberline {16.3}{\ignorespaces Final state validation: confirming the accuracy of the quantum operations at the end of the POC study.}}{140}{figure.caption.43}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {32.1}{\ignorespaces The Future of HAWRA: Scaling towards the Metabiotic Horizon.}}{193}{figure.caption.46}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Detailed Genomic Map of the pHAWRA Plasmid: Visualizing the integration of quantum, metabolic, and optogenetic modules.}}{208}{figure.caption.47}%
+\addvspace {10\p@ }

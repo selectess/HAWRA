@@ -1,0 +1,161 @@
+{
+  "trainer_runs": [
+    {
+      "run": 1,
+      "complexity": 20,
+      "ops": 16,
+      "measures": 5,
+      "fidelity": 0.7556345850953522,
+      "loss": 0.3443654149046478
+    },
+    {
+      "run": 2,
+      "complexity": 20,
+      "ops": 16,
+      "measures": 5,
+      "fidelity": 0.7704509495089866,
+      "loss": 0.32954905049101335
+    },
+    {
+      "run": 3,
+      "complexity": 20,
+      "ops": 16,
+      "measures": 5,
+      "fidelity": 0.785267313922621,
+      "loss": 0.31473268607737903
+    },
+    {
+      "run": 4,
+      "complexity": 20,
+      "ops": 16,
+      "measures": 5,
+      "fidelity": 0.8000836783362554,
+      "loss": 0.2999163216637446
+    },
+    {
+      "run": 5,
+      "complexity": 20,
+      "ops": 16,
+      "measures": 5,
+      "fidelity": 0.8149000427498897,
+      "loss": 0.2850999572501103
+    },
+    {
+      "run": 6,
+      "complexity": 20,
+      "ops": 16,
+      "measures": 5,
+      "fidelity": 0.8297164071635241,
+      "loss": 0.27028359283647585
+    },
+    {
+      "run": 7,
+      "complexity": 20,
+      "ops": 16,
+      "measures": 5,
+      "fidelity": 0.8445327715771584,
+      "loss": 0.25546722842284153
+    },
+    {
+      "run": 8,
+      "complexity": 20,
+      "ops": 16,
+      "measures": 5,
+      "fidelity": 0.8593491359907927,
+      "loss": 0.24065086400920735
+    },
+    {
+      "run": 9,
+      "complexity": 20,
+      "ops": 16,
+      "measures": 5,
+      "fidelity": 0.8741655004044271,
+      "loss": 0.22583449959557292
+    },
+    {
+      "run": 10,
+      "complexity": 20,
+      "ops": 16,
+      "measures": 5,
+      "fidelity": 0.8889818648180614,
+      "loss": 0.2110181351819386
+    },
+    {
+      "run": 11,
+      "complexity": 20,
+      "ops": 16,
+      "measures": 5,
+      "fidelity": 0.9037982292316958,
+      "loss": 0.19620177076830417
+    },
+    {
+      "run": 12,
+      "complexity": 20,
+      "ops": 16,
+      "measures": 5,
+      "fidelity": 0.9186145936453302,
+      "loss": 0.18138540635466985
+    },
+    {
+      "run": 13,
+      "complexity": 20,
+      "ops": 16,
+      "measures": 5,
+      "fidelity": 0.9334309580589645,
+      "loss": 0.16656904194103553
+    },
+    {
+      "run": 14,
+      "complexity": 20,
+      "ops": 16,
+      "measures": 5,
+      "fidelity": 0.9482473224725989,
+      "loss": 0.1517526775274011
+    },
+    {
+      "run": 15,
+      "complexity": 20,
+      "ops": 16,
+      "measures": 5,
+      "fidelity": 0.9630636868862332,
+      "loss": 0.13693631311376678
+    },
+    {
+      "run": 16,
+      "complexity": 20,
+      "ops": 16,
+      "measures": 5,
+      "fidelity": 0.9778800512998677,
+      "loss": 0.12211994870013235
+    },
+    {
+      "run": 17,
+      "complexity": 20,
+      "ops": 16,
+      "measures": 5,
+      "fidelity": 0.992696415713502,
+      "loss": 0.10730358428649803
+    },
+    {
+      "run": 18,
+      "complexity": 20,
+      "ops": 16,
+      "measures": 5,
+      "fidelity": 1.0,
+      "loss": 0.1
+    },
+    {
+      "run": 19,
+      "complexity": 22,
+      "ops": 18,
+      "measures": 6,
+      "fidelity": 0.992114752136058,
+      "loss": 0.12788524786394195
+    }
+  ],
+  "global_counts": {
+    "total_ops": 306,
+    "total_measures": 96,
+    "total_runs": 39
+  }
+}

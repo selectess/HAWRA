@@ -1,0 +1,96 @@
+{
+    "metadata": {
+        "source_arbol": "compiled.arbol",
+        "version": "0.3",
+        "qubit_count": 1,
+        "qubits": [
+            {
+                "name": "q1"
+            }
+        ]
+    },
+    "instructions": [
+        {
+            "instruction_id": 0,
+            "command": "INITIALIZE",
+            "params": null,
+            "config": {
+                "max_time": 500,
+                "dt": 1.0,
+                "env": {
+                    "light_schedule": []
+                },
+                "quantum": {
+                    "p700_threshold": 0.8,
+                    "decoherence_rate": 0.015
+                },
+                "bio": {
+                    "p700_synthesis_rate": 0.05,
+                    "p700_degradation_rate": 0.1,
+                    "optimal_temp": 35.0,
+                    "genes": {
+                        "psaA": {
+                            "basal_rate": 0.1,
+                            "degradation_rate": 0.05,
+                            "light_sensitivity": 0.8,
+                            "peak_wavelength": 700.0
+                        },
+                        "CRY2": {
+                            "basal_rate": 0.05,
+                            "light_sensitivity": 0.9,
+                            "peak_wavelength": 450.0
+                        },
+                        "LUC": {
+                            "basal_rate": 0.0,
+                            "degradation_rate": 0.1
+                        }
+                    },
+                    "grn": {
+                        "psaA": {
+                            "regulators": [
+                                {
+                                    "gene": "CRY2",
+                                    "type": "activator",
+                                    "weight": "2.0",
+                                    "hill_coefficient": 2.0,
+                                    "half_max_concentration": 0.5
+                                }
+                            ]
+                        },
+                        "LUC": {
+                            "regulators": [
+                                {
+                                    "gene": "psaA",
+                                    "type": "activator",
+                                    "weight": "1.5",
+                                    "hill_coefficient": 2.0,
+                                    "half_max_concentration": 0.5
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "instruction_id": 1,
+            "command": "GATE_APPLY",
+            "params": {
+                "gate": "h",
+                "targets": [
+                    0
+                ]
+            },
+            "config": null
+        },
+        {
+            "instruction_id": 2,
+            "command": "MEASURE",
+            "params": {
+                "qubit": 0,
+                "classical_bit": "c0"
+            },
+            "config": null
+        }
+    ]
+}

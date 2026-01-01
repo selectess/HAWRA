@@ -1,0 +1,49 @@
+// ARBOL v1.0 - Hello World Example
+// Test basique: 8 flashes IR = "HOLA" en morse
+
+hawra H1 {
+    roots:   electrode[32];
+    trunk:   em_coil[8];
+    leaves:  qubit[1024];
+    bark:    epigen[1M];
+}
+
+// Fonction Hello World
+bio hello() -> ir_flash {
+    // Step 1: Initialisation (superposition)
+    hadamard leaves[0..7] via white_light(100ms);
+    
+    // Step 2: Pattern "HOLA" en morse
+    // H = .... (4 flashes courts)
+    // O = --- (3 flashes longs)
+    // L = .-.. (4 flashes: court, long, court, court)
+    // A = .- (2 flashes: court, long)
+    
+    // Encodage: 1 = flash, 0 = silence
+    // H: 1111 0000
+    // O: 1110 0000
+    // L: 1011 0000
+    // A: 1000 0000
+    
+    pulse trunk[0] = "11110000" @9.8kHz;  // H
+    wait 500ms;
+    
+    pulse trunk[0] = "11100000" @9.8kHz;  // O
+    wait 500ms;
+    
+    pulse trunk[0] = "10110000" @9.8kHz;  // L
+    wait 500ms;
+    
+    pulse trunk[0] = "10000000" @9.8kHz;  // A
+    wait 500ms;
+    
+    // Step 3: Mesure
+    measure leaves via ir_flash -> pattern;
+    
+    // Step 4: Output
+    emit pattern;
+}
+
+// Exécution
+execute hello();
+

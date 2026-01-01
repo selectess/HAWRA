@@ -1,0 +1,62 @@
+// Protocole de contrôle génique simple
+
+// 1. Initialisation
+// Définit l'environnement initial et les paramètres du système.
+INITIALIZE({
+    "env": {
+        "light_schedule": [
+            {"time": 0, "intensity": 50.0},
+            {"time": 60, "intensity": 0.0}
+        ]
+    },
+    "bio": {
+        "genes": [
+            {
+                "id": "gene_light",
+                "name": "Light-sensitive Gene",
+                "basal_rate": 0.01,
+                "degradation_rate": 0.05,
+                "light_sensitivity": 0.5
+            },
+            {
+                "id": "gene_a",
+                "name": "Gene A",
+                "basal_rate": 0.01,
+                "degradation_rate": 0.05,
+                "light_sensitivity": 0
+            },
+            {
+                "id": "gene_b",
+                "name": "Gene B",
+                "basal_rate": 0.02,
+                "degradation_rate": 0.05,
+                "light_sensitivity": 0
+            }
+        ],
+        "grn": {
+            "gene_a": {
+                "gene_light": 1.0
+            },
+            "gene_b": {
+                "gene_a": -1.0
+            }
+        }
+    }
+})
+
+// 2. Exécution de la simulation
+// Laisse le système évoluer pendant 100 pas de temps.
+RUN_UNTIL(100)
+
+// 3. Mesure et contrôle
+// Mesure l'expression de gene_a et applique un inhibiteur si elle est trop élevée.
+measurement = MEASURE("gene_a", "expression_level")
+
+if measurement > 0.8:
+    STIMULUS_APPLY({
+        "stimulus": "inhibitor",
+        "target": "gene_a",
+        "arguments": {
+            "concentration": 0.5
+        }
+    })

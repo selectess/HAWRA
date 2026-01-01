@@ -1,0 +1,9 @@
+stimulus light_pulse(duration="100ms", intensity=1.0);
+logical_qubit q;
+classical_bit m;
+
+circuit main() {
+    apply light_pulse(duration="50ms", intensity=0.8);
+    H(q);
+    measure q -> m;
+}

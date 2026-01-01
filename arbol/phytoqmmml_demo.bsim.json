@@ -1,0 +1,57 @@
+{
+    "metadata": {
+        "source_arbol": "compiled.arbol",
+        "version": "0.3",
+        "qubit_count": 0,
+        "qubits": []
+    },
+    "instructions": [
+        {
+            "instruction_id": 0,
+            "command": "INITIALIZE",
+            "params": null,
+            "config": {
+                "max_time": 500,
+                "dt": 1.0,
+                "env": {
+                    "light_schedule": []
+                },
+                "quantum": {
+                    "p700_threshold": 0.8,
+                    "decoherence_rate": 0.015
+                },
+                "bio": {
+                    "p700_synthesis_rate": 0.05,
+                    "p700_degradation_rate": 0.1,
+                    "optimal_temp": 35.0,
+                    "genes": {},
+                    "grn": {}
+                }
+            }
+        },
+        {
+            "instruction_id": 1,
+            "command": "RUN_CIRCUIT",
+            "params": {
+                "name": "phytoqmmml_trainer",
+                "args": {
+                    "learning_rate": 0.15,
+                    "coherence": 0.0001,
+                    "noise_level": 0.05
+                }
+            },
+            "config": null
+        },
+        {
+            "instruction_id": 2,
+            "command": "RUN_CIRCUIT",
+            "params": {
+                "name": "phytoqmmml_classifier",
+                "args": {
+                    "threshold": 0.5
+                }
+            },
+            "config": null
+        }
+    ]
+}

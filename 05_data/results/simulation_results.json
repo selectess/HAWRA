@@ -1,0 +1,1492 @@
+{
+    "results": [
+        {
+            "p700_concentration": 0.975,
+            "stability": 0.95,
+            "coherence_factor": 0.95,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.05
+                },
+                "GENE_B": {
+                    "expression_level": 0.05
+                },
+                "GENE_C": {
+                    "expression_level": 0.05
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.9262499999999999,
+            "stability": 0.8999999999999999,
+            "coherence_factor": 0.8999999999999999,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.0875
+                },
+                "GENE_B": {
+                    "expression_level": 0.13700495049504952
+                },
+                "GENE_C": {
+                    "expression_level": 0.08746144949884349
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.8567812499999998,
+            "stability": 0.8499999999999999,
+            "coherence_factor": 0.8499999999999999,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.115625
+                },
+                "GENE_B": {
+                    "expression_level": 0.30132860674636297
+                },
+                "GENE_C": {
+                    "expression_level": 0.11351189000548612
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.7711031249999998,
+            "stability": 0.7999999999999998,
+            "coherence_factor": 0.7999999999999998,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.13671875
+                },
+                "GENE_B": {
+                    "expression_level": 0.5298063849793095
+                },
+                "GENE_C": {
+                    "expression_level": 0.10991297768797735
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.6747152343749997,
+            "stability": 0.7499999999999998,
+            "coherence_factor": 0.7499999999999998,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.1525390625
+                },
+                "GENE_B": {
+                    "expression_level": 0.7951882829703842
+                },
+                "GENE_C": {
+                    "expression_level": 0.08709582184032544
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.5735079492187496,
+            "stability": 0.6999999999999997,
+            "coherence_factor": 0.6999999999999997,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.164404296875
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.06631467366640854
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.47314405810546833,
+            "stability": 0.6499999999999997,
+            "coherence_factor": 0.6499999999999997,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.17330322265625
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.05013775110835218
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.37851524648437457,
+            "stability": 0.5999999999999996,
+            "coherence_factor": 0.5999999999999996,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.1799774169921875
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.03800505918980992
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.2933493160253902,
+            "stability": 0.5499999999999996,
+            "coherence_factor": 0.5499999999999996,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.18498306274414061
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.028905540250903215
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.2200119870190426,
+            "stability": 0.4999999999999996,
+            "coherence_factor": 0.4999999999999996,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.18873729705810546
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.022080901046723188
+                }
+            }
+        },
+        {
+            "p700_concentration": 1.0,
+            "stability": 0.4499999999999996,
+            "coherence_factor": 0.4499999999999996,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 1.0
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.01696242164358817
+                }
+            }
+        },
+        {
+            "p700_concentration": 1.0,
+            "stability": 0.39999999999999963,
+            "coherence_factor": 0.39999999999999963,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 1.0
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.013123562091236907
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.6749999999999998,
+            "stability": 0.34999999999999964,
+            "coherence_factor": 0.34999999999999964,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.8
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.010244417426973459
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.43874999999999975,
+            "stability": 0.29999999999999966,
+            "coherence_factor": 0.29999999999999966,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.65
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.008085058928775873
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.27421874999999973,
+            "stability": 0.24999999999999967,
+            "coherence_factor": 0.24999999999999967,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.5375000000000001
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.006465540055127684
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.1645312499999998,
+            "stability": 0.19999999999999968,
+            "coherence_factor": 0.19999999999999968,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.45312500000000006
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0052509008998915425
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.09460546874999985,
+            "stability": 0.1499999999999997,
+            "coherence_factor": 0.1499999999999997,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.38984375000000004
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.004339921533464436
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.05203300781249989,
+            "stability": 0.09999999999999969,
+            "coherence_factor": 0.09999999999999969,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.3423828125
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.003656687008644106
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.027317329101562433,
+            "stability": 0.049999999999999684,
+            "coherence_factor": 0.049999999999999684,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.30678710937500003
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0031442611150288586
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.013658664550781217,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.28009033203125
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.002759941694817423
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.006829332275390608,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.2600677490234375
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0024717021296588463
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.003414666137695304,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.24505081176757812
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.002255522455789914
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.001707333068847652,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.23378810882568357
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0020933877003882144
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.000853666534423826,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.22534108161926267
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.00197178663383694
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.000426833267211913,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.219005811214447
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0018805858339234842
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.0002134166336059565,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.21425435841083526
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0018121852339883923
+                }
+            }
+        },
+        {
+            "p700_concentration": 0.00010670831680297826,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.21069076880812643
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0017608847840370732
+                }
+            }
+        },
+        {
+            "p700_concentration": 5.335415840148913e-05,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.2080180766060948
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0017224094465735842
+                }
+            }
+        },
+        {
+            "p700_concentration": 2.6677079200744564e-05,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.20601355745457112
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016935529434759671
+                }
+            }
+        },
+        {
+            "p700_concentration": 1.3338539600372282e-05,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.20451016809092834
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016719105661527544
+                }
+            }
+        },
+        {
+            "p700_concentration": 6.669269800186141e-06,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 1.0
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.001655678783160345
+                }
+            }
+        },
+        {
+            "p700_concentration": 3.3346349000930705e-06,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 1.0
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016435049459160378
+                }
+            }
+        },
+        {
+            "p700_concentration": 1.6673174500465352e-06,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 1.0
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016343745679828076
+                }
+            }
+        },
+        {
+            "p700_concentration": 8.336587250232676e-07,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 1.0
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016275267845328849
+                }
+            }
+        },
+        {
+            "p700_concentration": 4.168293625116338e-07,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.8
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016223909469454427
+                }
+            }
+        },
+        {
+            "p700_concentration": 2.084146812558169e-07,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.65
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016185390687548612
+                }
+            }
+        },
+        {
+            "p700_concentration": 1.0420734062790845e-07,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.5375000000000001
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.001615650160111925
+                }
+            }
+        },
+        {
+            "p700_concentration": 5.2103670313954226e-08,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.45312500000000006
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016134834786297229
+                }
+            }
+        },
+        {
+            "p700_concentration": 2.6051835156977113e-08,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.38984375000000004
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016118584675180712
+                }
+            }
+        },
+        {
+            "p700_concentration": 1.3025917578488557e-08,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.3423828125
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016106397091843327
+                }
+            }
+        },
+        {
+            "p700_concentration": 6.512958789244278e-09,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.30678710937500003
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016097256404340287
+                }
+            }
+        },
+        {
+            "p700_concentration": 3.256479394622139e-09,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.28009033203125
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016090400888713007
+                }
+            }
+        },
+        {
+            "p700_concentration": 1.6282396973110696e-09,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.2600677490234375
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016085259251992546
+                }
+            }
+        },
+        {
+            "p700_concentration": 8.141198486555348e-10,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.24505081176757812
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016081403024452202
+                }
+            }
+        },
+        {
+            "p700_concentration": 4.070599243277674e-10,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.23378810882568357
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016078510853796942
+                }
+            }
+        },
+        {
+            "p700_concentration": 2.035299621638837e-10,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.22534108161926267
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016076341725805498
+                }
+            }
+        },
+        {
+            "p700_concentration": 1.0176498108194185e-10,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.219005811214447
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016074714879811916
+                }
+            }
+        },
+        {
+            "p700_concentration": 5.0882490540970924e-11,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.21425435841083526
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016073494745316727
+                }
+            }
+        },
+        {
+            "p700_concentration": 2.5441245270485462e-11,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.21069076880812643
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016072579644445337
+                }
+            }
+        },
+        {
+            "p700_concentration": 1.2720622635242731e-11,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.2080180766060948
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016071893318791795
+                }
+            }
+        },
+        {
+            "p700_concentration": 6.3603113176213655e-12,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.20601355745457112
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016071378574551637
+                }
+            }
+        },
+        {
+            "p700_concentration": 3.1801556588106828e-12,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.20451016809092834
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.001607099251637152
+                }
+            }
+        },
+        {
+            "p700_concentration": 1.5900778294053414e-12,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.20338262606819624
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016070702972736431
+                }
+            }
+        },
+        {
+            "p700_concentration": 7.950389147026707e-13,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.20253696955114717
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016070485815010114
+                }
+            }
+        },
+        {
+            "p700_concentration": 3.9751945735133534e-13,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.20190272716336038
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016070322946715378
+                }
+            }
+        },
+        {
+            "p700_concentration": 1.9875972867566767e-13,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.2014270453725203
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016070200795494324
+                }
+            }
+        },
+        {
+            "p700_concentration": 9.937986433783384e-14,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.2010702840293902
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016070109182078534
+                }
+            }
+        },
+        {
+            "p700_concentration": 4.968993216891692e-14,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.20080271302204264
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016070040472016692
+                }
+            }
+        },
+        {
+            "p700_concentration": 2.484496608445846e-14,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.200602034766532
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.001606998893947031
+                }
+            }
+        },
+        {
+            "p700_concentration": 1.242248304222923e-14,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.200451526074899
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016069950290060525
+                }
+            }
+        },
+        {
+            "p700_concentration": 6.211241521114615e-15,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.20033864455617423
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016069921303003185
+                }
+            }
+        },
+        {
+            "p700_concentration": 3.1056207605573074e-15,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.20025398341713066
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.001606989956271018
+                }
+            }
+        },
+        {
+            "p700_concentration": 1.5528103802786537e-15,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.200190487562848
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016069883257490425
+                }
+            }
+        },
+        {
+            "p700_concentration": 7.764051901393268e-16,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.200142865672136
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.001606987102857561
+                }
+            }
+        },
+        {
+            "p700_concentration": 3.882025950696634e-16,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.20010714925410197
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016069861856889498
+                }
+            }
+        },
+        {
+            "p700_concentration": 1.941012975348317e-16,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.2000803619405765
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016069854978124915
+                }
+            }
+        },
+        {
+            "p700_concentration": 9.705064876741586e-17,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.20006027145543237
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016069849819051478
+                }
+            }
+        },
+        {
+            "p700_concentration": 4.852532438370793e-17,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.20004520359157427
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.00160698459497464
+                }
+            }
+        },
+        {
+            "p700_concentration": 2.4262662191853964e-17,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.2000339026936807
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.001606984304776759
+                }
+            }
+        },
+        {
+            "p700_concentration": 1.2131331095926982e-17,
+            "stability": 0.0,
+            "coherence_factor": 0.0,
+            "genes": {
+                "GENE_A": {
+                    "expression_level": 0.20002542702026052
+                },
+                "GENE_B": {
+                    "expression_level": 1.0
+                },
+                "GENE_C": {
+                    "expression_level": 0.0016069840871283485
+                }
+            }
+        }
+    ],
+    "final_state": {
+        "p700_concentration": 1.2131331095926982e-17,
+        "stability": 0.0,
+        "coherence_factor": 0.0,
+        "genes": {
+            "GENE_A": {
+                "expression_level": 0.20002542702026052
+            },
+            "GENE_B": {
+                "expression_level": 1.0
+            },
+            "GENE_C": {
+                "expression_level": 0.0016069840871283485
+            }
+        }
+    },
+    "environment_history": [
+        {
+            "time": 0.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 5.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 10.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 15.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 20.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 25.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 30.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 35.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 40.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 45.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 50.0,
+            "temperature": 35.0,
+            "light_intensity": 1.0
+        },
+        {
+            "time": 55.0,
+            "temperature": 35.0,
+            "light_intensity": 1.0
+        },
+        {
+            "time": 60.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 65.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 70.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 75.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 80.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 85.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 90.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 95.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 100.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 105.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 110.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 115.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 120.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 125.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 130.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 135.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 140.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 145.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 150.0,
+            "temperature": 35.0,
+            "light_intensity": 0.5
+        },
+        {
+            "time": 155.0,
+            "temperature": 35.0,
+            "light_intensity": 0.5
+        },
+        {
+            "time": 160.0,
+            "temperature": 35.0,
+            "light_intensity": 0.5
+        },
+        {
+            "time": 165.0,
+            "temperature": 35.0,
+            "light_intensity": 0.5
+        },
+        {
+            "time": 170.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 175.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 180.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 185.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 190.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 195.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 200.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 205.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 210.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 215.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 220.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 225.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 230.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 235.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 240.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 245.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 250.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 255.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 260.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 265.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 270.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 275.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 280.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 285.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 290.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 295.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 300.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 305.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 310.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 315.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 320.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 325.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 330.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 335.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 340.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        },
+        {
+            "time": 345.0,
+            "temperature": 35.0,
+            "light_intensity": 0.0
+        }
+    ]
+}

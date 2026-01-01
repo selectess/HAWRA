@@ -1,0 +1,2672 @@
+{
+  "results": [],
+  "final_state": {
+    "p700_concentration": 1.0,
+    "stability": 1.0,
+    "coherence_factor": 1.0,
+    "genes": {}
+  },
+  "environment_history": [],
+  "quantum_history": [
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        1,
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 2,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 3,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 4,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 5,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 6,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        1,
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 2,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 3,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 4,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 5,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 6,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        1,
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 2,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 3,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 4,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 5,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 6,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        1,
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 2,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 3,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 4,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 5,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 6,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        1,
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 2,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 3,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 4,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 5,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 6,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        1,
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 2,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 3,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 4,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 5,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 6,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        1,
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 2,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 3,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 4,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 5,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 6,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        1,
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 2,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 3,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 4,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 5,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 6,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        1,
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 2,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 3,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 4,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 5,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 6,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        1,
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 2,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 3,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 4,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 5,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 6,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        1,
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 2,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 3,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 4,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 5,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 6,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        1,
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 2,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 3,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 4,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 5,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 6,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        1,
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 2,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 3,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 4,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 5,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 6,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        1,
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 2,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 3,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 4,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 5,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 6,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        1,
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 2,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 3,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 4,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 5,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 6,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        1,
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 2,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 3,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 4,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 5,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 6,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        1,
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 2,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 3,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 4,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 5,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 6,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        1,
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 2,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 3,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 4,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 5,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 6,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "CNOT",
+      "targets": [
+        1,
+        2
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 2,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        3
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Y",
+      "targets": [
+        4
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "X",
+      "targets": [
+        5
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        6
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 3,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 4,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "measure": 5,
+      "outcome": 1
+    },
+    {
+      "time": 0.0,
+      "measure": 6,
+      "outcome": 0
+    },
+    {
+      "time": 0.0,
+      "op": "H",
+      "targets": [
+        7
+      ]
+    },
+    {
+      "time": 0.0,
+      "op": "Z",
+      "targets": [
+        7
+      ]
+    },
+    {
+      "time": 0.0,
+      "measure": 7,
+      "outcome": 0
+    }
+  ]
+}

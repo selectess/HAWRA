@@ -1,0 +1,91 @@
+// PhytoQMML Multi-Runs (5 exécutions)
+// Objectif: démontrer la convergence supervisée par répétition de runs
+
+gate H(q) { }
+gate X(q) { }
+gate Y(q) { }
+gate Z(q) { }
+gate CNOT(control, target) { }
+
+stimulus adaptive_light(intensity: float, wavelength: float, duration: float, type: light) { }
+
+circuit phytoqmmml_trainer(learning_rate: float, coherence: float, noise_level: float) {
+    q1: qubit; q2: qubit; q3: qubit;
+    label: bit;
+
+    H(q1); H(q2); H(q3);
+    Y(q1); Z(q2); X(q3);
+    CNOT(q1, q2); CNOT(q2, q3);
+    apply adaptive_light(intensity: 0.8, wavelength: 680.0, duration: 10.0) on q1;
+    label = measure q3;
+}
+
+circuit phytoqmmml_classifier(threshold: float) {
+    q: qubit; m: bit;
+    H(q); Z(q);
+    m = measure q;
+}
+
+// Circuit de monitoring: multiplie les mesures pour affiner l'état par run
+circuit phytoqmmml_monitor(samples: int) {
+    qa: qubit; qb: qubit; qc: qubit; qd: qubit;
+    m1: bit; m2: bit; m3: bit; m4: bit;
+
+    H(qa); H(qb); H(qc); H(qd);
+    Z(qa); Y(qb); X(qc); Z(qd);
+
+    m1 = measure qa;
+    m2 = measure qb;
+    m3 = measure qc;
+    m4 = measure qd;
+}
+
+config {
+    bio { p700_efficiency: 0.85, photosynthetic_rate: 0.92 },
+    quantum { coherence_time: 1e-4, noise_level: 0.05 },
+    training { learning_rate: 0.15, target_efficiency: 0.95 }
+}
+
+// 10 cycles: entraînement + monitoring
+run phytoqmmml_trainer(learning_rate: 0.15, coherence: 1e-4, noise_level: 0.05);
+run phytoqmmml_monitor(samples: 4);
+run phytoqmmml_trainer(learning_rate: 0.15, coherence: 1e-4, noise_level: 0.05);
+run phytoqmmml_monitor(samples: 4);
+run phytoqmmml_trainer(learning_rate: 0.15, coherence: 1e-4, noise_level: 0.05);
+run phytoqmmml_monitor(samples: 4);
+run phytoqmmml_trainer(learning_rate: 0.15, coherence: 1e-4, noise_level: 0.05);
+run phytoqmmml_monitor(samples: 4);
+run phytoqmmml_trainer(learning_rate: 0.15, coherence: 1e-4, noise_level: 0.05);
+run phytoqmmml_monitor(samples: 4);
+// Ajout de 10 runs supplémentaires (trainer+monitor) pour atteindre 20 runs
+run phytoqmmml_trainer(learning_rate: 0.15, coherence: 1e-4, noise_level: 0.05);
+run phytoqmmml_monitor(samples: 4);
+run phytoqmmml_trainer(learning_rate: 0.15, coherence: 1e-4, noise_level: 0.05);
+run phytoqmmml_monitor(samples: 4);
+run phytoqmmml_trainer(learning_rate: 0.15, coherence: 1e-4, noise_level: 0.05);
+run phytoqmmml_monitor(samples: 4);
+run phytoqmmml_trainer(learning_rate: 0.15, coherence: 1e-4, noise_level: 0.05);
+run phytoqmmml_monitor(samples: 4);
+run phytoqmmml_trainer(learning_rate: 0.15, coherence: 1e-4, noise_level: 0.05);
+run phytoqmmml_monitor(samples: 4);
+run phytoqmmml_trainer(learning_rate: 0.15, coherence: 1e-4, noise_level: 0.05);
+run phytoqmmml_monitor(samples: 4);
+run phytoqmmml_trainer(learning_rate: 0.15, coherence: 1e-4, noise_level: 0.05);
+run phytoqmmml_monitor(samples: 4);
+run phytoqmmml_trainer(learning_rate: 0.15, coherence: 1e-4, noise_level: 0.05);
+run phytoqmmml_monitor(samples: 4);
+run phytoqmmml_trainer(learning_rate: 0.15, coherence: 1e-4, noise_level: 0.05);
+run phytoqmmml_monitor(samples: 4);
+run phytoqmmml_trainer(learning_rate: 0.15, coherence: 1e-4, noise_level: 0.05);
+run phytoqmmml_monitor(samples: 4);
+run phytoqmmml_trainer(learning_rate: 0.15, coherence: 1e-4, noise_level: 0.05);
+run phytoqmmml_monitor(samples: 4);
+run phytoqmmml_trainer(learning_rate: 0.15, coherence: 1e-4, noise_level: 0.05);
+run phytoqmmml_monitor(samples: 4);
+run phytoqmmml_trainer(learning_rate: 0.15, coherence: 1e-4, noise_level: 0.05);
+run phytoqmmml_monitor(samples: 4);
+run phytoqmmml_trainer(learning_rate: 0.15, coherence: 1e-4, noise_level: 0.05);
+run phytoqmmml_monitor(samples: 4);
+
+// Classification finale
+run phytoqmmml_classifier(threshold: 0.5);

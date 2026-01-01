@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hawra"
+version = "1.0.0"
+description = "Hardware-Agnostic Wetware-Reliant Architecture: Room-Temperature Biological Quantum Computing"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "CC-BY-4.0"}
+authors = [
+    {name = "Mehdi Wahbi", email = "m.wahbi.move37@atomicmail.io"}
+]
+keywords = [
+    "quantum-computing",
+    "bio-computing",
+    "photosynthetic-coherence",
+    "bio-os",
+    "arbol-language"
+]
+dependencies = [
+    "numpy>=1.20.0",
+    "qutip>=4.6.0",
+    "matplotlib>=3.4.0",
+    "scipy>=1.7.0",
+    "biopython>=1.79"
+]
+
+[project.urls]
+"Homepage" = "https://selectess.github.io/HAWRA/"
+"Repository" = "https://github.com/selectess/HAWRA"
+"DOI" = "https://doi.org/10.5281/zenodo.17908061"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["hawra_simulator*"]

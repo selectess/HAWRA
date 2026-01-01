@@ -1,0 +1,135 @@
+\documentclass[12pt,a4paper,oneside]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+
+% Definition of abstract environment for book class
+\renewenvironment{abstract}{
+    \begin{quotation}
+    \begin{center}
+        \textbf{Abstract}
+    \end{center}
+    \itshape
+}{
+    \end{quotation}
+}
+
+% Configuration of listings for JSON
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{gray!10},
+    stringstyle=\color{blue},
+    keywordstyle=\color{red},
+}
+
+\geometry{margin=2.5cm, headheight=15pt}
+
+% Layout optimization for page density
+\usepackage{setspace}
+\setstretch{1.15} % Slightly increase line spacing for readability and page count
+\usepackage{microtype} % Better character protrusion and font expansion to reduce overfull hboxes
+
+% Section spacing optimization
+\usepackage{titlesec}
+\titlespacing*{\chapter}{0pt}{20pt}{20pt}
+\titlespacing*{\section}{0pt}{15pt}{10pt}
+\titlespacing*{\subsection}{0pt}{10pt}{5pt}
+
+\title{
+    \textbf{Metabiotic Quantum Supremacy}\\
+    \large A Programmable Operating System Executed by Room-Temperature Photosynthetic Coherence
+}
+\author{
+    \textbf{Mehdi Wahbi}\\
+    \small Move37 Initiative, Independent Researcher\\
+    \small ORCID: 0009-0007-0110-9437\\
+    \small Email: \href{mailto:m.wahbi.move37@atomicmail.io}{m.wahbi.move37@atomicmail.io}\\
+    \small \and Move37 AI Team
+}
+\date{
+    \textbf{Document Version: 1.0}\\
+    December, 2025\\
+    \small DOI: \href{https://doi.org/10.5281/zenodo.17908061}{10.5281/zenodo.17908061}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Current quantum computing paradigms are constrained by the necessity of near-absolute zero environments to maintain qubit coherence. Here, we present \textbf{HAWRA} (Hardware-Agnostic Wetware-Reliant Architecture), a bio-physical framework that utilizes the natural excitonic coherence of Photosystem I (PSI) in \textit{Ficus elastica} for room-temperature quantum computation. By engineering a synthetic silica-based biomineralization pathway (Silica Shield), we extend the $T_2$ coherence time of the P700 complex to 41.67 ps, enabling high-fidelity gate operations at 300 K. We introduce a complete computational stack, including the \textbf{Arbol} domain-specific language for biological programming and the \textbf{BioOS} metabolic operating system. Numerical validation via multiphysics simulations (HAWRA-Sim) demonstrates a quantum gate fidelity of 0.952 and robust integration with the host's gene regulatory networks. Our findings suggest that the future of scalable, energy-efficient quantum logic lies not in silicon cryogenics, but in the engineered metabolic substrate of living organisms.
+\end{abstract}
+
+\tableofcontents
+
+\chapter{Introduction: The Era of Phyto-Quantum Computing}
+\input{sections/introduction}
+
+\chapter{Mathematical Foundations of PQPE}
+\input{sections/math_foundations}
+
+\chapter{Genomic Engineering: The HAWRA Plasmid}
+\input{sections/genomics}
+
+\chapter{The ARBOL Language: Syntax and Semantics}
+\input{sections/arbol_language}
+
+\chapter{The Arbol v0.3 Compiler}
+\input{sections/compiler}
+
+\chapter{The BioOS Operating System}
+\input{sections/bioos}
+
+\chapter{Unified Multiphysics Simulation}
+\input{sections/simulator}
+
+\chapter{Cyber-Physical Interface: Jetson Client}
+\input{sections/hardware_interface}
+
+\chapter{Experimental Results and Proofs of Concept}
+\input{sections/results}
+
+\chapter{Phyto-Quantum Advantage: Comparative Analysis}
+\input{sections/analysis}
+
+\chapter{Ethical Considerations and Future Perspectives}
+\input{sections/ethics_future}
+
+\chapter{Conclusion}
+\input{sections/conclusion}
+
+\appendix
+\chapter{Arbol Language Specifications}
+\input{sections/appendix_arbol}
+
+\chapter{Standard Operating Procedures (SOP)}
+\input{sections/appendix_sop}
+
+\chapter{Genomic Sequences}
+\input{sections/appendix_genomics}
+
+\chapter{System Schematics and Architecture}
+\input{sections/appendix_schematics}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
