@@ -21,10 +21,25 @@ Explore our professional web interface for technical documentation and interacti
 The repository is organized following the 00-04 academic convention for clarity and reproducibility:
 
 - **[00_docs/](00_docs/)**: Full scientific reports, theoretical models (PQPE), and Roadmap 2026.
-- **[01_genomics/](01_genomics/)**: Validated GenBank files (`HAWRA_FINAL_VALIDATED.gb`) and CRISPR-Cas9 protocols.
+  - 📄 [Scientific Report (PDF/MD)](00_docs/scientific/HAWRA_Scientific_Report_Full.md)
+- **[01_genomics/](01_genomics/)**: Validated GenBank files and CRISPR-Cas9 protocols.
+  - 🧬 [pHAWRA_v5.8_Validated.gb](01_genomics/plasmids/validated/HAWRA_FINAL_VALIDATED.gb)
 - **[02_bioos_engine/](02_bioos_engine/)**: Core Biological Operating System, Arbol DSL compiler, and multiphysics engine.
+  - ⚙️ [Arbol Compiler](02_bioos_engine/arbol_compiler/)
 - **[03_quantum_simulation/](03_quantum_simulation/)**: Lindblad decoherence models and Bloch sphere dynamics simulations.
+  - ⚛️ [Lindblad Solver](03_quantum_simulation/lindblad_master_equation.py)
 - **[04_validation_benchmarks/](04_validation_benchmarks/)**: "First Bloom" simulation scenarios and benchmark results.
+  - 📊 [Benchmark Scenario](04_validation_benchmarks/first_bloom.arbol)
+
+---
+
+## 🔬 Scientific Validation
+The project architecture has been numerically validated using a **Digital Twin** approach, coupling quantum master equations with biological metabolic flux analysis.
+
+### Theoretical Pillars:
+1. **P700 Coherence**: T2 prolongation via biomineralized Silica cage.
+2. **Lindblad-Hill Coupling**: Unified mathematical framework for bio-quantum state evolution.
+3. **BSIM Architecture**: Biological Instruction Set for molecular orchestration.
 
 ---
 
