@@ -29,6 +29,8 @@ The HAWRA architecture has successfully passed the end-to-end numerical validati
 To facilitate global recognition and media coverage, we provide a dedicated press kit and executive summary for journalists and stakeholders.
 - 📰 **[Press Kit](PRESS_KIT.md)**: Key talking points, impact analysis, and media assets.
 - 🚀 **[Executive Summary](EXECUTIVE_SUMMARY.md)**: 2-page strategic overview of the project.
+- 🗺️ **[Roadmap 2026](ROADMAP_2026.md)**: Interactive project milestones and future vision.
+- 📣 **[Launch Templates](LAUNCH_TEMPLATES.md)**: Ready-to-use templates for social media (LinkedIn, X, Email).
 - 🧪 **[Zenodo Archive](https://doi.org/10.5281/zenodo.17908061)**: Formal academic record and data repository.
 
 ---
