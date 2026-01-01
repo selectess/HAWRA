@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation | HAWRA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">HAWRA</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="docs.html">Documentation</a></li>
+                <li><a href="demo.html">Démo Simulation</a></li>
+                <li><a href="https://github.com/selectess/HAWRA" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <span class="tag">Technical Documentation</span>
+            <h1>Architecture HAWRA-PQPE</h1>
+            <p style="margin-bottom: 2rem; color: #a0a0a0;">Documentation de référence sur l'Entité de Traitement Quanti-Phytosynthétique (PQPE).</p>
+
+            <div class="card" style="margin-bottom: 3rem; border-left: 4px solid var(--secondary-color);">
+                <h3>Résumé du Projet</h3>
+                <p>HAWRA (Hardware-Agnostic Wetware-Reliant Architecture) est une infrastructure de calcul vivant. Elle détourne les mécanismes de transport d'énergie de la photosynthèse pour effectuer des opérations logiques quantiques à température ambiante, au sein de cellules végétales de <i>Ficus elastica</i> génétiquement modifiées.</p>
+            </div>
+
+            <div class="card" style="margin-bottom: 3rem;">
+                <h3>1. Le Modèle Formel PQPE</h3>
+                <p>Le système repose sur l'exploitation du centre de réaction P700. L'évolution de l'état quantique est décrite par l'équation de Lindblad pour les systèmes quantiques ouverts :</p>
+                <div class="code-block">
+                    dρ/dt = -i[H, ρ] + Σ [ L_i ρ L_i† - 1/2 {L_i† L_i, ρ} ]
+                </div>
+                <p>Où l'Hamiltonien <i>H</i> modélise l'interaction excitonique induite par les impulsions lumineuses (light pulses) programmées par le BioOS.</p>
+            </div>
+
+            <div class="card" style="margin-bottom: 3rem;">
+                <h3>2. Langage Arbol & Compilation</h3>
+                <p>Arbol est le premier DSL (Domain Specific Language) permettant de programmer la matière vivante. Le compilateur BioOS traduit le code Arbol en instructions BSIM (Biological Instruction Set Architecture).</p>
+                <div class="code-block">
+// Définition d'un circuit Arbol
+qubit p700_q1;
+light_pulse trigger { intensity: 0.85, duration: 120fs };
+
+apply(trigger, p700_q1);
+H(p700_q1); // Application d'une porte de Hadamard
+measure(p700_q1);
+                </div>
+            </div>
+
+            <div class="card" style="margin-bottom: 3rem;">
+                <h3>3. Validation Numérique (Digital Twin)</h3>
+                <p>Le simulateur multiphysique unifie trois moteurs de calcul synchronisés :</p>
+                <ul>
+                    <li><strong>Moteur Environnemental :</strong> Gère les flux photoniques et thermiques.</li>
+                    <li><strong>Moteur Biologique :</strong> Résout les ODE de régulation génique (GRN) via la cinétique de Hill.</li>
+                    <li><strong>Moteur Quantique :</strong> Simule la dynamique de cohérence au sein du PSI.</li>
+                </ul>
+            </div>
+
+            <section id="roadmap-summary" style="margin: 4rem 0;">
+                <h2 style="font-size: 1.5rem; margin-bottom: 2rem;">Feuille de Route & Perspectives</h2>
+                <div class="grid">
+                    <div class="card" style="padding: 1rem;">
+                        <span class="roadmap-date">2026</span>
+                        <p>Synthèse de la cassette génétique et validation <i>in vitro</i> du Silica Shield.</p>
+                    </div>
+                    <div class="card" style="padding: 1rem;">
+                        <span class="roadmap-date">2027</span>
+                        <p>Interconnexion photonique entre tissus végétaux pour le calcul distribué.</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Projet HAWRA - Move37 Initiative.</p>
+    </footer>
+</body>
+</html>
