@@ -15,47 +15,76 @@ class QuantumEngine:
         # Sorties des canaux de lecture
         self.luc_green_output = 0.0 # Canal |0> (stable)
         self.luc_red_output = 0.0   # Canal |1> (instable)
+        
+        # État quantique simplifié (amplitude de probabilité pour |0> et |1>)
+        self.qubit_state = [1.0, 0.0] # Initialement dans l'état |0>
 
         # Paramètres du modèle
         self.p700_excitation_threshold = config.get('p700_threshold', 0.8)
-        self.decoherence_rate_slow = config.get('decoherence_rate_slow', 0.1) # Effondrement lent -> ATP
-        self.decoherence_rate_fast = config.get('decoherence_rate_fast', 0.8) # Effondrement rapide -> ROS
-        self.fast_collapse_probability = config.get('fast_collapse_probability', 0.2) # Probabilité d'un effondrement rapide
+        self.decoherence_rate = config.get('decoherence_rate', 0.01)
+
+    def apply_gate(self, gate_name, qubits):
+        """Applique une porte quantique à l'état du qubit."""
+        print(f"QUANTUM_OP: Applying {gate_name} to {qubits}")
+        if gate_name == 'H':
+            # Hadamard simple: |0> -> (|0>+|1>)/sqrt(2), |1> -> (|0>-|1>)/sqrt(2)
+            # Ici on simule l'effet sur les probabilités de mesure
+            if self.qubit_state == [1.0, 0.0] or self.qubit_state == [0.0, 1.0]:
+                self.qubit_state = [0.5, 0.5] # Superposition équilibrée
+            else:
+                self.qubit_state = [1.0, 0.0] # Retour à la base (simplifié)
+        elif gate_name == 'X':
+            self.qubit_state = [self.qubit_state[1], self.qubit_state[0]]
+        elif gate_name == 'CCNOT':
+            # Toffoli simplified for current single-qubit focus
+            # In a real multi-qubit engine, this would affect 3 qubits
+            # For HAWRA v1, we treat it as a conditional flip if the "system" allows it
+            print("QUANTUM_OP: CCNOT (Toffoli) - multi-qubit gates are experimental in HAWRA v1")
+            self.qubit_state = [self.qubit_state[1], self.qubit_state[0]]
+        elif gate_name == 'DJ_ORACLE_CONSTANT':
+            # Oracle constant: f(x) = 0 or f(x) = 1. No change to the query qubit.
+            print("QUANTUM_OP: DJ Oracle (Constant)")
+            pass 
+        elif gate_name == 'DJ_ORACLE_BALANCED':
+            # Oracle balanced: f(0)=0, f(1)=1 (CNOT)
+            print("QUANTUM_OP: DJ Oracle (Balanced)")
+            # Simule l'effet d'un CNOT sur la phase du qubit cible
+            self.qubit_state = [self.qubit_state[1], self.qubit_state[0]]
+
+    def measure(self, qubit):
+        """Mesure le qubit et déclenche la bioluminescence."""
+        print(f"MEASURE: Qubit {qubit}")
+        # La mesure réduit l'état
+        if random.random() < self.qubit_state[0]:
+            self.p700_state = 0
+            self.luc_green_output = 1.0
+            self.qubit_state = [1.0, 0.0]
+        else:
+            self.p700_state = 1
+            self.luc_red_output = 1.0
+            self.qubit_state = [0.0, 1.0]
 
     def update_state(self, p700_concentration):
-        """Met à jour l'état de P700 et des canaux de lecture."""
-        # Réinitialisation des sorties à chaque pas
-        self.luc_green_output = 0.0
-        self.luc_red_output = 0.0
+        """Met à jour l'état de P700 en fonction de la concentration et de la décohérence."""
+        # Réinitialisation des sorties de lecture (impulsions brèves)
+        self.luc_green_output = max(0, self.luc_green_output - 0.2)
+        self.luc_red_output = max(0, self.luc_red_output - 0.2)
 
-        if self.p700_state == 0:
-            # Tente d'exciter P700 si la concentration est suffisante
-            if p700_concentration > self.p700_excitation_threshold:
-                excitation_prob = (p700_concentration - self.p700_excitation_threshold) / (1.0 - self.p700_excitation_threshold)
-                if random.random() < excitation_prob:
-                    self.p700_state = 1
-                    # print("P700 EXCITÉ")
-        else: # p700_state == 1
-            # P700* est excité, il peut s'effondrer
-            if random.random() < self.fast_collapse_probability:
-                # Effondrement RAPIDE (simule production de ROS)
-                if random.random() < self.decoherence_rate_fast:
-                    self.p700_state = 0
-                    self.luc_red_output = 1.0 # Le canal rouge s'active
-                    # print("EFFONDREMENT RAPIDE -> CANAL ROUGE")
-            else:
-                # Effondrement LENT (simule production d'ATP)
-                if random.random() < self.decoherence_rate_slow:
-                    self.p700_state = 0
-                    self.luc_green_output = 1.0 # Le canal vert s'active
-                    # print("EFFONDREMENT LENT -> CANAL VERT")
+        # Si le P700 est bas, la cohérence est perdue
+        if p700_concentration < self.p700_excitation_threshold:
+            # Décohérence vers l'état fondamental
+            if self.qubit_state[1] > 0:
+                decay = self.decoherence_rate * (1.0 - p700_concentration)
+                self.qubit_state[1] = max(0, self.qubit_state[1] - decay)
+                self.qubit_state[0] = 1.0 - self.qubit_state[1]
 
     def get_state(self):
         """Retourne l'état actuel pour le logging."""
         return {
             "p700_state": self.p700_state,
             "luc_green_output": self.luc_green_output,
-            "luc_red_output": self.luc_red_output
+            "luc_red_output": self.luc_red_output,
+            "qubit_state": self.qubit_state
         }
 
     def update(self, time, dt, bio_state):

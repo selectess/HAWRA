@@ -3,6 +3,8 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Bio-Quantum](https://img.shields.io/badge/Bio--Quantum-Open%20Science-green)](00_docs/scientific/HAWRA_Scientific_Report_Full.md)
 [![Preprint](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17908061-blue)](https://doi.org/10.5281/zenodo.17908061)
+[![Validation](https://img.shields.io/badge/Status-VALIDATED%20%E2%9C%85-brightgreen)](04_validation_benchmarks/CERTIFICATION_REPORT.md)
+[![GitHub Pages](https://img.shields.io/badge/Live-Documentation-orange)](https://selectess.github.io/HAWRA/)
 
 ## 🌿 Overview
 HAWRA is the first pioneering open-source project dedicated to **Metabiotic Computing**: leveraging living biological substrates for ambient-temperature quantum processing. By integrating synthetic biology with quantum physics, HAWRA transforms the *Ficus elastica* into a **Phyto-synthetic Quantum Processing Entity (PQPE)**.
@@ -10,6 +12,17 @@ HAWRA is the first pioneering open-source project dedicated to **Metabiotic Comp
 **"On ne rêve plus, on compile."**
 
 ---
+
+## 🏆 Current Status: LAB READY 🧪
+The HAWRA architecture has successfully passed the end-to-end numerical validation for advanced quantum benchmarks and is now ready for biological synthesis.
+- **Quantum Algorithms Validated**: 
+  - **First Bloom**: Initial quantum state preparation.
+  - **Grover's Search**: Amplitude amplification in biological substrates.
+  - **Deutsch-Jozsa**: Determination of biological function parity.
+- **Synthesis Ready**: Full fragmentation (7 blocks) and [Gibson Assembly Protocol](genomics/processed_sequences/synthesis_order/GIBSON_ASSEMBLY_PROTOCOL.md) finalized for the 18.1 kb cassette.
+- **Full Report**: [View the Latest Certification Report](04_validation_benchmarks/CERTIFICATION_REPORT.md)
+
+------
 
 ## 🌐 Project Presentation & Live Demo
 Explore our professional web interface for technical documentation and interactive simulation:

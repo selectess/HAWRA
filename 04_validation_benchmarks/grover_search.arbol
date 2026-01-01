@@ -1,0 +1,57 @@
+// HAWRA Grover Search Experiment (Simplified 2-qubit)
+// Objective: Find a specific biological state (marked by Oracle) using Grover's Algorithm
+
+genes {
+    gene "psaA" with basal_rate = 0.1, degradation_rate = 0.05, light_sensitivity = 0.8, peak_wavelength = 700;
+    gene "CRY2" with basal_rate = 0.05, light_sensitivity = 0.9, peak_wavelength = 450;
+    gene "LUC" with basal_rate = 0.0, degradation_rate = 0.1;
+}
+
+grn {
+    "CRY2" activates "psaA" with weight = 2.0;
+    "psaA" activates "LUC" with weight = 1.5;
+}
+
+LOGICAL_QUBIT q0 IS { activator: psaA };
+LOGICAL_QUBIT q1 IS { activator: psaA };
+
+run {
+    step(100.0);
+}
+
+// 1. Initialization: Superposition
+H(q0);
+H(q1);
+
+// 2. Oracle (Marking state |11>)
+// In 2 qubits, CCNOT on q0, q1 with an ancilla would mark it.
+// Here we simulate the phase flip via biological feedback.
+X(q0);
+X(q1);
+H(q1);
+// Simplified CCNOT logic
+CCNOT(q0, q1); 
+H(q1);
+X(q0);
+X(q1);
+
+// 3. Diffusion Operator (Inversion about the mean)
+H(q0);
+H(q1);
+X(q0);
+X(q1);
+H(q1);
+CCNOT(q0, q1);
+H(q1);
+X(q0);
+X(q1);
+H(q0);
+H(q1);
+
+run {
+    step(50.0);
+}
+
+// 4. Measurement
+measure q0;
+measure q1;

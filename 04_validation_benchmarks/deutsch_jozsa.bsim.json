@@ -85,24 +85,65 @@
             "instruction_id": 2,
             "command": "QUANTUM_OP",
             "params": {
-                "gate": "H",
+                "gate": "X",
                 "qubits": [
-                    "q1"
+                    "q_target"
                 ]
             }
         },
         {
             "instruction_id": 3,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "H",
+                "qubits": [
+                    "q_input"
+                ]
+            }
+        },
+        {
+            "instruction_id": 4,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "H",
+                "qubits": [
+                    "q_target"
+                ]
+            }
+        },
+        {
+            "instruction_id": 5,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "DJ_ORACLE_BALANCED",
+                "qubits": [
+                    "q_input",
+                    "q_target"
+                ]
+            }
+        },
+        {
+            "instruction_id": 6,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "H",
+                "qubits": [
+                    "q_input"
+                ]
+            }
+        },
+        {
+            "instruction_id": 7,
             "command": "RUN_UNTIL",
             "params": {
                 "time": 150.0
             }
         },
         {
-            "instruction_id": 4,
+            "instruction_id": 8,
             "command": "MEASURE",
             "params": {
-                "qubit": "q1",
+                "qubit": "q_input",
                 "classical_bit": null
             }
         }

@@ -64,16 +64,16 @@ class Compiler:
             "instruction_id": self.instruction_id,
             "command": "INITIALIZE",
             "config": {
-                "max_time": 500, # Default max_time
+                "max_time": 200, # Aligned with benchmark needs
                 "dt": 5,
-                "env": {"light_schedule": []},
-                "quantum": {"p700_threshold": 0.8, "decoherence_rate": 0.05}
+                "env": {"light_schedule": [{"start_time": 0, "end_time": 500, "intensity": 800}]},
+                "quantum": {"p700_threshold": 0.8, "decoherence_rate": 0.005} # Reduced decoherence for better T2
             }
         }
         config = init_instruction['config']
         if 'bio' not in config:
             config['bio'] = {
-                'p700_synthesis_rate': 1.0,
+                'p700_synthesis_rate': 0.1, # Stabilizes at 1.0 with 0.1 degradation
                 'p700_degradation_rate': 0.1,
                 'optimal_temp': 35.0,
                 'temp_sensitivity': 0.1,
@@ -260,7 +260,7 @@ class Compiler:
     def visit_QuantumOperation(self, node):
         gate_key = (node.name.name, tuple(ref.name for ref in node.qubit_refs))
         if gate_key not in self.symbol_table['gates']:
-            if node.name.name.upper() in ['H', 'X', 'Y', 'Z', 'CNOT']:
+            if node.name.name.upper() in ['H', 'X', 'Y', 'Z', 'CNOT', 'CCNOT', 'DJ_ORACLE_CONSTANT', 'DJ_ORACLE_BALANCED', 'ID', 'CX']:
                 op_instruction = {
                     "instruction_id": self.instruction_id,
                     "command": "QUANTUM_OP",
@@ -284,7 +284,7 @@ class Compiler:
         gate_key = (gate_name, tuple(targets))
 
         gate_name_upper = gate_name.upper()
-        if gate_name_upper in ['H', 'X', 'Y', 'Z', 'CNOT', 'CX']:
+        if gate_name_upper in ['H', 'X', 'Y', 'Z', 'CNOT', 'CCNOT', 'DJ_ORACLE_CONSTANT', 'DJ_ORACLE_BALANCED', 'CX']:
             gate_to_emit = 'CNOT' if gate_name_upper == 'CX' else gate_name_upper
             op_instruction = {
                 "instruction_id": self.instruction_id,

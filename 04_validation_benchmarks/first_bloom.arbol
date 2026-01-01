@@ -17,13 +17,13 @@ LOGICAL_QUBIT q1 IS {
 };
 
 run {
-    step(0.1);
+    step(100.0);
 }
 
 H(q1);
 
 run {
-    step(0.05);
+    step(50.0);
 }
 
 measure q1;

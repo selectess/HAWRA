@@ -1,0 +1,39 @@
+// HAWRA Deutsch-Jozsa Experiment
+// Objective: Determine if a biological function is Constant or Balanced in a single query
+
+genes {
+    gene "psaA" with basal_rate = 0.1, degradation_rate = 0.05, light_sensitivity = 0.8, peak_wavelength = 700;
+    gene "CRY2" with basal_rate = 0.05, light_sensitivity = 0.9, peak_wavelength = 450;
+    gene "LUC" with basal_rate = 0.0, degradation_rate = 0.1;
+}
+
+grn {
+    "CRY2" activates "psaA" with weight = 2.0;
+    "psaA" activates "LUC" with weight = 1.5;
+}
+
+LOGICAL_QUBIT q_input IS { activator: psaA };
+LOGICAL_QUBIT q_target IS { activator: psaA };
+
+run {
+    step(100.0);
+}
+
+// 1. Initialization
+X(q_target); // State |1>
+H(q_input);  // State |+>
+H(q_target); // State |->
+
+// 2. Oracle (Balanced Example)
+DJ_ORACLE_BALANCED(q_input, q_target);
+
+// 3. Final Interference
+H(q_input);
+
+run {
+    step(50.0);
+}
+
+// 4. Measurement
+// If q_input is 1, the function is Balanced. If 0, it's Constant.
+measure q_input;

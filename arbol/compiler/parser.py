@@ -90,7 +90,7 @@ class Parser:
             return self.parse_run_block()
         elif token.type == 'CONFIG':
             return self.parse_config_definition()
-        elif token.type in ['H', 'X', 'Y', 'Z', 'CNOT', 'ID', 'CX']:
+        elif token.type in ['H', 'X', 'Y', 'Z', 'CNOT', 'CCNOT', 'DJ_ORACLE_CONSTANT', 'DJ_ORACLE_BALANCED', 'ID', 'CX']:
             return self.parse_quantum_gate()
         else:
             if token and hasattr(token, 'type') and hasattr(token, 'line') and hasattr(token, 'column'):

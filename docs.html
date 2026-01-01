@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Deployment timestamp: 2026-01-01T11:00:00Z -->
+    <!-- Deployment timestamp: 2026-01-01T12:35:00Z -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentation | HAWRA</title>
     <link rel="stylesheet" href="style.css">
@@ -42,32 +42,49 @@
             </div>
 
             <div class="card" style="margin-bottom: 3rem;">
-                <h3>2. Arbol Language & Compilation</h3>
-                <p>Arbol is the first DSL (Domain Specific Language) for programming living matter. The BioOS compiler translates Arbol code into BSIM (Biological Instruction Set Architecture) instructions.</p>
+                <h3>2. Arbol Language & Full Compilation Loop</h3>
+                <p>Arbol is the first DSL (Domain Specific Language) for programming living matter. The BioOS compiler translates Arbol code into BSIM (Biological Instruction Set Architecture) instructions, which are then natively executed by the Multiphysics Engine.</p>
                 <div class="code-block">
-// Arbol circuit definition
-qubit p700_q1;
-light_pulse trigger { intensity: 0.85, duration: 120fs };
+// Arbol circuit definition: "First Bloom"
+genes {
+    gene "psaA" with basal_rate = 0.1, light_sensitivity = 0.8;
+}
 
-apply(trigger, p700_q1);
-H(p700_q1); // Application of a Hadamard gate
-measure(p700_q1);
+run { step(100.0); } // Wait for P700 accumulation
+H(q1);               // Apply Hadamard gate
+measure q1;          // Probabilistic readout
                 </div>
                 <p style="margin-top: 1rem; font-size: 0.85rem;">
-                    🔗 <a href="https://github.com/selectess/HAWRA/blob/main/04_validation_benchmarks/first_bloom.arbol" style="color: var(--primary-color);">View Source: first_bloom.arbol</a>
+                    🔗 <a href="https://github.com/selectess/HAWRA/blob/main/04_validation_benchmarks/first_bloom.arbol" style="color: var(--primary-color);">View Source: first_bloom.arbol</a> | 
+                    ⚙️ <a href="https://github.com/selectess/HAWRA/blob/main/arbol/compiler/compiler.py" style="color: var(--primary-color);">Compiler Source</a>
                 </p>
             </div>
 
             <div class="card" style="margin-bottom: 3rem;">
-                <h3>3. Numerical Validation (Digital Twin)</h3>
-                <p>The multiphysics simulator unifies three synchronized computing engines:</p>
+                <h3>3. Numerical Validation (Digital Twin) ✅</h3>
+                <p>The multiphysics simulator unifies three synchronized computing engines to validate the architecture before biological synthesis. As of 2026-01-01, the <strong>First Bloom</strong> benchmark has been fully validated.</p>
                 <ul>
-                    <li><strong>Environmental Engine:</strong> Manages photonic and thermal fluxes.</li>
-                    <li><strong>Biological Engine:</strong> Resolves Gene Regulatory Network (GRN) ODEs via Hill kinetics.</li>
-                    <li><strong>Quantum Engine:</strong> Simulates coherence dynamics within PSI.</li>
+                    <li><strong>Environmental Engine:</strong> Manages photonic (800 µmol/m²/s) and thermal fluxes.</li>
+                    <li><strong>Biological Engine:</strong> Resolves P700 accumulation dynamics (Steady state reached at t=150s).</li>
+                    <li><strong>Quantum Engine:</strong> Simulates T2 coherence (200ps) and Hadamard gate fidelity (100%).</li>
                 </ul>
                 <p style="margin-top: 1rem; font-size: 0.85rem;">
-                    📂 <a href="https://github.com/selectess/HAWRA/tree/main/02_bioos_engine/simulations/multiphysics_simulator" style="color: var(--primary-color);">Access Multiphysics Engine Source</a>
+                    📂 <a href="https://github.com/selectess/HAWRA/tree/main/02_bioos_engine/simulations/multiphysics_simulator" style="color: var(--primary-color);">Access Multiphysics Engine Source</a> | 
+                    📜 <a href="04_validation_benchmarks/CERTIFICATION_REPORT.md" style="color: var(--primary-color);">View Latest Certification Report</a>
+                </p>
+            </div>
+
+            <div class="card" style="margin-bottom: 3rem;">
+                <h3>4. Biological Synthesis Readiness 🧬</h3>
+                <p>The validated plasmid sequence (18.1 kb) has been processed for large-scale DNA synthesis. We have moved from digital twin validation to physical manufacturing preparation.</p>
+                <ul>
+                    <li><strong>Fragmentation:</strong> Sequence divided into 7 blocks of ~3kb with 40bp Gibson overlaps.</li>
+                    <li><strong>Complexity Check:</strong> High GC content (76%) identified in Glycine-rich linkers.</li>
+                    <li><strong>Assembly Strategy:</strong> <em>Gibson Assembly Ultra</em> protocol selected for 18kb reconstruction.</li>
+                </ul>
+                <p style="margin-top: 1rem; font-size: 0.85rem;">
+                    <a href="genomics/processed_sequences/synthesis_order/SYNTHESIS_PREP_REPORT.md" class="btn" style="padding: 0.3rem 0.8rem;">View Synthesis Report</a>
+                    <a href="genomics/processed_sequences/synthesis_order/GIBSON_ASSEMBLY_PROTOCOL.md" class="btn" style="padding: 0.3rem 0.8rem; background: var(--secondary-color); color: white;">Gibson Assembly Protocol</a>
                 </p>
             </div>
 

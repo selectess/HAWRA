@@ -1,0 +1,310 @@
+{
+    "metadata": {
+        "source_arbol": "compiled.arbol",
+        "version": "0.1"
+    },
+    "instructions": [
+        {
+            "instruction_id": 0,
+            "command": "INITIALIZE",
+            "config": {
+                "max_time": 200,
+                "dt": 5,
+                "env": {
+                    "light_schedule": [
+                        {
+                            "start_time": 0,
+                            "end_time": 500,
+                            "intensity": 800
+                        }
+                    ]
+                },
+                "quantum": {
+                    "p700_threshold": 0.8,
+                    "decoherence_rate": 0.005
+                },
+                "bio": {
+                    "p700_synthesis_rate": 0.1,
+                    "p700_degradation_rate": 0.1,
+                    "optimal_temp": 35.0,
+                    "temp_sensitivity": 0.1,
+                    "genes": {
+                        "psaA": {
+                            "basal_rate": 0.1,
+                            "degradation_rate": 0.05,
+                            "light_sensitivity": 0.8,
+                            "peak_wavelength": 700.0
+                        },
+                        "CRY2": {
+                            "basal_rate": 0.05,
+                            "degradation_rate": 0.1,
+                            "light_sensitivity": 0.9,
+                            "peak_wavelength": 450.0
+                        },
+                        "LUC": {
+                            "basal_rate": 0.0,
+                            "degradation_rate": 0.1,
+                            "light_sensitivity": 0.0
+                        }
+                    },
+                    "grn": {
+                        "psaA": {
+                            "regulators": [
+                                {
+                                    "gene": "CRY2",
+                                    "type": "activator",
+                                    "weight": 2.0,
+                                    "hill_coefficient": 2.0,
+                                    "half_max_concentration": 0.5
+                                }
+                            ]
+                        },
+                        "LUC": {
+                            "regulators": [
+                                {
+                                    "gene": "psaA",
+                                    "type": "activator",
+                                    "weight": 1.5,
+                                    "hill_coefficient": 2.0,
+                                    "half_max_concentration": 0.5
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "instruction_id": 1,
+            "command": "RUN_UNTIL",
+            "params": {
+                "time": 100.0
+            }
+        },
+        {
+            "instruction_id": 2,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "H",
+                "qubits": [
+                    "q0"
+                ]
+            }
+        },
+        {
+            "instruction_id": 3,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "H",
+                "qubits": [
+                    "q1"
+                ]
+            }
+        },
+        {
+            "instruction_id": 4,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "X",
+                "qubits": [
+                    "q0"
+                ]
+            }
+        },
+        {
+            "instruction_id": 5,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "X",
+                "qubits": [
+                    "q1"
+                ]
+            }
+        },
+        {
+            "instruction_id": 6,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "H",
+                "qubits": [
+                    "q1"
+                ]
+            }
+        },
+        {
+            "instruction_id": 7,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "CCNOT",
+                "qubits": [
+                    "q0",
+                    "q1"
+                ]
+            }
+        },
+        {
+            "instruction_id": 8,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "H",
+                "qubits": [
+                    "q1"
+                ]
+            }
+        },
+        {
+            "instruction_id": 9,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "X",
+                "qubits": [
+                    "q0"
+                ]
+            }
+        },
+        {
+            "instruction_id": 10,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "X",
+                "qubits": [
+                    "q1"
+                ]
+            }
+        },
+        {
+            "instruction_id": 11,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "H",
+                "qubits": [
+                    "q0"
+                ]
+            }
+        },
+        {
+            "instruction_id": 12,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "H",
+                "qubits": [
+                    "q1"
+                ]
+            }
+        },
+        {
+            "instruction_id": 13,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "X",
+                "qubits": [
+                    "q0"
+                ]
+            }
+        },
+        {
+            "instruction_id": 14,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "X",
+                "qubits": [
+                    "q1"
+                ]
+            }
+        },
+        {
+            "instruction_id": 15,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "H",
+                "qubits": [
+                    "q1"
+                ]
+            }
+        },
+        {
+            "instruction_id": 16,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "CCNOT",
+                "qubits": [
+                    "q0",
+                    "q1"
+                ]
+            }
+        },
+        {
+            "instruction_id": 17,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "H",
+                "qubits": [
+                    "q1"
+                ]
+            }
+        },
+        {
+            "instruction_id": 18,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "X",
+                "qubits": [
+                    "q0"
+                ]
+            }
+        },
+        {
+            "instruction_id": 19,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "X",
+                "qubits": [
+                    "q1"
+                ]
+            }
+        },
+        {
+            "instruction_id": 20,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "H",
+                "qubits": [
+                    "q0"
+                ]
+            }
+        },
+        {
+            "instruction_id": 21,
+            "command": "QUANTUM_OP",
+            "params": {
+                "gate": "H",
+                "qubits": [
+                    "q1"
+                ]
+            }
+        },
+        {
+            "instruction_id": 22,
+            "command": "RUN_UNTIL",
+            "params": {
+                "time": 150.0
+            }
+        },
+        {
+            "instruction_id": 23,
+            "command": "MEASURE",
+            "params": {
+                "qubit": "q0",
+                "classical_bit": null
+            }
+        },
+        {
+            "instruction_id": 24,
+            "command": "MEASURE",
+            "params": {
+                "qubit": "q1",
+                "classical_bit": null
+            }
+        }
+    ]
+}

@@ -15,6 +15,49 @@ class MultiphysicsSimulator:
         self.dt = config.get('dt', 1)
         self.log = []
 
+    def run_bsim(self, bsim_data):
+        """Exécute un programme complet au format BSIM."""
+        print(f"Starting BSIM execution: {bsim_data.get('metadata', {}).get('source_arbol', 'unknown')}")
+        instructions = bsim_data.get('instructions', [])
+        
+        for instr in instructions:
+            command = instr.get('command')
+            params = instr.get('params', {})
+            
+            if command == 'INITIALIZE':
+                # La configuration a déjà été faite dans __init__, mais on peut la mettre à jour
+                config = instr.get('config', {})
+                self.max_time = config.get('max_time', self.max_time)
+                self.dt = config.get('dt', self.dt)
+                print(f"BSIM: Re-initialized with max_time={self.max_time}")
+            
+            elif command == 'RUN_UNTIL':
+                target_time = params.get('time', self.time)
+                print(f"BSIM: Running until t={target_time}s")
+                self.run_until(target_time)
+            
+            elif command == 'QUANTUM_OP':
+                gate = params.get('gate')
+                qubits = params.get('qubits')
+                print(f"BSIM: Applying {gate} to {qubits}")
+                self.apply_gate(gate, qubits)
+            
+            elif command == 'MEASURE':
+                qubit = params.get('qubit')
+                print(f"BSIM: Measuring {qubit}")
+                self.measure(qubit)
+                # On force une étape de simulation pour capturer le signal de mesure
+                self.step()
+            
+            elif command == 'STIMULUS_APPLY':
+                # Implémentation simplifiée : on pourrait agir sur l'environnement ou la bio
+                stim = params.get('stimulus')
+                args = params.get('arguments', {})
+                print(f"BSIM: Stimulus {stim} applied with {args}")
+        
+        print("BSIM execution finished.")
+        return self.log
+
     def run(self):
         print("Starting simulation loop.")
         while self.time < self.max_time:
@@ -42,9 +85,9 @@ class MultiphysicsSimulator:
             import matplotlib.pyplot as plt
             times = [s['time'] for s in self.log]
             light = [s['light_intensity'] for s in self.log]
-            p700 = [s['p700_concentration'] for s in self.log]
-            luc_green = [s['luc_green_output'] for s in self.log]
-            luc_red = [s['luc_red_output'] for s in self.log]
+            p700 = [s['bio']['p700_concentration'] for s in self.log]
+            luc_green = [s['quantum']['luc_green_output'] for s in self.log]
+            luc_red = [s['quantum']['luc_red_output'] for s in self.log]
 
             fig, ax1 = plt.subplots(figsize=(12, 6))
 
@@ -73,28 +116,38 @@ class MultiphysicsSimulator:
 
 
 
+    def apply_gate(self, gate_name, qubits):
+        """Applique une porte quantique via le moteur quantique."""
+        self.quantum_engine.apply_gate(gate_name, qubits)
+
+    def measure(self, qubit):
+        """Mesure un qubit via le moteur quantique."""
+        self.quantum_engine.measure(qubit)
+
     def step(self):
-        # 1. Get light intensity from environment
+        # 1. Update environment
         env_state = self.env_engine.update(self.time, self.dt)
-        light_intensity = env_state['light_intensity']
-
-        # 2. Update biological state
-        self.bio_engine.update(self.time, self.dt, env_state)
+        light = env_state['light_intensity']
         
-        # 3. Update quantum state
-        self.quantum_engine.update_state(self.bio_engine.p700_concentration)
+        # 2. Update biological system
+        self.bio_engine.update(self.time, self.dt, env_state)
+        bio_state = {
+            'p700_concentration': self.bio_engine.p700_concentration
+        }
+        
+        # 3. Update quantum system
+        self.quantum_engine.update_state(bio_state['p700_concentration'])
         quantum_state = self.quantum_engine.get_state()
-
-        # 4. Log current state
-        self.log.append({
-            'time': self.time,
-            'light_intensity': light_intensity,
-            'p700_concentration': self.bio_engine.p700_concentration,
-            'p700_state': quantum_state['p700_state'],
-            'luc_green_output': quantum_state['luc_green_output'],
-            'luc_red_output': quantum_state['luc_red_output']
-        })
-
+        
+        # 4. Log state
+        state = {
+            "time": self.time,
+            "light_intensity": light,
+            "bio": bio_state,
+            "quantum": quantum_state
+        }
+        self.log.append(state)
+        
         # 5. Advance time
         self.time += self.dt
 
