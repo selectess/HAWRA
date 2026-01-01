@@ -1,7 +1,0 @@
-biopython
-qutip
-numpy
-matplotlib
-plotly
-dna_features_viewer
-tqdm

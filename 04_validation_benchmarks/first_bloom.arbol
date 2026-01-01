@@ -1,0 +1,29 @@
+// HAWRA "First Bloom" Experiment
+// Objective: Initialize P700, Apply Hadamard Gate, Measure State
+
+genes {
+    gene "psaA" with basal_rate = 0.1, degradation_rate = 0.05, light_sensitivity = 0.8, peak_wavelength = 700;
+    gene "CRY2" with basal_rate = 0.05, light_sensitivity = 0.9, peak_wavelength = 450;
+    gene "LUC" with basal_rate = 0.0, degradation_rate = 0.1;
+}
+
+grn {
+    "CRY2" activates "psaA" with weight = 2.0;
+    "psaA" activates "LUC" with weight = 1.5;
+}
+
+LOGICAL_QUBIT q1 IS {
+    activator: psaA
+};
+
+run {
+    step(0.1);
+}
+
+H(q1);
+
+run {
+    step(0.05);
+}
+
+measure q1;
